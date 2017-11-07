@@ -1,0 +1,107 @@
+homeassistant:
+  name: Home
+  latitude: !secret latitude_home
+  longitude: !secret longitude_home
+  elevation: 732
+  unit_system: imperial
+  time_zone: America/Chicago
+  customize: !include customize.yaml
+
+# Adds Configurator panel
+panel_iframe:
+  configurator:
+    title: Configurator
+    icon: mdi:wrench
+    url: !secret configurator_url
+
+# Show links to resources in log and frontend
+#introduction:
+
+# Enables the frontend
+frontend:
+
+# Enables configuration UI
+config:
+
+http:
+  api_password: !secret api_password
+  trusted_networks:
+    - 127.0.0.1
+    - 192.168.86.0/24
+  base_url: !secret base_url_secret
+  ssl_certificate: /ssl/fullchain.pem
+  ssl_key: /ssl/privkey.pem
+
+# Checks for available updates
+updater:
+
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+#conversation:
+
+# Enables support for tracking state changes over time
+history:
+
+# View all events in a logbook
+logbook:
+
+# Enables a map showing the location of tracked devices
+map:
+
+# Track the sun
+sun:
+
+# Text to speech
+tts:
+  - platform: google
+
+# Includes for better organization
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+zone: !include zones.yaml
+camera: !include cameras.yaml
+sensor: !include sensors.yaml
+switch: !include switches.yaml
+light: !include lights.yaml
+
+
+mqtt:
+  broker: localhost
+  username: !secret mqtt_user
+  password: !secret mqtt_pass
+  discovery: true
+  discovery_prefix: homeassistant
+
+nest:
+  client_id: !secret nest_id
+  client_secret: !secret nest_secret
+
+device_tracker:
+  - platform: owntracks
+    max_gps_accuracy: 200
+  - platform: ping
+    hosts:
+      HTPC: !secret htpc_ip
+      count: 5
+
+media_player:
+  - platform: plex
+    include_non_clients: true
+    scan_interval: 5
+    use_episode_art: true
+
+notify:
+  - name: pushy
+    platform: pushbullet
+    api_key: !secret pushy_key
+
+google:
+  client_id: !secret google_client_id
+  client_secret: !secret google_secret
+
+# usps:
+  # username: !secret usps_user
+  # password: !secret usps_pass

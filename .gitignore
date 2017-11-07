@@ -1,0 +1,37 @@
+#######################
+# Ignore secrets.yaml #
+#######################
+secrets.yaml
+
+###############################
+# Ignore specific directories #
+###############################
+tts
+deps
+
+#########################
+# Ignore specific files #
+#########################
+google_calendars.yaml
+known_devices.yaml
+.google.token
+.HA_VERSION
+.uuid
+gitupdate.sh
+
+########################
+# Catch-all extensions #
+########################
+*.pid
+*.xml
+*.csr
+*.crt
+*.key
+*.conf
+*.pickle
+*.db-journal
+*.db-shm
+*.db-wal
+*.sqlite
+*.db
+*.log

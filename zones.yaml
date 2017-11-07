@@ -1,0 +1,17 @@
+- name: Home
+  latitude: !secret latitude_home
+  longitude: !secret longitude_home
+  radius: 100
+  icon: mdi:home-map-marker
+
+- name: BoE
+  latitude: !secret latitude_boe
+  longitude: !secret longitude_boe
+  radius: 100
+  icon: mdi:domain
+
+- name: HBMS
+  latitude: !secret latitude_hbms
+  longitude: !secret latitude_hbms
+  radius: 150
+  icon: mdi:school

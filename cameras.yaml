@@ -1,0 +1,12 @@
+- name: Daryl
+  platform: generic
+  still_image_url: !secret daryl_map_image
+  limit_refetch_to_url_change: true
+  
+- name: Megan
+  platform: generic
+  still_image_url: !secret megan_map_image
+  limit_refetch_to_url_change: true
+
+# - platform: usps
+  # scan_interval: 5

@@ -1,0 +1,226 @@
+get_going:
+  name: "Get Going!"
+  entities:
+    - automation.tell_the_family_its_705
+    - automation.tell_the_family_its_709
+    - automation.tell_the_family_its_710
+
+get_going_tab:
+  name: "Get going!"
+  view: yes
+  icon: mdi:coffee-to-go
+  entities:
+    - group.get_going
+
+network_tab:
+  name: "Network"
+  view: yes
+  icon: mdi:network
+  entities:
+    - group.google_wifi
+    - group.speedtest
+    - group.system
+    - group.htpc
+
+google_wifi:
+  name: "Google Wifi"
+  entities:
+    - sensor.google_wifi_status
+    - sensor.google_wifi_local_ip
+    - sensor.google_wifi_current_version
+    - sensor.google_wifi_new_version
+    - sensor.google_wifi_uptime
+    - sensor.google_wifi_last_restart
+
+speedtest:
+  name: "Speedtest.net"
+  entities:
+    - sensor.speedtest_download
+    - sensor.speedtest_ping
+    - sensor.speedtest_upload
+
+climate_tab:
+  name: "Climate"
+  view: yes
+  icon: mdi:weather-windy-variant
+  entities:
+    - group.climate
+    - group.weather_now
+    - group.weather_today
+
+climate:
+  name: "Climate Control"
+  entities:
+    - climate.hallway
+    - binary_sensor.hallway_thermostat_online
+    - sensor.hallway_thermostat_operation_mode
+    - sensor.hallway_thermostat_temperature
+    - sensor.hallway_thermostat_target
+    - sensor.hallway_thermostat_hvac_state
+    - binary_sensor.hallway_thermostat_fan
+    - sensor.hallway_thermostat_humidity
+    - binary_sensor.hallway_thermostat_has_leaf
+    - binary_sensor.hallway_thermostat_is_locked
+    - binary_sensor.hallway_thermostat_is_using_emergency_heat
+    - sensor.bedroom_temp
+    - sensor.bathroom_temp
+
+weather_now:
+  name: "Now"
+  entities:
+    - sun.sun
+    - sensor.dark_sky_summary
+    - sensor.dark_sky_temperature
+    - sensor.dark_sky_pressure
+    - sensor.dark_sky_icon
+    - sensor.dark_sky_minutely_summary
+    - sensor.dark_sky_humidity
+    - sensor.dark_sky_apparent_temperature
+    - sensor.dark_sky_cloud_coverage
+    - sensor.dark_sky_uv_index
+    - sensor.dark_sky_visibility
+    - sensor.dark_sky_wind_bearing
+    - sensor.dark_sky_wind_speed
+    - sensor.dark_sky_nearest_storm_distance
+    - sensor.dark_sky_precip
+
+weather_today:
+  name: "Today"
+  entities:
+    - sensor.dark_sky_precip_probability
+    - sensor.dark_sky_ozone
+    - sensor.dark_sky_hourly_summary
+    - sensor.dark_sky_daily_high_apparent_temperature
+    - sensor.dark_sky_daily_high_temperature
+    - sensor.dark_sky_daily_low_apparent_temperature
+    - sensor.dark_sky_daily_low_temperature
+    - sensor.dark_sky_daily_max_precip_intensity
+    - sensor.dark_sky_daily_summary
+    - sensor.dark_sky_dew_point
+
+system:
+  name: "HASSIO Pi"
+  entities:
+    - sensor.disk_used_home
+    - sensor.ram_available
+    - sensor.since_last_boot
+    - sensor.last_boot
+    - sensor.ipv4_address
+    - sensor.cpu_used
+    - sensor.ssl_cert
+
+htpc:
+  name: "HTPC"
+  entities:
+    - device_tracker.htpc
+    - sensor.transmission_status
+    - sensor.transmission_active_torrents
+    - sensor.transmission_down_speed
+    - sensor.transmission_up_speed
+    - switch.transmission_turtle
+
+autos_tab:
+  name: "Automations"
+  view: yes
+  icon: mdi:home-automation
+  entities:
+    - automation.pushbullet_test
+    - automation.bathroom_lights_auto
+    - group.calendars
+
+calendars:
+  name: "Calendars"
+  entities:
+    - calendar.daryl_public_calendar
+    - calendar.family
+    - calendar.football
+    - calendar.holidays_in_united_states
+    - calendar.private_events
+    - calendar.scheduling
+    - calendar.scheduling_nowork
+
+media:
+  name: "Media"
+  view: yes
+  icon: mdi:cast
+  entities:
+    - group.chromecasts
+    - group.chromecast_audios
+    - group.google_homes
+    - group.plex
+
+chromecasts:
+  name: "Chromecasts"
+  entities:
+    - media_player.bedroom_tv
+    - media_player.dat_dongle
+
+chromecast_audios:
+  name: "Chromecast Audio"
+  entities:
+    - media_player.shop_stereo
+
+google_homes:
+  name: "Google Homes"
+  entities:
+    - media_player.kitchen_home
+    - media_player.master_bedroom_speaker
+    - media_player.smart_speakers
+
+plex:
+  name: "Plex"
+  entities:
+    - sensor.plex
+
+location:
+  name: "People Locations"
+  view: yes
+  icon: mdi:map-marker
+  entities:
+    - group.people_maps
+    - group.people_trackers
+
+people_maps:
+  name: "Maps"
+  entities:
+    - camera.daryl
+    - camera.megan
+
+people_trackers:
+  name: "Trackers"
+  entities:
+    - device_tracker.mixpix405_daryl_pixel_xl
+    - sensor.daryls_battery
+    - device_tracker.mixpix405_megans_xl
+    - sensor.megans_battery
+
+packages:
+  name: "Packages"
+  entities:
+    - sensor.ups_my_choice
+
+smartthings_switches:
+  name: "Switches and Lights"
+  entities:
+    - switch.porch_lights
+    - switch.bathroom_lights
+    - switch.bedroom_lights
+    - switch.landscaping_outlet
+    # - switch.lamp
+    - light.peq_lamp
+
+smartthings_sensors:
+  name: "Sensors"
+  entities:
+    - sensor.bedroom_temp
+    - sensor.bathroom_temp
+    - sensor.bedroom_motion
+    - sensor.bathroom_door
+
+smartthings_tab:
+  name: "SmartThings"
+  view: yes
+  icon: mdi:magnet
+  entities:
+    - group.smartthings_sensors
+    - group.smartthings_switches

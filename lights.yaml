@@ -1,0 +1,10 @@
+- platform: mqtt
+  name: "Peq Lamp"
+  state_topic: "smartthings/Peq Outlet/switch/state"
+  command_topic: "smartthings/Peq Outlet/switch/cmd"
+  brightness_state_topic: "smartthings/Peq Outlet/level/state"
+  brightness_command_topic: "smartthings/Peq Outlet/level/cmd"
+  brightness_scale: 100
+  payload_on: "on"
+  payload_off: "off"
+  retain: true

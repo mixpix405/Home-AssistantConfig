@@ -1,0 +1,123 @@
+# Better icons for Speedtest.net sensors
+sensor.speedtest_download:
+  icon: mdi:download-network
+sensor.speedtest_upload:
+  icon: mdi:upload-network
+
+# Friendly names for Google WiFi sensors
+sensor.google_wifi_current_version:
+  friendly_name: "Firmware version"
+sensor.google_wifi_last_restart:
+  friendly_name: "Last reboot"
+sensor.google_wifi_local_ip:
+  friendly_name: "External IP"
+sensor.google_wifi_new_version:
+  friendly_name: "Firmware update?"
+sensor.google_wifi_status:
+  friendly_name: "Status"
+sensor.google_wifi_uptime:
+  friendly_name: "Uptime"
+
+# Cleaning up repetitive DarkSky entity names
+sensor.dark_sky_apparent_temperature:
+  friendly_name: "Feels Like"
+sensor.dark_sky_cloud_coverage:
+  friendly_name: "Cloud Coverage"
+sensor.dark_sky_daily_high_apparent_temperature:
+  friendly_name: "Feels Like High"
+sensor.dark_sky_daily_high_temperature:
+  friendly_name: "Today's High"
+sensor.dark_sky_daily_low_apparent_temperature:
+  friendly_name: "Feels Like Low"
+sensor.dark_sky_daily_low_temperature:
+  friendly_name: "Today's Low"
+sensor.dark_sky_daily_max_precip_intensity:
+  friendly_name: "Daily Max Precip Intensity"
+sensor.dark_sky_daily_summary:
+  friendly_name: "Daily"
+sensor.dark_sky_dew_point:
+  friendly_name: "Dew Point"
+sensor.dark_sky_hourly_summary:
+  friendly_name: "Hourly"
+sensor.dark_sky_humidity:
+  friendly_name: "Humidity"
+sensor.dark_sky_icon:
+  friendly_name: "Icon"
+sensor.dark_sky_minutely_summary:
+  friendly_name: "Minutely"
+sensor.dark_sky_nearest_storm_distance:
+  friendly_name: "Nearest Storm"
+sensor.dark_sky_ozone:
+  friendly_name: "Ozone"
+sensor.dark_sky_precip:
+  friendly_name: "Precipitation"
+sensor.dark_sky_precip_probability:
+  friendly_name: "Precipitation Chance"
+sensor.dark_sky_pressure:
+  friendly_name: "Pressure"
+sensor.dark_sky_summary:
+  friendly_name: "Currently"
+sensor.dark_sky_temperature:
+  friendly_name: "Temperature"
+sensor.dark_sky_uv_index:
+  friendly_name: "UV Index"
+sensor.dark_sky_visibility:
+  friendly_name: "Visibility"
+sensor.dark_sky_wind_bearing:
+  friendly_name: "Wind Direction"
+sensor.dark_sky_wind_speed:
+  friendly_name: "Wind Speed"
+
+# Cleaning up Nest names
+climate.hallway:
+  friendly_name: "Nest Thermostat"
+  entity_picture: /local/nest.png
+sensor.hallway_thermostat_humidity:
+  friendly_name: "Humidity"
+sensor.hallway_thermostat_hvac_state:
+  friendly_name: "State"
+sensor.hallway_thermostat_operation_mode:
+  friendly_name: "Mode"
+  hidden: true
+sensor.hallway_thermostat_target:
+  friendly_name: "Target Temp"
+  hidden: true
+sensor.hallway_thermostat_temperature:
+  friendly_name: "Temperature"
+  hidden: true
+binary_sensor.hallway_thermostat_fan:
+  friendly_name: "Fan"
+binary_sensor.hallway_thermostat_has_leaf:
+  friendly_name: "Leaf Status"
+binary_sensor.hallway_thermostat_is_locked:
+  friendly_name: "Locked"
+binary_sensor.hallway_thermostat_is_using_emergency_heat:
+  friendly_name: "Emergency Heat"
+binary_sensor.hallway_thermostat_online:
+  friendly_name: "Online"
+
+# Battery icons for battery trackers
+sensor.daryls_battery:
+  icon: mdi:battery-outline
+sensor.megans_battery:
+  icon: mdi:battery-outline
+
+# Correct Plex icon
+sensor.plex:
+  icon: mdi:plex
+
+# Better icons for SmartThings switches
+switch.porch_lights:
+  icon: mdi:spotlight-beam
+switch.bathroom_lights:
+  icon: mdi:lightbulb-outline
+switch.bedroom_lights:
+  icon: mdi:lightbulb-outline
+switch.landscaping_outlet:
+  icon: mdi:power-socket-us
+
+# Better icons for SmartThings sensors
+sensor.bedroom_motion:
+  icon: mdi:walk
+sensor.bathroom_door:
+  icon: mdi:door
