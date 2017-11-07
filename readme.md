@@ -22,5 +22,5 @@ This is the initial commit. Everything is pretty poorly organized, but it works.
 ![Climate Control](https://imgur.com/SJ7egNa.png)
 ![Automation](https://imgur.com/dDxp56F.png)
 ![Media Players](https://imgur.com/ejFWicA.png)
-![Device Trackers](https://imgur.com/ASVyYXT.png)
+![Device Trackers](https://imgur.com/2Q238dB.png)
 ![SmartThings Integration](https://imgur.com/FuxL6Zk.png)
