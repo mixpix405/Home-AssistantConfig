@@ -1,0 +1,5 @@
+- name: "Lying in Bed"
+  entities:
+    light.peq_lamp:
+      state: on
+      brightness_pct: 50

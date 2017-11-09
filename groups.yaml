@@ -11,6 +11,7 @@ get_going_tab:
   icon: mdi:coffee-to-go
   entities:
     - group.get_going
+    - group.packages
 
 network_tab:
   name: "Network"
@@ -21,6 +22,7 @@ network_tab:
     - group.speedtest
     - group.system
     - group.htpc
+    - group.network_devices
 
 google_wifi:
   name: "Google Wifi"
@@ -38,6 +40,37 @@ speedtest:
     - sensor.speedtest_download
     - sensor.speedtest_ping
     - sensor.speedtest_upload
+
+network_devices:
+  name: "Other Network Devices"
+  entities:
+    - sensor.ghome_kitchen
+    - sensor.range_extender
+    - sensor.ghome_mini_bedroom
+    - sensor.xbox_one
+    - sensor.st_hub
+    - sensor.sawyer_tablet
+    - sensor.cast_bedroom
+    - sensor.nest
+
+homeless_stuff:
+  name: "Homeless"
+  entities:
+    - device_tracker.googlehomelan
+    - device_tracker.tlwa855relan
+    - device_tracker.e4f0421cb224
+    - device_tracker.xboxonelan
+    - device_tracker.st24fd5b00000037a4lan
+    - device_tracker.androidea8e397ef27b1c0elan
+    - device_tracker.6cadf82677a2
+    - device_tracker.09aa01ac25160s7klan
+    - binary_sensor.anyone_home
+    - device_tracker.testwifihere
+    - device_tracker.htpclan
+    - sensor.bathroom_door
+    - group.lights_and_switches
+    - scene.lying_in_bed
+    - group.away_mode_off
 
 climate_tab:
   name: "Climate"
@@ -112,7 +145,7 @@ system:
 htpc:
   name: "HTPC"
   entities:
-    - device_tracker.htpc
+    - sensor.htpc
     - sensor.transmission_status
     - sensor.transmission_active_torrents
     - sensor.transmission_down_speed
@@ -124,14 +157,7 @@ autos_tab:
   view: yes
   icon: mdi:home-automation
   entities:
-    - automation.anyone_home
-    - automation.bathroom_lights_auto
-    - automation.front_porch_dusk
-    - automation.midnight
-    - automation.pushbullet_test
-    - automation.tell_the_family_its_705
-    - automation.tell_the_family_its_709
-    - automation.tell_the_family_its_710
+    - group.all_automations
     - group.calendars
 
 calendars:
@@ -155,7 +181,12 @@ media:
     - group.chromecast_audios
     - group.google_homes
     - group.plex
+
+xbox:
+  name: "Xbox"
+  entities:
     - media_player.xboxone
+    - sensor.mixpix405
 
 chromecasts:
   name: "Chromecasts"
@@ -199,8 +230,10 @@ people_trackers:
   entities:
     - device_tracker.mixpix405_daryl_pixel_xl
     - sensor.daryls_battery
+    - sensor.time_to_home_for_daryl
     - device_tracker.mixpix405_megans_xl
     - sensor.megans_battery
+    - sensor.time_to_home_for_megan
 
 packages:
   name: "Packages"
@@ -208,7 +241,7 @@ packages:
     - sensor.ups_my_choice
 
 smartthings_switches:
-  name: "Switches and Lights"
+  name: "ST Switches & Lights"
   entities:
     - switch.porch_lights
     - switch.bathroom_lights
@@ -223,7 +256,7 @@ smartthings_sensors:
     - sensor.bedroom_temp
     - sensor.bathroom_temp
     - sensor.bedroom_motion
-    - sensor.bathroom_door
+    - sensor.bathroom_door_status
 
 smartthings_tab:
   name: "SmartThings"
@@ -259,7 +292,14 @@ zwave_nodes:
     - zwave.porch
 
 lights_and_switches:
-  name: "Lights & Switches"
+  name: "All Switches & Lights"
   entities:
     - group.zwave_devices
     - group.smartthings_switches
+
+away_mode_off:
+  name: "Turn off when away"
+  entities:
+    - switch.bedroom_switch
+    - switch.bathroom_switch
+    - light.peq_lamp

@@ -70,7 +70,7 @@
     - service: media_player.play_media
       data:
         entity_id: media_player.smart_speakers
-        media_content_id: /local/audio/school_bell.mp3
+        media_content_id: !secret bell_mp3
         media_content_type: audio/mp3
     - delay: 0:00:15   
     - service: tts.google_say
@@ -79,6 +79,7 @@
         message: "It is 7:10, and time to leave. Have a good day!"
 
 - alias: "Pushbullet Test"
+  initial_state: False
   trigger:
     platform: time
     at: '08:45:00'
@@ -114,13 +115,37 @@
     service: homeassistant.turn_off
     entity_id: group.lights_and_switches
 
-- alias: "Anyone Home"
+- alias: "Away Mode"
   trigger:
     platform: state
-    entity_id: device_tracker.mixpix405_daryl_pixel_xl, device_tracker.mixpix405_megans_xl
-    to: "home"
-    # for:
-      # minutes: 10
+    entity_id: binary_sensor.anyone_home
+    to: 'off'
   action:
-    - service: homeassistant.turn_on
-      entity_id: input_boolean.anyone_home
+    - service: climate.set_away_mode
+      data:
+        entity_id: climate.hallway
+        away_mode: 'on'
+    - service: homeassistant.turn_off
+      entity_id: group.away_mode_off
+
+- alias: "Home Mode"
+  trigger:
+    platform: state
+    entity_id: binary_sensor.anyone_home
+    to: 'on'
+  action:
+    - service: climate.set_away_mode
+      data:
+        entity_id: climate.hallway
+        away_mode: 'off'
+
+- alias: "Bedroom No Motion"
+  trigger:
+    platform: state
+    entity_id: sensor.bedroom_motion
+    to: 'inactive'
+    for:
+      minutes: 10
+  action:
+    service: switch.turn_off
+    entity_id: switch.bedroom_switch

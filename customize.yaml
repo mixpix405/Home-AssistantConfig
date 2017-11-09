@@ -68,7 +68,7 @@ sensor.dark_sky_wind_bearing:
 sensor.dark_sky_wind_speed:
   friendly_name: "Wind Speed"
 
-# Cleaning up Nest names
+# Cleaning up Nest names & icons
 climate.hallway:
   friendly_name: "Nest Thermostat"
   entity_picture: /local/nest.png
@@ -87,37 +87,75 @@ sensor.hallway_thermostat_temperature:
   hidden: true
 binary_sensor.hallway_thermostat_fan:
   friendly_name: "Fan"
+  icon: mdi:fan
 binary_sensor.hallway_thermostat_has_leaf:
   friendly_name: "Leaf Status"
 binary_sensor.hallway_thermostat_is_locked:
   friendly_name: "Locked"
+  icon: mdi:lock
 binary_sensor.hallway_thermostat_is_using_emergency_heat:
   friendly_name: "Emergency Heat"
 binary_sensor.hallway_thermostat_online:
   friendly_name: "Online"
 
-# Battery icons for battery trackers
+# Battery icons for trackers
 sensor.daryls_battery:
   icon: mdi:battery-outline
+sensor.time_to_home_for_daryl:
+  icon: mdi:car-sports
 sensor.megans_battery:
   icon: mdi:battery-outline
+sensor.time_to_home_for_megan:
+  icon: mdi:car-estate
 
 # Correct Plex icon
 sensor.plex:
   icon: mdi:plex
 
-# Better icons for SmartThings switches
-switch.porch_lights:
+# Better icons for z-wave switches
+switch.porch_switch:
   icon: mdi:spotlight-beam
-switch.bathroom_lights:
+switch.bathroom_switch:
   icon: mdi:lightbulb-outline
-switch.bedroom_lights:
+switch.bedroom_switch:
   icon: mdi:lightbulb-outline
-switch.landscaping_outlet:
+switch.landscaping_outlet_switch:
   icon: mdi:power-socket-us
 
-# Better icons for SmartThings sensors
+# Better icons for SmartThings stuff
+light.peq_lamp:
+  icon: mdi:lamp
 sensor.bedroom_motion:
   icon: mdi:walk
 sensor.bathroom_door:
   icon: mdi:door
+  # icon_template: "{% if is_state('sensor.bathroom_door', 'open') %}mdi:door-open{% else %}mdi:door-closed{% endif %}"
+
+# Better icons for network devices
+sensor.htpc:
+  icon: mdi:desktop-tower
+sensor.ghome_kitchen:
+  icon: mdi:google-assistant
+sensor.range_extender:
+  icon: mdi:access-point
+sensor.ghome_mini_bedroom:
+  icon: mdi:google-assistant
+sensor.xbox_one:
+  icon: mdi:xbox
+sensor.st_hub:
+  icon: mdi:white-balance-iridescent
+sensor.sawyer_tablet:
+  icon: mdi:tablet-android
+sensor.cast_bedroom:
+  icon: mdi:cast
+sensor.nest:
+  entity_picture: /local/nest.png
+sensor.transmission_down_speed:
+  icon: mdi:download-network
+sensor.transmission_up_speed:
+  icon: mdi:upload-network
+
+# Show hidden groups!
+group.all_automations:
+  hidden: false
+  friendly_name: "All Automations"

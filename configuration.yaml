@@ -66,7 +66,10 @@ camera: !include cameras.yaml
 sensor: !include sensors.yaml
 switch: !include switches.yaml
 light: !include lights.yaml
-input_boolean: !include booleans.yaml
+binary_sensor: !include binary_sensors.yaml
+scene: !include scenes.yaml
+device_tracker: !include device_trackers.yaml
+#input_boolean: !include booleans.yaml
 
 zwave:
   usb_path: /dev/ttyACM0
@@ -81,14 +84,6 @@ mqtt:
 nest:
   client_id: !secret nest_id
   client_secret: !secret nest_secret
-
-device_tracker:
-  - platform: owntracks
-    max_gps_accuracy: 200
-  - platform: ping
-    hosts:
-      HTPC: !secret htpc_ip
-      count: 5
 
 media_player:
   - platform: plex

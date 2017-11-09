@@ -103,3 +103,57 @@
   host: !secret duck_domain
   port: !secret duck_port
   name: "SSL Cert"
+
+- platform: xbox_live
+  api_key: !secret xboxapi_key
+  xuid:
+    - !secret xbox_uid
+
+- platform: google_travel_time
+  name: "Time to Home for Daryl"
+  api_key: !secret google_api_key
+  origin: device_tracker.mixpix405_daryl_pixel_xl
+  destination: zone.home
+
+- platform: google_travel_time
+  name: "Time to Home for Megan"
+  api_key: !secret google_api_key
+  origin: device_tracker.mixpix405_megans_xl
+  destination: zone.home
+
+#############
+# Templates #
+#############
+- platform: template
+  sensors:
+    htpc:
+      friendly_name: "HTPC"
+      value_template: "{% if is_state('device_tracker.htpclan', 'home') %}Online{% else %}offline{% endif %}"
+    ghome_kitchen:
+      friendly_name: "GHome Kitchen"
+      value_template: "{% if is_state('device_tracker.googlehomelan', 'home') %}Online{% else %}offline{% endif %}"
+    range_extender:
+      friendly_name: "Range Extender"
+      value_template: "{% if is_state('device_tracker.tlwa855relan', 'home') %}Online{% else %}offline{% endif %}"
+    ghome_mini_bedroom:
+      friendly_name: "GHome Mini (Bedroom)"
+      value_template: "{% if is_state('device_tracker.e4f0421cb224', 'home') %}Online{% else %}offline{% endif %}"
+    xbox_one:
+      friendly_name: "XBOne"
+      value_template: "{% if is_state('device_tracker.xboxonelan', 'home') %}Online{% else %}offline{% endif %}"
+    st_hub:
+      friendly_name: "SmartThings Hub"
+      value_template: "{% if is_state('device_tracker.st24fd5b00000037a4lan', 'home') %}Online{% else %}offline{% endif %}"
+    sawyer_tablet:
+      friendly_name: "Sawyer's Tablet"
+      value_template: "{% if is_state('device_tracker.androidea8e397ef27b1c0elan', 'home') %}Online{% else %}offline{% endif %}"
+    cast_bedroom:
+      friendly_name: "Bedroom Chromecast"
+      value_template: "{% if is_state('device_tracker.6cadf82677a2', 'home') %}Online{% else %}offline{% endif %}"
+    nest:
+      friendly_name: "Nest Thermostat"
+      value_template: "{% if is_state('device_tracker.09aa01ac25160s7klan', 'home') %}Online{% else %}offline{% endif %}"
+    bathroom_door_status:
+      friendly_name: "Bathroom Door"
+      value_template: "{% if is_state('sensor.bathroom_door', 'open') %}open{% else %}closed{% endif %}"
+      icon_template: "{% if is_state('sensor.bathroom_door', 'open') %}mdi:door-open{% else %}mdi:door-closed{% endif %}"

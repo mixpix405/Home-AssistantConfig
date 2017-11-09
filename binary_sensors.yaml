@@ -1,0 +1,10 @@
+  - platform: template
+    sensors:
+      anyone_home:
+        friendly_name: "Anyone Home?"
+        entity_id:
+          - device_tracker.mixpix405_daryl_pixel_xl
+          - device_tracker.mixpix405_megans_xl
+        value_template: >-
+          {{ is_state('device_tracker.mixpix405_daryl_pixel_xl', 'home')
+             or is_state('device_tracker.mixpix405_megans_xl', 'home') }}
