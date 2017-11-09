@@ -1,3 +1,12 @@
+- alias: "Front Porch Dusk"
+  trigger:
+    platform: sun
+    event: sunset
+    offset: '-00:30:00'
+  action:
+    service: switch.turn_on
+    entity_id: switch.porch_switch
+
 - alias: "Tell the family it's 7:05"
   trigger:
     platform: time
@@ -96,4 +105,22 @@
     to: "open"
   action:
     service: switch.turn_on
-    entity_id: switch.bathroom_lights
+    entity_id: switch.bathroom_switch
+- alias: "Midnight"
+  trigger:
+    platform: time
+    at: '00:00:00'
+  action:
+    service: homeassistant.turn_off
+    entity_id: group.lights_and_switches
+
+- alias: "Anyone Home"
+  trigger:
+    platform: state
+    entity_id: device_tracker.mixpix405_daryl_pixel_xl, device_tracker.mixpix405_megans_xl
+    to: "home"
+    # for:
+      # minutes: 10
+  action:
+    - service: homeassistant.turn_on
+      entity_id: input_boolean.anyone_home

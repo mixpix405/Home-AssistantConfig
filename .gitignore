@@ -18,6 +18,7 @@ known_devices.yaml
 .HA_VERSION
 .uuid
 gitupdate.sh
+OZW_Log.txt
 
 ########################
 # Catch-all extensions #

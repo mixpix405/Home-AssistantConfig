@@ -76,25 +76,25 @@
     - type: since_last_boot
 
 - platform: mqtt
-  state_topic: "smartthings/Peq Motion Sensor/temperature/state"
+  state_topic: "smartthings/PEQ Motion Sensor/temperature/state"
   name: "Bedroom Temp"
   unit_of_measurement: "°F"
 
 - platform: mqtt
-  state_topic: "smartthings/Peq Door Sensor/temperature/state"
+  state_topic: "smartthings/PEQ Door Sensor/temperature/state"
   name: "Bathroom Temp"
   unit_of_measurement: "°F"
 
 - platform: mqtt
   name: "Bedroom Motion"
-  state_topic: "smartthings/Peq Motion Sensor/motion/state"
+  state_topic: "smartthings/PEQ Motion Sensor/motion/state"
   payload_on: "active"
   payload_off: "inactive"
   device_class: "motion"
 
 - platform: mqtt
   name: "Bathroom Door"
-  state_topic: "smartthings/Peq Door Sensor/contact/state"
+  state_topic: "smartthings/PEQ Door Sensor/contact/state"
   payload_on: "open"
   payload_off: "closed"
   device_class: "opening"

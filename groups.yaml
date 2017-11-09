@@ -124,8 +124,14 @@ autos_tab:
   view: yes
   icon: mdi:home-automation
   entities:
-    - automation.pushbullet_test
+    - automation.anyone_home
     - automation.bathroom_lights_auto
+    - automation.front_porch_dusk
+    - automation.midnight
+    - automation.pushbullet_test
+    - automation.tell_the_family_its_705
+    - automation.tell_the_family_its_709
+    - automation.tell_the_family_its_710
     - group.calendars
 
 calendars:
@@ -138,6 +144,7 @@ calendars:
     - calendar.private_events
     - calendar.scheduling
     - calendar.scheduling_nowork
+    - calendar.scheduling_work
 
 media:
   name: "Media"
@@ -148,6 +155,7 @@ media:
     - group.chromecast_audios
     - group.google_homes
     - group.plex
+    - media_player.xboxone
 
 chromecasts:
   name: "Chromecasts"
@@ -223,4 +231,35 @@ smartthings_tab:
   icon: mdi:magnet
   entities:
     - group.smartthings_sensors
+    - group.smartthings_switches
+
+zwave_tab:
+  name: "Z-Wave Stuff"
+  view: yes
+  icon: mdi:router-wireless
+  entities:
+    - group.zwave_devices
+    - group.zwave_nodes
+
+zwave_devices:
+  name: "Z-Wave Devices"
+  entities:
+    - switch.porch_switch
+    - switch.bedroom_switch
+    - switch.bathroom_switch
+    - switch.landscaping_outlet_switch
+
+zwave_nodes:
+  name: "Z-Wave Nodes"
+  entities:
+    - zwave.aeotec_zw090_zstick_gen5_us
+    - zwave.bathroom
+    - zwave.bedroom
+    - zwave.landscaping_outlet
+    - zwave.porch
+
+lights_and_switches:
+  name: "Lights & Switches"
+  entities:
+    - group.zwave_devices
     - group.smartthings_switches

@@ -1,35 +1,35 @@
-# SmartThings Switches
-- platform: mqtt
-  name: "Porch Lights"
-  state_topic: "smartthings/Front Porch Lights/switch/state"
-  command_topic: "smartthings/Front Porch Lights/switch/cmd"
-  payload_on: "on"
-  payload_off: "off"
-  retain: true
+# # SmartThings Switches
+# - platform: mqtt
+  # name: "Porch Lights"
+  # state_topic: "smartthings/Front Porch Lights/switch/state"
+  # command_topic: "smartthings/Front Porch Lights/switch/cmd"
+  # payload_on: "on"
+  # payload_off: "off"
+  # retain: true
 
-- platform: mqtt
-  name: "Bathroom Lights"
-  state_topic: "smartthings/Bathroom Lights/switch/state"
-  command_topic: "smartthings/Bathroom Lights/switch/cmd"
-  payload_on: "on"
-  payload_off: "off"
-  retain: true
+# - platform: mqtt
+  # name: "Bathroom Lights"
+  # state_topic: "smartthings/Bathroom Lights/switch/state"
+  # command_topic: "smartthings/Bathroom Lights/switch/cmd"
+  # payload_on: "on"
+  # payload_off: "off"
+  # retain: true
 
-- platform: mqtt
-  name: "Bedroom Lights"
-  state_topic: "smartthings/Bedroom Lights/switch/state"
-  command_topic: "smartthings/Bedroom Lights/switch/cmd"
-  payload_on: "on"
-  payload_off: "off"
-  retain: true
+# - platform: mqtt
+  # name: "Bedroom Lights"
+  # state_topic: "smartthings/Bedroom Lights/switch/state"
+  # command_topic: "smartthings/Bedroom Lights/switch/cmd"
+  # payload_on: "on"
+  # payload_off: "off"
+  # retain: true
 
-- platform: mqtt
-  name: "Landscaping Outlet"
-  state_topic: "smartthings/Landscaping Outlet/switch/state"
-  command_topic: "smartthings/Landscaping Outlet/switch/cmd"
-  payload_on: "on"
-  payload_off: "off"
-  retain: true
+# - platform: mqtt
+  # name: "Landscaping Outlet"
+  # state_topic: "smartthings/Landscaping Outlet/switch/state"
+  # command_topic: "smartthings/Landscaping Outlet/switch/cmd"
+  # payload_on: "on"
+  # payload_off: "off"
+  # retain: true
 
 # - platform: mqtt
   # name: "Lamp"
@@ -46,3 +46,5 @@
   name: "Transmission Turtle"
   username: !secret transmission_user
   password: !secret transmission_pass
+
+# Z-Wave Switches
