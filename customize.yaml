@@ -162,6 +162,12 @@ sensor.dat_dongle:
   icon: mdi:cast
 sensor.daryl_laptop:
   icon: mdi:laptop-windows
+sensor.retropie:
+  icon: mdi:gamepad-variant
+sensor.daryl_watch:
+  icon: mdi:watch
+sensor.megan_explorer:
+  icon: mdi:car-estate
 
 # Better icons for automations
 automation.tell_the_family_its_705:

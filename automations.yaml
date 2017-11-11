@@ -193,11 +193,41 @@
 - alias: "Tell Daryl when Megan gets home"
   trigger:
     platform: state
-    entity_id: device_tracker.mixpix405_daryl_pixel_xl
-    to: 'home'
+    entity_id: binary_sensor.megan_home
+    to: 'on'
   action:
     service: notify.html5
     data:
       message: "safe and sound"
       title: "Megan arrived home"
       target: "Daryl's XL"
+
+- alias: "Welcome Daryl home"
+  trigger:
+    platform: state
+    entity_id: binary_sensor.daryl_home
+    to: 'on'
+  action:
+    service: notify.html5
+    data:
+      message: "Alert megan?"
+      title: "Welcome home!"
+      target: "Daryl's XL"
+      data:
+        actions:
+          - action: "tell_her"
+            title: "Sure..."
+            icon: "/local/icons/human-female_hab.png"
+
+- alias: "Option to tell Megan Daryl is home"
+  trigger:
+    platform: event
+    event_type: html5_notification.clicked
+    event_data:
+     action: tell_her
+  action:
+    service: notify.html5
+    data:
+      message: "Safe and sound!"
+      title: "Daryl arrived home"
+      target: "Megan's XL"
