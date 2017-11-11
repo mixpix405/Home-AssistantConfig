@@ -1,3 +1,13 @@
+default_view:
+  view: yes
+  icon: mdi:castle
+  entities:
+    - group.people_trackers
+    - group.people_maps
+    - group.zwave_devices
+    - group.smartthings_switches
+    - climate.hallway
+
 get_going:
   name: "Get Going!"
   entities:
@@ -52,10 +62,18 @@ network_devices:
     - sensor.sawyer_tablet
     - sensor.cast_bedroom
     - sensor.nest
+    - sensor.daryl_xl_nmap
+    - sensor.megan_xl_nmap
+    - sensor.dat_dongle
+    - sensor.daryl_laptop
 
 homeless_stuff:
   name: "Homeless"
   entities:
+    - device_tracker.ac37434dee93
+    - device_tracker.404e36256a50
+    - device_tracker.chromecastlan
+    - device_tracker.darylt540plan
     - device_tracker.googlehomelan
     - device_tracker.tlwa855relan
     - device_tracker.e4f0421cb224
@@ -80,21 +98,22 @@ climate_tab:
     - group.climate
     - group.weather_now
     - group.weather_today
+    - camera.radar
 
 climate:
   name: "Climate Control"
   entities:
     - climate.hallway
-    - binary_sensor.hallway_thermostat_online
-    - sensor.hallway_thermostat_operation_mode
-    - sensor.hallway_thermostat_temperature
-    - sensor.hallway_thermostat_target
-    - sensor.hallway_thermostat_hvac_state
+    # - binary_sensor.hallway_thermostat_online
+    # - sensor.hallway_thermostat_operation_mode
+    # - sensor.hallway_thermostat_temperature
+    # - sensor.hallway_thermostat_target
+    # - sensor.hallway_thermostat_hvac_state
     - binary_sensor.hallway_thermostat_fan
     - sensor.hallway_thermostat_humidity
-    - binary_sensor.hallway_thermostat_has_leaf
-    - binary_sensor.hallway_thermostat_is_locked
-    - binary_sensor.hallway_thermostat_is_using_emergency_heat
+    # - binary_sensor.hallway_thermostat_has_leaf
+    # - binary_sensor.hallway_thermostat_is_locked
+    # - binary_sensor.hallway_thermostat_is_using_emergency_heat
     - sensor.bedroom_temp
     - sensor.bathroom_temp
 
@@ -104,32 +123,32 @@ weather_now:
     - sun.sun
     - sensor.dark_sky_summary
     - sensor.dark_sky_temperature
-    - sensor.dark_sky_pressure
-    - sensor.dark_sky_icon
+    # - sensor.dark_sky_pressure
+    # - sensor.dark_sky_icon
     - sensor.dark_sky_minutely_summary
     - sensor.dark_sky_humidity
     - sensor.dark_sky_apparent_temperature
-    - sensor.dark_sky_cloud_coverage
-    - sensor.dark_sky_uv_index
-    - sensor.dark_sky_visibility
-    - sensor.dark_sky_wind_bearing
+    # - sensor.dark_sky_cloud_coverage
+    # - sensor.dark_sky_uv_index
+    # - sensor.dark_sky_visibility
+    # - sensor.dark_sky_wind_bearing
     - sensor.dark_sky_wind_speed
     - sensor.dark_sky_nearest_storm_distance
-    - sensor.dark_sky_precip
+    # - sensor.dark_sky_precip
 
 weather_today:
   name: "Today"
   entities:
     - sensor.dark_sky_precip_probability
-    - sensor.dark_sky_ozone
+    # - sensor.dark_sky_ozone
     - sensor.dark_sky_hourly_summary
-    - sensor.dark_sky_daily_high_apparent_temperature
+    # - sensor.dark_sky_daily_high_apparent_temperature
     - sensor.dark_sky_daily_high_temperature
-    - sensor.dark_sky_daily_low_apparent_temperature
+    # - sensor.dark_sky_daily_low_apparent_temperature
     - sensor.dark_sky_daily_low_temperature
-    - sensor.dark_sky_daily_max_precip_intensity
+    # - sensor.dark_sky_daily_max_precip_intensity
     - sensor.dark_sky_daily_summary
-    - sensor.dark_sky_dew_point
+    # - sensor.dark_sky_dew_point
 
 system:
   name: "HASSIO Pi"
@@ -159,6 +178,7 @@ autos_tab:
   entities:
     - group.all_automations
     - group.calendars
+    - input_boolean.notify_home
 
 calendars:
   name: "Calendars"
@@ -181,6 +201,7 @@ media:
     - group.chromecast_audios
     - group.google_homes
     - group.plex
+    - group.xbox
 
 xbox:
   name: "Xbox"
@@ -229,10 +250,12 @@ people_trackers:
   name: "Trackers"
   entities:
     - device_tracker.mixpix405_daryl_pixel_xl
-    - sensor.daryls_battery
+    # - sensor.daryls_battery
+    - sensor.daryls_battery_dyn
     - sensor.time_to_home_for_daryl
     - device_tracker.mixpix405_megans_xl
-    - sensor.megans_battery
+    # - sensor.megans_battery
+    - sensor.megans_battery_dyn
     - sensor.time_to_home_for_megan
 
 packages:

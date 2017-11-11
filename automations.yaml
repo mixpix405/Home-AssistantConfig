@@ -94,10 +94,10 @@
   action:
     service: notify.pushy
     data:
-      message: "It is 8:40 on a weekday, except Friday!"
-      title: "Shouldn't fire on Fridays!"
+      message: "What does the icon look like?"
+      title: "What Icon?"
       data:
-        file_url:  https://cdn.pixabay.com/photo/2014/06/03/19/38/test-361512_960_720.jpg
+        target: "channel/opoazrrvvv"
 
 - alias: "Bathroom Lights Auto"
   trigger:
@@ -149,3 +149,55 @@
   action:
     service: switch.turn_off
     entity_id: switch.bedroom_switch
+
+- alias: "HTML5 Push Test"
+  initial_state: False
+  trigger:
+    platform: state
+    entity_id: sensor.bathroom_door
+    to: 'open'
+  action:
+    service: notify.html5
+    data:
+      message: "Bathroom door open"
+      target: "Daryl's XL"
+      data:
+        actions:
+          - action: "button_on"
+            title: "Lights On"
+            icon: "/local/icons/lightbulb-on_hab.png"
+          - action: "button_off"
+            title: "Lights Off"
+            icon: "/local/icons/lightbulb_hab.png"
+
+- alias: "Porch On via HTML5"
+  trigger:
+    platform: event
+    event_type: html5_notification.clicked
+    event_data:
+     action: button_on
+  action:
+    service: switch.turn_on
+    entity_id: switch.porch_switch
+
+- alias: "Porch Off via HTML5"
+  trigger:
+    platform: event
+    event_type: html5_notification.clicked
+    event_data:
+     action: button_off
+  action:
+    service: switch.turn_off
+    entity_id: switch.porch_switch
+
+- alias: "Tell Daryl when Megan gets home"
+  trigger:
+    platform: state
+    entity_id: device_tracker.mixpix405_daryl_pixel_xl
+    to: 'home'
+  action:
+    service: notify.html5
+    data:
+      message: "safe and sound"
+      title: "Megan arrived home"
+      target: "Daryl's XL"

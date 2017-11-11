@@ -69,7 +69,8 @@ light: !include lights.yaml
 binary_sensor: !include binary_sensors.yaml
 scene: !include scenes.yaml
 device_tracker: !include device_trackers.yaml
-#input_boolean: !include booleans.yaml
+input_boolean: !include booleans.yaml
+notify: !include notifiers.yaml
 
 zwave:
   usb_path: /dev/ttyACM0
@@ -90,11 +91,6 @@ media_player:
     include_non_clients: true
     scan_interval: 5
     use_episode_art: true
-
-notify:
-  - name: pushy
-    platform: pushbullet
-    api_key: !secret pushy_key
 
 google:
   client_id: !secret google_client_id

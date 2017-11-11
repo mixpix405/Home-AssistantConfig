@@ -8,5 +8,9 @@
   still_image_url: !secret megan_map_image
   limit_refetch_to_url_change: true
 
+- name: Radar
+  platform: generic
+  still_image_url: !secret radar_image_url
+
 # - platform: usps
   # scan_interval: 5
