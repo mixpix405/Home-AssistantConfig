@@ -1,4 +1,4 @@
-notify_home:
-  name: "Notify when someone arrives home"
-  initial: off
-  icon: mdi:car
+# notify_home:
+  # name: "Notify when someone arrives home"
+  # initial: off
+  # icon: mdi:car

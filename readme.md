@@ -3,6 +3,7 @@
 
 This is the initial commit. Everything is pretty poorly organized, but it works. I'll be getting it all organized better as I go along.
 
+[Note: This screenshot is way old... I should probably update it...]
 ![Screenshot of all stuff in Home Assistant](https://imgur.com/zBFvAal.png)
 
 **Devices I'm using:**
@@ -19,12 +20,24 @@ This is the initial commit. Everything is pretty poorly organized, but it works.
 * **Nest Thermostat**
 
 ## More Screenshots:
-[Note: These are all badly out of date...]
 
-![Morning Announcements](https://imgur.com/6ZJI1DZ.png)
-![Network Devices](https://imgur.com/NJOJuKL.png)
-![Climate Control](https://imgur.com/SJ7egNa.png)
-![Automation](https://imgur.com/dDxp56F.png)
-![Media Players](https://imgur.com/ejFWicA.png)
-![Device Trackers](https://imgur.com/ASVyYXT.png)
-![SmartThings Integration](https://imgur.com/FuxL6Zk.png)
+![Landing Page](https://imgur.com/xtBjrus.png)
+![Morning Announcements](https://imgur.com/MrkMrus.png)
+![Network Devices](https://imgur.com/rAnmnE7.png)
+![Climate Control](https://imgur.com/7q4RO0f.png)
+![Automation](https://imgur.com/YJBqCNX.png)
+![Media Players](https://imgur.com/xeyboYC.png)
+![Device Trackers](https://imgur.com/4lgldWN.png)
+![SmartThings Integration](https://imgur.com/jbkJdiX.png)
+![Z-Wave Devices](https://imgur.com/SplXlbC.png)
+
+## To Do:
+
+- [x] Get z-wave integrated directly
+- [x] Bring in automations from ST
+- [x] Setup nmap for device tracking
+- [ ] Notify if close to SSL expiry
+- [x] Get HTML5 push notifications working
+- [x] Battery charging status for trackers
+- [ ] Get rid of pointless stuff on front-end
+- [ ] Re-organize into fewer, more relevant tabs

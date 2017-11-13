@@ -190,7 +190,7 @@ autos_tab:
   entities:
     - group.all_automations
     - group.calendars
-    - input_boolean.notify_home
+    #- input_boolean.notify_home
 
 calendars:
   name: "Calendars"

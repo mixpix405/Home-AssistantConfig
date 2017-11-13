@@ -184,7 +184,7 @@
       value_template: "{% if is_state('device_tracker.megan_explorer', 'home') %}Online{% else %}offline{% endif %}"
     retropie:
       friendly_name: "RetroPie"
-      value_template: "{% if is_state('device_tracker.retrpielan', 'home') %}Online{% else %}offline{% endif %}"
+      value_template: "{% if is_state('device_tracker.retropielan', 'home') %}Online{% else %}offline{% endif %}"
     megan_xl_nmap:
       friendly_name: "Megan's XL"
       value_template: "{% if is_state('device_tracker.ac37434dee93', 'home') %}Online{% else %}offline{% endif %}"
