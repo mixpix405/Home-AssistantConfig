@@ -1,0 +1,13 @@
+#######################################################################
+# Turns porch light off, if chosen, via actionable HTML5 notification #
+#######################################################################
+
+alias: "Porch Off via HTML5"
+trigger:
+  platform: event
+  event_type: html5_notification.clicked
+  event_data:
+   action: button_off
+action:
+  service: switch.turn_off
+  entity_id: switch.porch_switch

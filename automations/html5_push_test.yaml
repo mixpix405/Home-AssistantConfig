@@ -1,0 +1,19 @@
+alias: "HTML5 Push Test"
+initial_state: False
+trigger:
+  platform: state
+  entity_id: sensor.bathroom_door
+  to: 'open'
+action:
+  service: notify.html5
+  data:
+    message: "Bathroom door open"
+    target: "Daryl's XL"
+    data:
+      actions:
+        - action: "button_on"
+          title: "Lights On"
+          icon: "/local/icons/lightbulb-on_hab.png"
+        - action: "button_off"
+          title: "Lights Off"
+          icon: "/local/icons/lightbulb_hab.png"

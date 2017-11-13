@@ -1,0 +1,16 @@
+#####################################################################################
+# Alerts Megna that Daryl is home, if he chooses, via actionable HTML5 notification #
+#####################################################################################
+
+alias: "Option to tell Megan Daryl is home"
+trigger:
+  platform: event
+  event_type: html5_notification.clicked
+  event_data:
+   action: tell_her
+action:
+  service: notify.html5
+  data:
+    message: "Safe and sound!"
+    title: "Daryl arrived home"
+    target: "Megan's XL"

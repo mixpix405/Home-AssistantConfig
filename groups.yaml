@@ -8,25 +8,35 @@ default_view:
     - group.smartthings_switches
     - climate.hallway
 
-get_going:
-  name: "Get Going!"
-  entities:
-    - automation.tell_the_family_its_705
-    - automation.tell_the_family_its_709
-    - automation.tell_the_family_its_710
-
 get_going_tab:
   name: "Get going!"
   view: yes
-  icon: mdi:coffee-to-go
+  icon: mdi:weather-sunset-up
   entities:
-    - group.get_going
     - group.packages
+    - group.calendars
+
+packages:
+  name: "Packages"
+  entities:
+    - sensor.ups_my_choice
+
+calendars:
+  name: "Calendars"
+  entities:
+    - calendar.daryl_public_calendar
+    - calendar.family
+    - calendar.football
+    - calendar.holidays_in_united_states
+    - calendar.private_events
+    - calendar.scheduling
+    - calendar.scheduling_nowork
+    - calendar.scheduling_work
 
 network_tab:
   name: "Network"
   view: yes
-  icon: mdi:network
+  icon: mdi:plus-network
   entities:
     - group.google_wifi
     - group.speedtest
@@ -39,10 +49,8 @@ google_wifi:
   entities:
     - sensor.google_wifi_status
     - sensor.google_wifi_local_ip
-    - sensor.google_wifi_current_version
     - sensor.google_wifi_new_version
     - sensor.google_wifi_uptime
-    - sensor.google_wifi_last_restart
 
 speedtest:
   name: "Speedtest.net"
@@ -51,81 +59,49 @@ speedtest:
     - sensor.speedtest_ping
     - sensor.speedtest_upload
 
-network_devices:
-  name: "
- Network Devices"
+system:
+  name: "HASSIO Pi"
   entities:
-    - sensor.ghome_kitchen
-    - sensor.range_extender
-    - sensor.ghome_mini_bedroom
-    - sensor.xbox_one
-    - sensor.st_hub
-    - sensor.sawyer_tablet
-    - sensor.cast_bedroom
+    - sensor.disk_used_home
+    - sensor.ram_available
+    - sensor.last_boot
+    - sensor.ipv4_address
+    - sensor.cpu_used
+    - sensor.ssl_cert
+
+htpc:
+  name: "HTPC"
+  entities:
+    - sensor.htpc
+    - sensor.transmission_status
+    - sensor.transmission_active_torrents
+    - sensor.transmission_down_speed
+    - sensor.transmission_up_speed
+    - switch.transmission_turtle
+
+network_devices:
+  name: "Network Devices"
+  entities:
     - sensor.nest
     - sensor.daryl_xl_nmap
     - sensor.megan_xl_nmap
+    - sensor.sawyer_tablet
+    - sensor.ghome_kitchen
+    - sensor.ghome_mini_bedroom
+    - sensor.retropie
+    - sensor.range_extender
+    - sensor.xbox_one
+    - sensor.st_hub
+    - sensor.cast_bedroom
     - sensor.dat_dongle
     - sensor.daryl_laptop
-    - sensor.retropie
     - sensor.daryl_watch
     - sensor.megan_explorer
-
-homeless_stuff:
-  name: "Homeless"
-  entities:
-    - device_tracker.ac37434dee93
-    - binary_sensor.megan_home
-    - sensor.megans_battery
-    - binary_sensor.megan_charging
-    - device_tracker.404e36256a50
-    - binary_sensor.daryl_home
-    - sensor.daryls_battery
-    - binary_sensor.daryl_charging
-    - device_tracker.chromecastlan
-    - device_tracker.darylt540plan
-    - device_tracker.googlehomelan
-    - device_tracker.tlwa855relan
-    - device_tracker.e4f0421cb224
-    - device_tracker.xboxonelan
-    - device_tracker.st24fd5b00000037a4lan
-    - device_tracker.androidea8e397ef27b1c0elan
-    - device_tracker.6cadf82677a2
-    - device_tracker.09aa01ac25160s7klan
-    - device_tracker.android5486ce199fee9d90lan
-    - device_tracker.retropielan
-    - binary_sensor.anyone_home
-    - device_tracker.testwifihere
-    - device_tracker.htpclan
-    - sensor.bathroom_door
-    - group.lights_and_switches
-    - scene.lying_in_bed
-    - group.away_mode_off
-    - sensor.dark_sky_pressure
-    - sensor.dark_sky_icon
-    - sensor.dark_sky_cloud_coverage
-    - sensor.dark_sky_uv_index
-    - sensor.dark_sky_visibility
-    - sensor.dark_sky_wind_bearing
-    - sensor.dark_sky_precip
-    - sensor.dark_sky_ozone
-    - sensor.dark_sky_daily_high_apparent_temperature
-    - sensor.dark_sky_daily_low_apparent_temperature
-    - sensor.dark_sky_daily_max_precip_intensity
-    - sensor.dark_sky_dew_point
-    - binary_sensor.hallway_thermostat_has_leaf
-    - binary_sensor.hallway_thermostat_is_locked
-    - binary_sensor.hallway_thermostat_is_using_emergency_heat
-    - binary_sensor.hallway_thermostat_online
-    - sensor.hallway_thermostat_operation_mode
-    - sensor.hallway_thermostat_temperature
-    - sensor.hallway_thermostat_target
-    - sensor.hallway_thermostat_hvac_state
 
 climate_tab:
   name: "Climate"
   view: yes
-  icon: mdi:weather-windy-variant
+  icon: mdi:weather-partlycloudy
   entities:
     - group.climate
     - group.weather_now
@@ -161,65 +137,17 @@ weather_today:
     - sensor.dark_sky_daily_high_temperature
     - sensor.dark_sky_daily_low_temperature
     - sensor.dark_sky_daily_summary
-    
-system:
-  name: "HASSIO Pi"
-  entities:
-    - sensor.disk_used_home
-    - sensor.ram_available
-    - sensor.since_last_boot
-    - sensor.last_boot
-    - sensor.ipv4_address
-    - sensor.cpu_used
-    - sensor.ssl_cert
 
-htpc:
-  name: "HTPC"
-  entities:
-    - sensor.htpc
-    - sensor.transmission_status
-    - sensor.transmission_active_torrents
-    - sensor.transmission_down_speed
-    - sensor.transmission_up_speed
-    - switch.transmission_turtle
-
-autos_tab:
-  name: "Automations"
-  view: yes
-  icon: mdi:home-automation
-  entities:
-    - group.all_automations
-    - group.calendars
-    #- input_boolean.notify_home
-
-calendars:
-  name: "Calendars"
-  entities:
-    - calendar.daryl_public_calendar
-    - calendar.family
-    - calendar.football
-    - calendar.holidays_in_united_states
-    - calendar.private_events
-    - calendar.scheduling
-    - calendar.scheduling_nowork
-    - calendar.scheduling_work
-
-media:
+media_tab:
   name: "Media"
   view: yes
-  icon: mdi:cast
+  icon: mdi:play-box-outline
   entities:
     - group.chromecasts
     - group.chromecast_audios
     - group.google_homes
     - group.plex
     - group.xbox
-
-xbox:
-  name: "Xbox"
-  entities:
-    - media_player.xboxone
-    - sensor.mixpix405
 
 chromecasts:
   name: "Chromecasts"
@@ -244,8 +172,14 @@ plex:
   entities:
     - sensor.plex
 
-location:
-  name: "People"
+xbox:
+  name: "Xbox"
+  entities:
+    - media_player.xboxone
+    - sensor.mixpix405
+
+trackers_tab:
+  name: "Trackers"
   view: yes
   icon: mdi:map-marker
   entities:
@@ -270,10 +204,22 @@ megan_tracker:
     - sensor.time_to_home_for_megan
     - camera.megan
 
-packages:
-  name: "Packages"
+lights_and_switches_tab:
+  name: "Lights / Switches / Sensors"
+  view: yes
+  icon: mdi:lightbulb-on-outline
   entities:
-    - sensor.ups_my_choice
+    - group.zwave_devices
+    - group.smartthings_switches
+    - group.smartthings_sensors
+
+zwave_devices:
+  name: "Z-Wave Devices"
+  entities:
+    - switch.porch_switch
+    - switch.bedroom_switch
+    - switch.bathroom_switch
+    - switch.landscaping_outlet_switch
 
 smartthings_switches:
   name: "ST Switches & Lights"
@@ -282,7 +228,6 @@ smartthings_switches:
     - switch.bathroom_lights
     - switch.bedroom_lights
     - switch.landscaping_outlet
-    # - switch.lamp
     - light.peq_lamp
 
 smartthings_sensors:
@@ -293,29 +238,23 @@ smartthings_sensors:
     - sensor.bedroom_motion
     - sensor.bathroom_door_status
 
-smartthings_tab:
-  name: "SmartThings"
+autos_tab:
+  name: "Automation Overrides"
   view: yes
-  icon: mdi:magnet
+  icon: mdi:home-automation
   entities:
-    - group.smartthings_sensors
-    - group.smartthings_switches
+    - group.all_automations
+    #- input_boolean.notify_home
 
-zwave_tab:
-  name: "Z-Wave Stuff"
-  view: yes
-  icon: mdi:router-wireless
+############################################################################
+# Grouped, but only for automations, or pure organization - maybe homeless #
+############################################################################
+away_mode_off:
+  name: "Turn off when away"
   entities:
-    - group.zwave_devices
-    - group.zwave_nodes
-
-zwave_devices:
-  name: "Z-Wave Devices"
-  entities:
-    - switch.porch_switch
     - switch.bedroom_switch
     - switch.bathroom_switch
-    - switch.landscaping_outlet_switch
+    - light.peq_lamp
 
 zwave_nodes:
   name: "Z-Wave Nodes"
@@ -326,15 +265,56 @@ zwave_nodes:
     - zwave.landscaping_outlet
     - zwave.porch
 
-lights_and_switches:
-  name: "All Switches & Lights"
+homeless_stuff:
+  name: "Homeless"
   entities:
-    - group.zwave_devices
-    - group.smartthings_switches
-
-away_mode_off:
-  name: "Turn off when away"
-  entities:
-    - switch.bedroom_switch
-    - switch.bathroom_switch
-    - light.peq_lamp
+    - device_tracker.ac37434dee93
+    - binary_sensor.megan_home
+    - sensor.megans_battery
+    - binary_sensor.megan_charging
+    - device_tracker.404e36256a50
+    - binary_sensor.daryl_home
+    - sensor.daryls_battery
+    - binary_sensor.daryl_charging
+    - device_tracker.chromecastlan
+    - device_tracker.darylt540plan
+    - device_tracker.googlehomelan
+    - device_tracker.tlwa855relan
+    - device_tracker.e4f0421cb224
+    - device_tracker.xboxonelan
+    - device_tracker.st24fd5b00000037a4lan
+    - device_tracker.androidea8e397ef27b1c0elan
+    - device_tracker.6cadf82677a2
+    - device_tracker.09aa01ac25160s7klan
+    - device_tracker.android5486ce199fee9d90lan
+    - device_tracker.retropielan
+    - binary_sensor.anyone_home
+    - device_tracker.testwifihere
+    - device_tracker.htpclan
+    - sensor.bathroom_door
+    - scene.lying_in_bed
+    - group.away_mode_off
+    - sensor.dark_sky_pressure
+    - sensor.dark_sky_icon
+    - sensor.dark_sky_cloud_coverage
+    - sensor.dark_sky_uv_index
+    - sensor.dark_sky_visibility
+    - sensor.dark_sky_wind_bearing
+    - sensor.dark_sky_precip
+    - sensor.dark_sky_ozone
+    - sensor.dark_sky_daily_high_apparent_temperature
+    - sensor.dark_sky_daily_low_apparent_temperature
+    - sensor.dark_sky_daily_max_precip_intensity
+    - sensor.dark_sky_dew_point
+    - binary_sensor.hallway_thermostat_has_leaf
+    - binary_sensor.hallway_thermostat_is_locked
+    - binary_sensor.hallway_thermostat_is_using_emergency_heat
+    - binary_sensor.hallway_thermostat_online
+    - sensor.hallway_thermostat_operation_mode
+    - sensor.hallway_thermostat_temperature
+    - sensor.hallway_thermostat_target
+    - sensor.hallway_thermostat_hvac_state
+    - sensor.google_wifi_current_version
+    - sensor.google_wifi_last_restart
+    - sensor.since_last_boot
+    - group.zwave_nodes

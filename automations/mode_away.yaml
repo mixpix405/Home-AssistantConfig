@@ -1,0 +1,16 @@
+#####################################################
+# Sets Nest to away, turns off all lights but porch #
+#####################################################
+
+alias: "Away Mode"
+trigger:
+  platform: state
+  entity_id: binary_sensor.anyone_home
+  to: 'off'
+action:
+  - service: climate.set_away_mode
+    data:
+      entity_id: climate.hallway
+      away_mode: 'on'
+  - service: homeassistant.turn_off
+    entity_id: group.away_mode_off

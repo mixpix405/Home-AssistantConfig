@@ -1,0 +1,18 @@
+alias: "Tell the family it's 7:09"
+trigger:
+  platform: time
+  # Military time format.
+  at: '07:09:00'
+condition:
+  - condition: time
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+action:
+  service: tts.google_say
+  entity_id: media_player.kitchen_home
+  data:
+    message: 'Hey! It is seven oh nine! Better get a move on!'

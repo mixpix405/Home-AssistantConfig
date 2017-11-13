@@ -1,0 +1,14 @@
+#####################
+# Sets Nest to home #
+#####################
+
+alias: "Home Mode"
+trigger:
+  platform: state
+  entity_id: binary_sensor.anyone_home
+  to: 'on'
+action:
+  - service: climate.set_away_mode
+    data:
+      entity_id: climate.hallway
+      away_mode: 'off'

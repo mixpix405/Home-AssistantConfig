@@ -1,0 +1,20 @@
+################################################################
+# HTML5 notify Daryl that he's home, with action to tell Megan #
+################################################################
+
+alias: "Welcome Daryl home"
+trigger:
+  platform: state
+  entity_id: binary_sensor.daryl_home
+  to: 'on'
+action:
+  service: notify.html5
+  data:
+    message: "Alert megan?"
+    title: "Welcome home!"
+    target: "Daryl's XL"
+    data:
+      actions:
+        - action: "tell_her"
+          title: "Sure..."
+          icon: "/local/icons/human-female_hab.png"

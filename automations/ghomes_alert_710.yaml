@@ -1,0 +1,32 @@
+alias: "Tell the family it's 7:10"
+trigger:
+  platform: time
+  # Military time format.
+  at: '07:10:00'
+condition:
+  - condition: time
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+action:
+  - service: media_player.volume_set
+    data:
+      entity_id: media_player.master_bedroom_speaker
+      volume_level: 0.75
+  - service: media_player.volume_set
+    data:
+      entity_id: media_player.kitchen_home
+      volume_level: 0.75
+  - service: media_player.play_media
+    data:
+      entity_id: media_player.smart_speakers
+      media_content_id: !secret bell_mp3
+      media_content_type: audio/mp3
+  - delay: 0:00:15   
+  - service: tts.google_say
+    entity_id: media_player.smart_speakers
+    data:
+      message: "It is 7:10, and time to leave. Have a good day!"

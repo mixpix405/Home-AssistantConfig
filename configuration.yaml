@@ -59,7 +59,8 @@ tts:
 
 # Includes for better organization
 group: !include groups.yaml
-automation: !include automations.yaml
+# automation: !include automations.yaml
+automation: !include_dir_list automations
 script: !include scripts.yaml
 zone: !include zones.yaml
 camera: !include cameras.yaml
@@ -95,6 +96,21 @@ media_player:
 google:
   client_id: !secret google_client_id
   client_secret: !secret google_secret
+
+google_assistant:
+  project_id: hassio-184721
+  client_id: y1c2ltliDxvmWr1R
+  access_token: wBchBUSbTt6D0s7N6OFWDmQaCNFL2g
+  exposed_domains:
+    - switch
+    - light
+    - group
+    - cover
+    - media_player
+    - group
+    - fan
+    - scene
+    - script
 
 # usps:
   # username: !secret usps_user

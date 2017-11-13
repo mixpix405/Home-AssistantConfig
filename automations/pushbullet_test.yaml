@@ -1,0 +1,20 @@
+alias: "Pushbullet Test"
+initial_state: False
+trigger:
+  platform: time
+  at: '08:45:00'
+condition:
+  - condition: time
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+action:
+  service: notify.pushy
+  data:
+    message: "What does the icon look like?"
+    title: "What Icon?"
+    data:
+      target: "channel/opoazrrvvv"
