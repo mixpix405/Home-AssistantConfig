@@ -11,6 +11,6 @@ trigger:
 action:
   service: notify.html5
   data:
-    message: "Check the list or message her."
+    message: "{{ as_timestamp(now()) | timestamp_custom('%I:%M%p', true) }} - Check the list or message her."
     title: "Megan needs something from Walmart"
     target: "Daryl's XL"

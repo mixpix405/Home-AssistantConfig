@@ -10,7 +10,7 @@ trigger:
 action:
   service: notify.html5
   data:
-    message: "Need anything? Tap yes, then update the list."
+    message: "{{ as_timestamp(now()) | timestamp_custom('%I:%M%p', true) }} - Need anything? Tap yes, then update the list."
     title: "Megan is at Walmart"
     target: "Daryl's XL"
     data:

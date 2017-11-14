@@ -32,6 +32,7 @@ calendars:
     - calendar.scheduling
     - calendar.scheduling_nowork
     - calendar.scheduling_work
+    - calendar.childrens_theatre_rehearsals
 
 network_tab:
   name: "Network"

@@ -21,3 +21,15 @@
   longitude: !secret longitude_wally
   radius: 300
   icon: mdi:cart
+
+- name: "BB & Pawpaws"
+  latitude: !secret latitude_bbpawpaw
+  longitude: !secret longitude_bbpawpaw
+  radius: 150
+  icon: mdi:account-star
+
+- name: "Grammi & Pops"
+  latitude: !secret latitude_grammipop
+  longitude: !secret longitude_grammipop
+  radius: 50
+  icon: mdi:account-star

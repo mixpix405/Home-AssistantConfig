@@ -6,6 +6,6 @@ trigger:
 action:
   service: notify.html5
   data:
-    message: "safe and sound"
+    message: "Safe and sound at {{ as_timestamp(now()) | timestamp_custom('%I:%M%p', true) }}"
     title: "Megan arrived home"
     target: "Daryl's XL"
