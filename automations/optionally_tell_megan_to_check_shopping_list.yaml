@@ -1,0 +1,16 @@
+#######################################################################################################
+# Alerts Megan that Daryl opted to tell her to check shopping list, via actionable HTML5 notification #
+#######################################################################################################
+
+alias: "Option to tell Megan to check shopping list"
+trigger:
+  platform: event
+  event_type: html5_notification.clicked
+  event_data:
+   action: walmart_need_2
+action:
+  service: notify.html5
+  data:
+    message: "Check the list or message him."
+    title: "Daryl needs something from Walmart"
+    target: "Megan's XL"

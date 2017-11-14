@@ -1,21 +1,21 @@
 ############################################################
-# Alerts Megan that Daryl is at Walmart, give her actions  #
+# Alerts Daryl that Megan is at Walmart, give him actions  #
 ############################################################
 
-alias: "Tell Megan when Daryl is at Walmart"
+alias: "Tell Daryl when Megan is at Walmart"
 trigger:
   platform: state
-  entity_id: device_tracker.mixpix405_daryl_pixel_xl
+  entity_id: device_tracker.mixpix405_megans_xl
   to: 'Walmart'
 action:
   service: notify.html5
   data:
     message: "Need anything? Tap yes, then update the list."
-    title: "Daryl is at Walmart"
-    target: "Megan's XL"
+    title: "Megan is at Walmart"
+    target: "Daryl's XL"
     data:
       actions:
-        - action: "walmart_need"
+        - action: "walmart_need_2"
           title: "Yes"
           icon: "/local/icons/checkbox-marked-circle-outline_hab.png"
         - action: "walmart_noneed"

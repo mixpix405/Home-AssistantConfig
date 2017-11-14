@@ -194,6 +194,22 @@ automation.html5_push_test:
   icon: mdi:language-html5
 automation.tell_daryl_when_megan_gets_home:
   icon: mdi:airplane-landing
+automation.option_to_tell_daryl_to_check_shopping_list:
+  icon: mdi:cart
+automation.option_to_tell_megan_daryl_is_home:
+  icon: mdi:mdi:airplane-landing
+automation.option_to_tell_megan_to_check_shopping_list:
+  icon: mdi:cart
+automation.porch_off_via_html5:
+  icon: mdi:spotlight-beam
+automation.porch_on_via_html5:
+  icon: mdi:spotlight-beam
+automation.tell_daryl_when_megan_is_at_walmart:
+  icon: mdi:cart
+automation.tell_megan_when_daryl_is_at_walmart:
+  icon: mdi:cart
+automation.welcome_daryl_home:
+  icon: mdi:human-greeting
 
 # Better icons for calendars
 calendar.football:

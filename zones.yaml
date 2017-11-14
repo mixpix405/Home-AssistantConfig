@@ -19,5 +19,5 @@
 - name: Walmart
   latitude: !secret latitude_wally
   longitude: !secret longitude_wally
-  radius: 150
+  radius: 300
   icon: mdi:cart

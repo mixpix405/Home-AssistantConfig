@@ -1,6 +1,6 @@
-#####################################################
-# Sets Nest to away, turns off all lights but porch #
-#####################################################
+########################################################################
+# Sets Nest to away, turns off all lights but porch, notifies everyone #
+########################################################################
 
 alias: "Away Mode"
 trigger:
@@ -14,3 +14,7 @@ action:
       away_mode: 'on'
   - service: homeassistant.turn_off
     entity_id: group.away_mode_off
+  - service: notify.html5
+    data:
+      message: "Away mode enabled because everyone left."
+      title: "Roll Out!"

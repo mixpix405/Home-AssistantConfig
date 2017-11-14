@@ -1,5 +1,5 @@
 #####################################################################################
-# Alerts Megna that Daryl is home, if he chooses, via actionable HTML5 notification #
+# Alerts Megan that Daryl is home, if he chooses, via actionable HTML5 notification #
 #####################################################################################
 
 alias: "Option to tell Megan Daryl is home"
