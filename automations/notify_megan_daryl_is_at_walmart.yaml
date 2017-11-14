@@ -1,0 +1,12 @@
+alias: "Tell Megan when Daryl gets home"
+initial_state: False
+trigger:
+  platform: state
+  entity_id: binary_sensor.megan_home
+  to: 'on'
+action:
+  service: notify.html5
+  data:
+    message: "safe and sound"
+    title: "Megan arrived home"
+    target: "Daryl's XL"

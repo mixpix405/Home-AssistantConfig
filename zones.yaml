@@ -15,3 +15,9 @@
   longitude: !secret longitude_hbms
   radius: 150
   icon: mdi:school
+
+- name: Walmart
+  latitude: !secret latitude_wally
+  longitude: !secret longitude_wally
+  radius: 150
+  icon: mdi:cart

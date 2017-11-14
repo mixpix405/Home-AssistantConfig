@@ -99,8 +99,8 @@ google:
 
 google_assistant:
   project_id: hassio-184721
-  client_id: y1c2ltliDxvmWr1R
-  access_token: wBchBUSbTt6D0s7N6OFWDmQaCNFL2g
+  client_id: !secret gass_id
+  access_token: !secret gass_token
   exposed_domains:
     - switch
     - light

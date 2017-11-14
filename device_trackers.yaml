@@ -2,7 +2,7 @@
   max_gps_accuracy: 200
 - platform: nmap_tracker
   hosts: 192.168.86.0/24
-  home_interval: 10
+  home_interval: 7
   exclude:
     - 192.168.86.3
   interval_seconds: 30

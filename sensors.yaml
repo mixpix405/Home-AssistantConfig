@@ -114,8 +114,7 @@
 
 - platform: xbox_live
   api_key: !secret xboxapi_key
-  xuid:
-    - !secret xbox_uid
+  xuid: !secret xbox_uid
 
 - platform: google_travel_time
   name: "Time to Home for Daryl"
