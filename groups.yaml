@@ -64,9 +64,9 @@ system:
   name: "HASSIO Pi"
   entities:
     - sensor.disk_used_home
-    - sensor.ram_available
+    - sensor.ram_used
     - sensor.last_boot
-    - sensor.ipv4_address
+    - sensor.ipv4_address_eth0
     - sensor.cpu_used
     - sensor.ssl_cert
 
@@ -255,6 +255,14 @@ away_mode_off:
   entities:
     - switch.bedroom_switch
     - switch.bathroom_switch
+    - light.peq_lamp
+
+off_at_midnight:
+  name: "Turn off at Midnight"
+  entities:
+    - switch.bedroom_switch
+    - switch.bathroom_switch
+    - switch.porch_switch
     - light.peq_lamp
 
 zwave_nodes:

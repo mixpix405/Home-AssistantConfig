@@ -4,4 +4,4 @@ trigger:
   at: '00:00:00'
 action:
   service: homeassistant.turn_off
-  entity_id: group.lights_and_switches
+  entity_id: group.off_at_midnight

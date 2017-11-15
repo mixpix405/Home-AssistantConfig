@@ -4,13 +4,18 @@ trigger:
   # Military time format.
   at: '07:09:00'
 condition:
-  - condition: time
-    weekday:
-      - mon
-      - tue
-      - wed
-      - thu
-      - fri
+  condition: and
+  conditions:
+    - condition: time
+      weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+    - condition: state
+      entity_id: calendar.scheduling_nowork
+      state: 'off'
 action:
   service: tts.google_say
   entity_id: media_player.kitchen_home

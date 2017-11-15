@@ -77,8 +77,9 @@
   resources:
     - type: disk_use_percent
       arg: /home
-    - type: memory_free
+    - type: memory_use_percent
     - type: ipv4_address
+      arg: eth0
     - type: processor_use
     - type: last_boot
     - type: since_last_boot
