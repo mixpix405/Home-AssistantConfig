@@ -34,6 +34,12 @@
   username: !secret ups_user
   password: !secret ups_pass
 
+- platform: fedex
+  name: "FedEx Manager"
+  username: !secret fedex_user
+  password: !secret fedex_pass
+  update_interval: '00:15:00'
+
 - platform: speedtest
   minute: 0
   hour:
@@ -203,4 +209,4 @@
       friendly_name: "Megan's XL"
       unit_of_measurement: "%"
       value_template: "{{states.sensor.megans_battery.state}}"
-      icon_template: "{%- if states.sensor.megans_battery.state >= '95' %}mdi:battery{%- elif states.sensor.megans_battery.state == '100' %}mdi:battery{%- elif states.sensor.megans_battery.state <= '15' %}mdi:battery-outline{% else %}mdi:battery-{{(states.sensor.megans_battery.state|float / 10)|round*10}}{%- endif %}"
+      icon_template: "{%- if states.sensor.megans_battery.state >= '95' %}mdi:battery{%- elif states.sensor.megans_battery.state == '100' %}mdi:battery{%- elif states.sensor.megans_battery.state <= '15' %}mdi:battery-outline{%- elif states.sensor.megans_battery.state == '' %}mdi:battery-unknown{% else %}mdi:battery-{{(states.sensor.megans_battery.state|float / 10)|round*10}}{%- endif %}"

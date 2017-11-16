@@ -18,7 +18,7 @@ panel_iframe:
 #introduction:
 
 # Enables the frontend
-frontend:
+frontend: !include frontend.yaml
 
 # Enables configuration UI
 config:

@@ -20,6 +20,7 @@ packages:
   name: "Packages"
   entities:
     - sensor.ups_my_choice
+    - sensor.fedex_manager
 
 calendars:
   name: "Calendars"

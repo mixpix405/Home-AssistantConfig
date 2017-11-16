@@ -1,0 +1,11 @@
+alias: "Dusk Mode"
+trigger:
+  platform: sun
+  event: sunset
+  offset: '-00:30:00'
+action:
+  - service: switch.turn_on
+    entity_id: switch.porch_switch
+  - service: frontend.set_theme
+    data:
+      name: dusk

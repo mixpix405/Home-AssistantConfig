@@ -1,0 +1,8 @@
+alias: "Morning Mode"
+trigger:
+  platform: sun
+  event: sunrise
+action:
+  - service: frontend.set_theme
+    data:
+      name: default
