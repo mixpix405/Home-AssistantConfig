@@ -3,7 +3,7 @@
 
 This is the initial commit. Everything is pretty poorly organized, but it works. I'll be getting it all organized better as I go along.
 
-![Screenshot of all stuff in Home Assistant](https://imgur.com/RiVRdT4.png)
+![Screenshot of all stuff in Home Assistant](https://imgur.com/QzSgzEZ.gif)
 
 **Devices I'm using:**
 * **Google WiFi** : My router. I like it. It works.
