@@ -1,8 +1,6 @@
 # Home-Assistant Config by [@mixpix405](http://www.twitter.com/mixpix405)
 [Home Assistant](https://home-assistant.io/) configuration files (and some referenced files)
 
-This is the initial commit. Everything is pretty poorly organized, but it works. I'll be getting it all organized better as I go along.
-
 ![Screenshot of all stuff in Home Assistant](https://imgur.com/QzSgzEZ.gif)
 
 **Devices I'm using:**
@@ -33,6 +31,7 @@ This is the initial commit. Everything is pretty poorly organized, but it works.
 ## To Do:
 
 - [x] Get z-wave integrated directly
+- [x] Implement night mode theme, automated
 - [x] Bring in automations from ST
 - [x] Setup nmap for device tracking
 - [ ] Notify if close to SSL expiry
