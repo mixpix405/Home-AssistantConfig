@@ -11,7 +11,7 @@ gr2:
   name: RAM
   entities:
     - sensor.ram_used
-  hours_to_show: 120
+  hours_to_show: 72
   refresh: 60
 
 gr3:

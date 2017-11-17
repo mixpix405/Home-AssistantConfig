@@ -43,6 +43,7 @@ network_tab:
     - group.google_wifi
     - group.speedtest
     - group.system
+    - group.pi_hole
     - group.htpc
     - group.network_devices
 
@@ -72,6 +73,18 @@ system:
     - sensor.ipv4_address_eth0
     - sensor.cpu_used
     - sensor.ssl_cert
+
+pi_hole:
+  name: "Pi-Hole"
+  entities:
+    - sensor.pihole_ads_blocked_today
+    - sensor.pihole_ads_percentage_blocked_today
+    # - sensor.pihole_dns_queries_cached
+    # - sensor.pihole_dns_queries_forwarded
+    # - sensor.pihole_dns_queries_today
+    - sensor.pihole_dns_unique_clients
+    # - sensor.pihole_dns_unique_domains
+    # - sensor.pihole_domains_blocked
 
 htpc:
   name: "HTPC"

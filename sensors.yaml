@@ -135,6 +135,8 @@
   origin: device_tracker.mixpix405_megans_xl
   destination: zone.home
 
+- platform: pi_hole
+
 #############
 # Templates #
 #############

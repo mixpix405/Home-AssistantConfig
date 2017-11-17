@@ -6,6 +6,11 @@ homeassistant:
   unit_system: imperial
   time_zone: America/Chicago
   customize: !include customize.yaml
+  # customize_glob: !include customize_globs.yaml
+
+# For the custom-ui stuff
+# customizer:
+  # custom_ui: local
 
 # Adds Configurator panel
 panel_iframe:
