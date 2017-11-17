@@ -204,9 +204,9 @@
       friendly_name: "Daryl's XL"
       unit_of_measurement: "%"
       value_template: "{{states.sensor.daryls_battery.state}}"
-      icon_template: "{%- if states.sensor.daryls_battery.state >= '95' %}mdi:battery{%- elif states.sensor.daryls_battery.state == '100' %}mdi:battery{%- elif states.sensor.daryls_battery.state <= '15' %}mdi:battery-outline{% else %}mdi:battery-{{(states.sensor.daryls_battery.state|float / 10)|round*10}}{%- endif %}"
+      icon_template: "{%- if states.sensor.daryls_battery.state >= '95' %}mdi:battery{%- elif states.sensor.daryls_battery.state == '100' %}mdi:battery{%- elif states.sensor.daryls_battery.state == '' %}mdi:battery-unknown{%- elif states.sensor.daryls_battery.state <= '15' %}mdi:battery-outline{% else %}mdi:battery-{{(states.sensor.daryls_battery.state|float / 10)|round*10}}{%- endif %}"
     megans_battery_dyn:
       friendly_name: "Megan's XL"
       unit_of_measurement: "%"
       value_template: "{{states.sensor.megans_battery.state}}"
-      icon_template: "{%- if states.sensor.megans_battery.state >= '95' %}mdi:battery{%- elif states.sensor.megans_battery.state == '100' %}mdi:battery{%- elif states.sensor.megans_battery.state <= '15' %}mdi:battery-outline{%- elif states.sensor.megans_battery.state == '' %}mdi:battery-unknown{% else %}mdi:battery-{{(states.sensor.megans_battery.state|float / 10)|round*10}}{%- endif %}"
+      icon_template: "{%- if states.sensor.megans_battery.state >= '95' %}mdi:battery{%- elif states.sensor.megans_battery.state == '100' %}mdi:battery{%- elif states.sensor.megans_battery.state == '' %}mdi:battery-unknown{%- elif states.sensor.megans_battery.state <= '15' %}mdi:battery-outline{% else %}mdi:battery-{{(states.sensor.megans_battery.state|float / 10)|round*10}}{%- endif %}"
