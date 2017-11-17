@@ -78,13 +78,10 @@ sensor.hallway_thermostat_hvac_state:
   friendly_name: "State"
 sensor.hallway_thermostat_operation_mode:
   friendly_name: "Mode"
-  hidden: true
 sensor.hallway_thermostat_target:
   friendly_name: "Target Temp"
-  hidden: true
 sensor.hallway_thermostat_temperature:
   friendly_name: "Temperature"
-  hidden: true
 binary_sensor.hallway_thermostat_fan:
   friendly_name: "Fan"
   icon: mdi:fan

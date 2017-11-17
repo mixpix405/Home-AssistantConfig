@@ -7,7 +7,7 @@ trigger:
   platform: event
   event_type: html5_notification.clicked
   event_data:
-   action: button_off
+    action: button_off
 action:
   service: switch.turn_off
   entity_id: switch.porch_switch

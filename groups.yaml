@@ -60,12 +60,14 @@ speedtest:
     - sensor.speedtest_download
     - sensor.speedtest_ping
     - sensor.speedtest_upload
+    - history_graph.bandwidth
 
 system:
   name: "HASSIO Pi"
   entities:
     - sensor.disk_used_home
     - sensor.ram_used
+    - history_graph.ram
     - sensor.last_boot
     - sensor.ipv4_address_eth0
     - sensor.cpu_used
@@ -109,6 +111,7 @@ climate_tab:
     - group.weather_now
     - group.weather_today
     - camera.radar
+    - history_graph.temperature
 
 climate:
   name: "Climate Control"

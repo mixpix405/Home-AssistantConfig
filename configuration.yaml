@@ -14,12 +14,6 @@ panel_iframe:
     icon: mdi:wrench
     url: !secret configurator_url
 
-# Show links to resources in log and frontend
-#introduction:
-
-# Enables the frontend
-frontend: !include frontend.yaml
-
 # Enables configuration UI
 config:
 
@@ -59,7 +53,6 @@ tts:
 
 # Includes for better organization
 group: !include groups.yaml
-# automation: !include automations.yaml
 automation: !include_dir_list automations
 script: !include scripts.yaml
 zone: !include zones.yaml
@@ -72,6 +65,8 @@ scene: !include scenes.yaml
 device_tracker: !include device_trackers.yaml
 #input_boolean: !include booleans.yaml
 notify: !include notifiers.yaml
+frontend: !include frontend.yaml
+history_graph: !include history_graphs.yaml
 
 zwave:
   usb_path: /dev/ttyACM0

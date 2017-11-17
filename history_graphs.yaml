@@ -1,0 +1,21 @@
+gr1:
+  name: Temperature
+  entities:
+    - sensor.hallway_thermostat_temperature
+    - sensor.hallway_thermostat_target
+    - sensor.dark_sky_temperature
+  hours_to_show: 72
+  refresh: 60
+
+gr2:
+  name: RAM
+  entities:
+    - sensor.ram_used
+  hours_to_show: 120
+  refresh: 60
+
+gr3:
+  name: Bandwidth
+  entities:
+    - sensor.speedtest_download
+    - sensor.speedtest_upload
