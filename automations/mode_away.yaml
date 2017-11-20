@@ -16,5 +16,5 @@ action:
     entity_id: group.away_mode_off
   - service: notify.html5
     data:
-      message: "Away mode enabled  at {{ as_timestamp(now()) | timestamp_custom('%I:%M', true) }}because everyone left."
+      message: "Away mode enabled  at {{ as_timestamp(now()) | timestamp_custom('%I:%M', true) }} because nobody's home."
       title: "Roll Out!"

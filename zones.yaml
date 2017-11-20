@@ -33,3 +33,9 @@
   longitude: !secret longitude_grammipop
   radius: 50
   icon: mdi:account-star
+
+- name: "Church"
+  latitude: !secret latitude_church
+  longitude: !secret longitude_church
+  radius: 85
+  icon: mdi:church

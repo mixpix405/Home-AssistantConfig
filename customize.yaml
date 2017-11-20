@@ -1,3 +1,9 @@
+# Icons for Binary home/away sensors
+binary_sensor.daryl_home:
+  entity_picture: /local/images/people/avi_daryl.png
+binary_sensor.megan_home:
+  entity_picture: /local/images/people/avi_megan.png
+
 # Better icons for Speedtest.net sensors
 sensor.speedtest_download:
   icon: mdi:download-network
@@ -71,7 +77,7 @@ sensor.dark_sky_wind_speed:
 # Cleaning up Nest names & icons
 climate.hallway:
   friendly_name: "Nest Thermostat"
-  entity_picture: /local/nest.png
+  entity_picture: /local/images/devices/nest.png
 sensor.hallway_thermostat_humidity:
   friendly_name: "Humidity"
 sensor.hallway_thermostat_hvac_state:
@@ -146,7 +152,7 @@ sensor.sawyer_tablet:
 sensor.cast_bedroom:
   icon: mdi:cast
 sensor.nest:
-  entity_picture: /local/nest.png
+  entity_picture: /local/images/devices/nest.png
 sensor.transmission_down_speed:
   icon: mdi:download-network
 sensor.transmission_up_speed:

@@ -61,14 +61,14 @@ speedtest:
     - sensor.speedtest_download
     - sensor.speedtest_ping
     - sensor.speedtest_upload
-    - history_graph.bandwidth
+    # - history_graph.bandwidth
 
 system:
   name: "HASSIO Pi"
   entities:
     - sensor.disk_used_home
     - sensor.ram_used
-    - history_graph.ram
+    # - history_graph.ram
     - sensor.last_boot
     - sensor.ipv4_address_eth0
     - sensor.cpu_used
@@ -207,7 +207,7 @@ trackers_tab:
 daryl_tracker:
   name: "Daryl"
   entities:
-    - device_tracker.mixpix405_daryl_pixel_xl
+    - device_tracker.mixpix405_2xl
     - sensor.daryls_battery_dyn
     - sensor.daryl_charging
     - sensor.time_to_home_for_daryl
@@ -294,7 +294,6 @@ zwave_nodes:
 homeless_stuff:
   name: "Homeless"
   entities:
-    - device_tracker.ac37434dee93
     - binary_sensor.megan_home
     - sensor.megans_battery
     - binary_sensor.megan_charging

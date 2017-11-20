@@ -1,5 +1,10 @@
-- name: "Lying in Bed"
+- name: "Megan in Bed"
   entities:
     light.peq_lamp:
       state: on
       brightness_pct: 50
+
+- name: "Test Scene"
+  entities:
+    switch.porch_switch:
+      state: off
