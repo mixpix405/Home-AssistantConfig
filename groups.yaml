@@ -4,9 +4,19 @@ default_view:
   entities:
     - group.daryl_tracker
     - group.megan_tracker
-    - group.zwave_devices
-    - group.smartthings_switches
+    - group.lights_and_switches
+    # - group.zwave_devices
+    # - group.smartthings_switches
     - climate.hallway
+
+lights_and_switches:
+  name: "Lights & Switches"
+  entities:
+    - switch.porch_switch
+    - switch.bedroom_switch
+    - switch.bathroom_switch
+    - switch.landscaping_outlet
+    - light.peq_lamp
 
 get_going_tab:
   name: "Get going!"
@@ -67,6 +77,7 @@ system:
   name: "HASSIO Pi"
   entities:
     - sensor.disk_used_home
+    - sensor.log_db_file_size
     - sensor.ram_used
     # - history_graph.ram
     - sensor.last_boot
@@ -164,7 +175,7 @@ media_tab:
     - group.chromecasts
     - group.chromecast_audios
     - group.google_homes
-    - group.plex
+    - group.streaming
     - group.xbox
 
 chromecasts:
@@ -185,10 +196,11 @@ google_homes:
     - media_player.master_bedroom_speaker
     - media_player.smart_speakers
 
-plex:
-  name: "Plex"
+streaming:
+  name: "Streaming Media"
   entities:
     - sensor.plex
+    - sensor.lastfm_mixpix405
 
 xbox:
   name: "Xbox"

@@ -232,6 +232,11 @@ calendar.scheduling_work:
 calendar.holidays_in_united_states:
   icon: mdi:beach
 
+# For System stuff
+sensor.log_db_file_size:
+  friendly_name: "Home Assistant Log DB"
+  icon: mdi:database
+
 # Show hidden groups!
 group.all_automations:
   hidden: false

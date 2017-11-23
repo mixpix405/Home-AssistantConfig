@@ -6,11 +6,6 @@ homeassistant:
   unit_system: imperial
   time_zone: America/Chicago
   customize: !include customize.yaml
-  # customize_glob: !include customize_globs.yaml
-
-# For the custom-ui stuff
-# customizer:
-  # custom_ui: local
 
 # Adds Configurator panel
 panel_iframe:
@@ -93,25 +88,24 @@ media_player:
     scan_interval: 5
     use_episode_art: true
 
-google:
+google: # For Google Calendar integration
   client_id: !secret google_client_id
   client_secret: !secret google_secret
 
 google_assistant:
-  project_id: hassio-184721
-  client_id: !secret gass_id
+  project_id: !secret gass_project_id
+  client_id: !secret gass_client_id
   access_token: !secret gass_token
   exposed_domains:
     - switch
     - light
-    - group
     - cover
-    - media_player
-    - group
-    - fan
     - scene
     - script
 
+# Currently broken, check:
+# https://github.com/home-assistant/home-assistant/issues/9143#issuecomment-343496444 and
+# https://github.com/happyleavesaoc/python-myusps/issues/9
 # usps:
   # username: !secret usps_user
   # password: !secret usps_pass

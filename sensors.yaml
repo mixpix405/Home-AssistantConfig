@@ -123,6 +123,11 @@
   api_key: !secret xboxapi_key
   xuid: !secret xbox_uid
 
+- platform: lastfm
+  api_key: 2f812625c3ae0506f71e999d2908f572
+  users:
+    - mixpix405
+
 - platform: google_travel_time
   name: "Time to Home for Daryl"
   api_key: !secret google_api_key
@@ -137,11 +142,20 @@
 
 - platform: pi_hole
 
+- platform: command_line
+  name: log_db_file_size
+  command: "du -m /config/home-assistant_v2.db | cut -f1"
+  unit_of_measurement: "MB"
+  value_template: '{{ value | int - 1 }}'
+
 #############
 # Templates #
 #############
 - platform: template
   sensors:
+    # nest_mode:
+      # friendly_name: "Mode"
+      # value_template: "{% if is_state('sensor.hallway_thermostat_operation_mode', 'heat') %}Heating"
     htpc:
       friendly_name: "HTPC"
       value_template: "{% if is_state('device_tracker.htpclan', 'home') %}Online{% else %}offline{% endif %}"
