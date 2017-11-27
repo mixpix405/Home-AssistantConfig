@@ -25,6 +25,7 @@ get_going_tab:
   entities:
     - group.packages
     - group.calendars
+    - input_text.reminder
 
 packages:
   name: "Packages"
@@ -242,6 +243,7 @@ lights_and_switches_tab:
     - group.zwave_devices
     - group.smartthings_switches
     - group.smartthings_sensors
+    - group.cameras
 
 zwave_devices:
   name: "Z-Wave Devices"
@@ -267,6 +269,15 @@ smartthings_sensors:
     - sensor.bathroom_temp
     - sensor.bedroom_motion
     - sensor.bathroom_door_status
+
+cameras:
+  name: "Cameras"
+  entities:
+    # - camera.usb
+    - camera.htc_cam
+    - switch.htc_cam_torch
+    # - sensor.htc_cam_audio_connections
+    # - sensor.htc_cam_video_connections
 
 autos_tab:
   name: "Automation Overrides"
@@ -329,7 +340,6 @@ homeless_stuff:
     - device_tracker.testwifihere
     - device_tracker.htpclan
     - sensor.bathroom_door
-    - scene.lying_in_bed
     - group.away_mode_off
     - sensor.dark_sky_pressure
     - sensor.dark_sky_icon

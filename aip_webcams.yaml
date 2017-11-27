@@ -1,0 +1,5 @@
+- host: 192.168.86.51
+  name: "HTC Cam"
+  port: 8080
+  switches:
+    - torch

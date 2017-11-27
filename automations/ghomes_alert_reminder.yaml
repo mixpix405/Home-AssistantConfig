@@ -1,8 +1,8 @@
-alias: "Tell the family it's 7:09"
+alias: "Announce Daryl's Reminders"
 trigger:
   platform: time
   # Military time format.
-  at: '07:09:00'
+  at: '07:07:00'
 condition:
   condition: and
   conditions:
@@ -20,4 +20,4 @@ action:
   service: tts.google_say
   entity_id: media_player.smart_speakers
   data:
-    message: 'Hey! It is seven oh nine! Better get a move on!'
+    message: "{{ states.input_text.reminder.state }}"

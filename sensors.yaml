@@ -121,7 +121,8 @@
 
 - platform: xbox_live
   api_key: !secret xboxapi_key
-  xuid: !secret xbox_uid
+  xuid:
+    - !secret xbox_uid
 
 - platform: lastfm
   api_key: 2f812625c3ae0506f71e999d2908f572

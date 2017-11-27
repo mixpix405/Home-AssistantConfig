@@ -17,7 +17,15 @@ condition:
       entity_id: calendar.scheduling_nowork
       state: 'off'
 action:
-  service: tts.google_say
-  entity_id: media_player.kitchen_home
-  data:
+  - service: media_player.volume_set
+    data:
+      entity_id: media_player.master_bedroom_speaker
+      volume_level: 0.75
+  - service: media_player.volume_set
+    data:
+      entity_id: media_player.kitchen_home
+      volume_level: 0.75
+  - service: tts.google_say
+    entity_id: media_player.smart_speakers
+    data:
       message: 'Hello. I just wanted to let you know that it is 7:05.'

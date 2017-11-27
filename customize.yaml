@@ -185,8 +185,6 @@ automation.midnight:
   icon: mdi:sleep
 automation.home_mode:
   icon: mdi:home-map-marker
-automation.front_porch_dusk:
-  icon: mdi:weather-sunset-down
 automation.bedroom_no_motion:
   icon: mdi:walk
 automation.bathroom_lights_auto:
@@ -213,6 +211,14 @@ automation.tell_megan_when_daryl_is_at_walmart:
   icon: mdi:cart
 automation.welcome_daryl_home:
   icon: mdi:human-greeting
+automation.announce_daryls_reminders:
+  icon: mdi:bullhorn
+automation.dusk_mode:
+  icon: mdi:weather-sunset-down
+automation.morning_mode:
+  icon: mdi:weather-sunset-up
+automation.set_theme_at_startup:
+  icon: mdi:restart
 
 # Better icons for calendars
 calendar.football:

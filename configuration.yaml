@@ -13,6 +13,14 @@ panel_iframe:
     title: Configurator
     icon: mdi:wrench
     url: !secret configurator_url
+  ide:
+    title: IDE
+    icon: mdi:code-braces
+    url: !secret ide_url
+  terminal:
+    title: Terminal
+    icon: mdi:console
+    url: !secret terminal_url
 
 # Enables configuration UI
 config:
@@ -37,6 +45,11 @@ discovery:
 
 # Enables support for tracking state changes over time
 history:
+
+# Somehow deals with the database, in addition to the history: junk. It's confusing, but it is what it is. This is set to purge every day, and keep 7 days of data when it does so.
+recorder:
+  purge_interval: 1
+  purge_keep_days: 7
 
 # View all events in a logbook
 logbook:
@@ -67,6 +80,8 @@ device_tracker: !include device_trackers.yaml
 notify: !include notifiers.yaml
 frontend: !include frontend.yaml
 history_graph: !include history_graphs.yaml
+#android_ip_webcam: !include aip_webcams.yaml
+input_text: !include input_texts.yaml
 
 zwave:
   usb_path: /dev/ttyACM0
