@@ -1,9 +1,9 @@
 # Transmission Turtle
-- platform: transmission
-  host: !secret htpc_ip
-  port: 428
-  name: "Transmission Turtle"
-  username: !secret transmission_user
-  password: !secret transmission_pass
+# - platform: transmission
+  # host: !secret htpc_ip
+  # port: 428
+  # name: "Transmission Turtle"
+  # username: !secret transmission_user
+  # password: !secret transmission_pass
 
 # Z-Wave Switches

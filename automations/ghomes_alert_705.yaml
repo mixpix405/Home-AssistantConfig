@@ -19,13 +19,16 @@ condition:
 action:
   - service: media_player.volume_set
     data:
-      entity_id: media_player.master_bedroom_speaker
+      entity_id: media_player.smart_speakers
       volume_level: 0.75
-  - service: media_player.volume_set
+  - service: media_player.play_media
     data:
-      entity_id: media_player.kitchen_home
-      volume_level: 0.75
+      entity_id: media_player.smart_speakers
+      media_content_id: /local/audio/harp-strumming-5s.mp3
+      media_content_type: MUSIC
+  - delay: 0:00:05
   - service: tts.google_say
     entity_id: media_player.smart_speakers
-    data:
-      message: 'Hello. I just wanted to let you know that it is 7:05.'
+    data_template:
+      message: >
+        '{{ ["Good morning, Henson family! Just wanted to let you know that it's 7:05.", "Hey everyone. It's 7:05.", "Hey! It's 5 after 7."] | random }}'

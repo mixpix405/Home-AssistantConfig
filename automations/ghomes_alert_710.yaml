@@ -18,9 +18,10 @@ condition:
       state: 'off'
 action:
   - service: media_player.play_media
-    data:
+    data_template:
       entity_id: media_player.smart_speakers
-      media_content_id: /local/audio/school_bell.mp3
+      media_content_id: >
+        '{{ ["/local/audio/school-bell-5s.mp3", "/local/audio/nuclear-warning-5s.mp3", "/local/audio/belch-5s.mp3"] | random }}'
       media_content_type: MUSIC
   - delay: 0:00:15   
   - service: tts.google_say

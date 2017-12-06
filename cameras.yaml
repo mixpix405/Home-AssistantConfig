@@ -1,6 +1,6 @@
 # - name: USB
   # platform: mjpeg
-  # mjpeg_url: http://192.168.86.2:8081/video.mjpg
+  # mjpeg_url: http://10.0.0.2:8081/video.mjpg
 
 - name: Daryl
   platform: generic

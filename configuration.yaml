@@ -29,7 +29,7 @@ http:
   api_password: !secret api_password
   trusted_networks:
     - 127.0.0.1
-    - 192.168.86.0/24
+    - 10.0.0.0/24
   base_url: !secret base_url_secret
   ssl_certificate: /ssl/fullchain.pem
   ssl_key: /ssl/privkey.pem
@@ -97,11 +97,11 @@ nest:
   client_id: !secret nest_id
   client_secret: !secret nest_secret
 
-media_player:
-  - platform: plex
-    include_non_clients: true
-    scan_interval: 5
-    use_episode_art: true
+# media_player:
+  # - platform: plex
+    # include_non_clients: true
+    # scan_interval: 5
+    # use_episode_art: true
 
 google: # For Google Calendar integration
   client_id: !secret google_client_id

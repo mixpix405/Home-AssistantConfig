@@ -15,7 +15,7 @@ lights_and_switches:
     - switch.porch_switch
     - switch.bedroom_switch
     - switch.bathroom_switch
-    - switch.landscaping_outlet
+    - switch.landscaping_outlet_switch
     - light.peq_lamp
 
 get_going_tab:
@@ -45,6 +45,8 @@ calendars:
     - calendar.scheduling_nowork
     - calendar.scheduling_work
     - calendar.childrens_theatre_rehearsals
+    - calendar.rehearsal_sawyer
+    - calendar._sawyers_basketball_games_
 
 network_tab:
   name: "Network"
@@ -102,6 +104,7 @@ htpc:
   name: "HTPC"
   entities:
     - sensor.htpc
+    - sensor.htpc_city
     - sensor.transmission_status
     - sensor.transmission_active_torrents
     - sensor.transmission_down_speed
@@ -117,6 +120,7 @@ network_devices:
     - sensor.sawyer_tablet
     - sensor.ghome_kitchen
     - sensor.ghome_mini_bedroom
+    - sensor.ghome_mini_bathroom
     - sensor.retropie
     - sensor.range_extender
     - sensor.xbox_one
@@ -195,6 +199,7 @@ google_homes:
   entities:
     - media_player.kitchen_home
     - media_player.master_bedroom_speaker
+    - media_player.master_bathroom_speaker
     - media_player.smart_speakers
 
 streaming:
@@ -240,27 +245,18 @@ lights_and_switches_tab:
   view: yes
   icon: mdi:lightbulb-on-outline
   entities:
-    - group.zwave_devices
-    - group.smartthings_switches
+    - group.lights_and_switches
     - group.smartthings_sensors
     - group.cameras
 
 zwave_devices:
-  name: "Z-Wave Devices"
+  name: "Lights & Switches"
   entities:
     - switch.porch_switch
     - switch.bedroom_switch
     - switch.bathroom_switch
     - switch.landscaping_outlet_switch
-
-smartthings_switches:
-  name: "ST Switches & Lights"
-  entities:
-    - switch.porch_lights
-    - switch.bathroom_lights
-    - switch.bedroom_lights
-    - switch.landscaping_outlet
-    - light.peq_lamp
+    - light.peq_lamp    
 
 smartthings_sensors:
   name: "Sensors"
@@ -304,6 +300,7 @@ off_at_midnight:
     - switch.bathroom_switch
     - switch.porch_switch
     - light.peq_lamp
+    - switch.landscaping_outlet_switch
 
 zwave_nodes:
   name: "Z-Wave Nodes"

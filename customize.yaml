@@ -137,11 +137,15 @@ sensor.bathroom_door:
 # Better icons for network devices
 sensor.htpc:
   icon: mdi:desktop-tower
+sensor.htpc_city:
+  icon: mdi:security-network
 sensor.ghome_kitchen:
   icon: mdi:google-assistant
 sensor.range_extender:
   icon: mdi:access-point
 sensor.ghome_mini_bedroom:
+  icon: mdi:google-assistant
+sensor.ghome_mini_bathroom:
   icon: mdi:google-assistant
 sensor.xbox_one:
   icon: mdi:xbox
@@ -219,6 +223,10 @@ automation.morning_mode:
   icon: mdi:weather-sunset-up
 automation.set_theme_at_startup:
   icon: mdi:restart
+automation.dusk_mode_christmas:
+  icon: mdi:pine-tree
+automation.mode_early_morning:
+  icon: mdi:coffee
 
 # Better icons for calendars
 calendar.football:
@@ -237,6 +245,8 @@ calendar.scheduling_work:
   icon: mdi:timetable
 calendar.holidays_in_united_states:
   icon: mdi:beach
+calendar._sawyers_basketball_games_:
+  icon: mdi:basketball
 
 # For System stuff
 sensor.log_db_file_size:

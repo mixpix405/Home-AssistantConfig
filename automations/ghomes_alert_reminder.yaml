@@ -1,4 +1,5 @@
 alias: "Announce Daryl's Reminders"
+initial_state: False
 trigger:
   platform: time
   # Military time format.
@@ -19,5 +20,6 @@ condition:
 action:
   service: tts.google_say
   entity_id: media_player.smart_speakers
-  data:
-    message: "{{ states.input_text.reminder.state }}"
+  data_template:
+    message: >
+      '{{ states.input_text.reminder.state }}'

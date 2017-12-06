@@ -1,0 +1,10 @@
+alias: "Dusk Mode Christmas"
+trigger:
+  platform: sun
+  event: sunset
+  offset: '-00:10:00'
+action:
+  - service: switch.turn_off
+    entity_id: switch.porch_switch
+  - service: switch.turn_on
+    entity_id: switch.landscaping_outlet_switch

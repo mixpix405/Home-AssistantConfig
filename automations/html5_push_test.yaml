@@ -6,14 +6,15 @@ trigger:
   to: 'open'
 action:
   service: notify.html5
-  data:
-    message: "Bathroom door open"
-    target: "Daryl's XL"
-    data:
-      actions:
-        - action: "button_on"
-          title: "Lights On"
-          icon: "/local/icons/lightbulb-on_hab.png"
-        - action: "button_off"
-          title: "Lights Off"
-          icon: "/local/icons/lightbulb_hab.png"
+  data_template:
+    message: >
+      {{ states.input_text.reminder.state }}
+    target: ["Daryl's XL", "Daryl's Laptop"]
+    #data:
+      #actions:
+      #  - action: "button_on"
+      #    title: "Lights On"
+      #    icon: "/local/icons/lightbulb-on_hab.png"
+      #  - action: "button_off"
+      #    title: "Lights Off"
+      #    icon: "/local/icons/lightbulb_hab.png"

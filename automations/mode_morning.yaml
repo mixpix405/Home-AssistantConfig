@@ -2,7 +2,10 @@ alias: "Morning Mode"
 trigger:
   platform: sun
   event: sunrise
+  offset: '+00:15:00'
 action:
   - service: frontend.set_theme
     data:
       name: default
+  - service: switch.turn_off
+    entity_id: switch.porch_switch
