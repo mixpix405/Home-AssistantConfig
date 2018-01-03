@@ -1,0 +1,7 @@
+alias: "Sleepy Time off at 8:30am"
+trigger:
+  platform: time
+  at: '08:30:00'
+action:
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.sleepy_time_mode

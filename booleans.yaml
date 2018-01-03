@@ -1,4 +1,5 @@
-# notify_home:
-  # name: "Notify when someone arrives home"
-  # initial: off
-  # icon: mdi:car
+sleepy_time_mode:
+  name: "Sleepy Time Mode"
+  initial: off
+  icon: mdi:sleep
+  

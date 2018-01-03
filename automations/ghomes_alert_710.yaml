@@ -18,12 +18,13 @@ condition:
       state: 'off'
 action:
   - service: media_player.play_media
-    data_template:
+    data:
       entity_id: media_player.smart_speakers
-      media_content_id: >
-        '{{ ["/local/audio/school-bell-5s.mp3", "/local/audio/nuclear-warning-5s.mp3", "/local/audio/belch-5s.mp3"] | random }}'
+      media_content_id: "http://k003.kiwi6.com/hotlink/iuy499xxca/nuclear-warning-5s.mp3"
+      #media_content_id: >
+      #  '{{ ["http://k003.kiwi6.com/hotlink/riqhdnvqfn/school-bell-5s.mp3", "/local/audio/nuclear-warning-5s.mp3", "http://k003.kiwi6.com/hotlink/ezkfbxowvj/belch-5s.mp3"] | random }}'
       media_content_type: MUSIC
-  - delay: 0:00:15   
+  - delay: 0:00:5   
   - service: tts.google_say
     entity_id: media_player.smart_speakers
     data:

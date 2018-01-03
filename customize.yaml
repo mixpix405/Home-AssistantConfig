@@ -25,54 +25,30 @@ sensor.google_wifi_uptime:
   friendly_name: "Uptime"
 
 # Cleaning up repetitive DarkSky entity names
-sensor.dark_sky_apparent_temperature:
-  friendly_name: "Feels Like"
-sensor.dark_sky_cloud_coverage:
-  friendly_name: "Cloud Coverage"
-sensor.dark_sky_daily_high_apparent_temperature:
-  friendly_name: "Feels Like High"
-sensor.dark_sky_daily_high_temperature:
-  friendly_name: "Today's High"
-sensor.dark_sky_daily_low_apparent_temperature:
-  friendly_name: "Feels Like Low"
-sensor.dark_sky_daily_low_temperature:
-  friendly_name: "Today's Low"
-sensor.dark_sky_daily_max_precip_intensity:
-  friendly_name: "Daily Max Precip Intensity"
-sensor.dark_sky_daily_summary:
-  friendly_name: "Daily"
-sensor.dark_sky_dew_point:
-  friendly_name: "Dew Point"
-sensor.dark_sky_hourly_summary:
-  friendly_name: "Hourly"
-sensor.dark_sky_humidity:
-  friendly_name: "Humidity"
-sensor.dark_sky_icon:
-  friendly_name: "Icon"
-sensor.dark_sky_minutely_summary:
-  friendly_name: "Minutely"
-sensor.dark_sky_nearest_storm_distance:
-  friendly_name: "Nearest Storm"
-sensor.dark_sky_ozone:
-  friendly_name: "Ozone"
-sensor.dark_sky_precip:
-  friendly_name: "Precipitation"
-sensor.dark_sky_precip_probability:
-  friendly_name: "Precipitation Chance"
-sensor.dark_sky_pressure:
-  friendly_name: "Pressure"
-sensor.dark_sky_summary:
-  friendly_name: "Currently"
+# Now Tab
 sensor.dark_sky_temperature:
   friendly_name: "Temperature"
-sensor.dark_sky_uv_index:
-  friendly_name: "UV Index"
-sensor.dark_sky_visibility:
-  friendly_name: "Visibility"
-sensor.dark_sky_wind_bearing:
-  friendly_name: "Wind Direction"
-sensor.dark_sky_wind_speed:
-  friendly_name: "Wind Speed"
+sensor.dark_sky_apparent_temperature:
+  friendly_name: "Feels Like"
+sensor.dark_sky_summary:
+  friendly_name: "Currently"
+sensor.dark_sky_minutely_summary:
+  friendly_name: "Next Hour"
+sensor.dark_sky_humidity:
+  friendly_name: "Humidity"
+sensor.dark_sky_nearest_storm_distance:
+  friendly_name: "Nearest Storm"
+# Today Tab
+sensor.dark_sky_daily_high_temperature:
+  friendly_name: "High"
+sensor.dark_sky_daily_low_temperature:
+  friendly_name: "Low"
+sensor.dark_sky_precip_probability:
+  friendly_name: "Chance of Precip."
+sensor.dark_sky_hourly_summary:
+  friendly_name: "24-Hour"
+sensor.dark_sky_daily_summary:
+  friendly_name: "7-Day"
 
 # Cleaning up Nest names & icons
 climate.hallway:
@@ -125,6 +101,18 @@ switch.bedroom_switch:
 switch.landscaping_outlet_switch:
   icon: mdi:power-socket-us
 
+# Better icons for Sonoff switches
+switch.sonoff_cord_01:
+  friendly_name: "Trees by Front Door"
+  icon: mdi:power-socket-us
+switch.sonoff_cord_02:
+  friendly_name: "Above Cabinet Lighting"
+  icon: mdi:power-socket-us
+sensor.sonoff_01:
+  icon: mdi:power-socket-us
+sensor.sonoff_02:
+  icon: mdi:power-socket-us
+
 # Better icons for SmartThings stuff
 light.peq_lamp:
   icon: mdi:lamp
@@ -137,8 +125,11 @@ sensor.bathroom_door:
 # Better icons for network devices
 sensor.htpc:
   icon: mdi:desktop-tower
-sensor.htpc_city:
+sensor.htpc_pia:
   icon: mdi:security-network
+sensor.ipinfo_city:
+  icon: mdi:map
+  friendly_name: "PIA City"
 sensor.ghome_kitchen:
   icon: mdi:google-assistant
 sensor.range_extender:
@@ -175,6 +166,8 @@ sensor.daryl_watch:
   icon: mdi:watch
 sensor.megan_explorer:
   icon: mdi:car-estate
+sensor.chromebook_lenovo:
+  icon: mdi:laptop-chromebook
 
 # Better icons for automations
 automation.tell_the_family_its_705:
@@ -227,6 +220,8 @@ automation.dusk_mode_christmas:
   icon: mdi:pine-tree
 automation.mode_early_morning:
   icon: mdi:coffee
+automation.sleepy_time_off_at_830am:
+  icon: mdi:alarm-bell
 
 # Better icons for calendars
 calendar.football:

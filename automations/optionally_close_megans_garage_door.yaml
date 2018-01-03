@@ -1,0 +1,13 @@
+#################################################################################
+# Closes Megan's garage door, if she chooses, via HTML5 actionable notification #
+#################################################################################
+
+alias: "Option to close Megan's garage door"
+trigger:
+  platform: event
+  event_type: html5_notification.clicked
+  event_data:
+    action: close_megans_door
+action:
+  service: switch.toggle
+  entity_id: switch.garage_megan

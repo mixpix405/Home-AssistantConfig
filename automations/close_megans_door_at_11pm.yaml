@@ -1,0 +1,11 @@
+alias: "Close Megan's Door @ 11pm"
+trigger:
+  platform: time
+  at: '23:00:00'
+condition:
+  condition: state
+  entity_id: sensor.megans_garage_door
+  state: open
+action:
+  - service: switch.turn_off
+    entity_id: switch.garage_megan

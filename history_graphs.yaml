@@ -4,7 +4,7 @@ gr1:
     - sensor.hallway_thermostat_temperature
     - sensor.hallway_thermostat_target
     - sensor.dark_sky_temperature
-  hours_to_show: 72
+  hours_to_show: 48
   refresh: 60
 
 gr2:

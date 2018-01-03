@@ -9,3 +9,6 @@ action:
       name: default
   - service: switch.turn_off
     entity_id: switch.porch_switch
+  - service: input_boolean.turn_off
+    data:
+      entity_id: input_boolean.sleepy_time_mode

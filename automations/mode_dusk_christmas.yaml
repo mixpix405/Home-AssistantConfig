@@ -8,3 +8,7 @@ action:
     entity_id: switch.porch_switch
   - service: switch.turn_on
     entity_id: switch.landscaping_outlet_switch
+  - service: switch.turn_on
+    entity_id: switch.sonoff_cord_01
+  - service: switch.turn_on
+    entity_id: switch.sonoff_cord_02

@@ -1,0 +1,16 @@
+##################################################
+# Notify when SSL Certificate is about to expire #
+##################################################
+
+alias: Notify Daryl when SSL Cert is about to expire
+trigger: 
+  platform: numeric_state
+  entity_id: sensor.ssl_cert
+  value_template: '{{ states.sensor.ssl_certificate_expiry.state }}'
+  below: 10
+action:
+  service: notify.html5
+  data: 
+    message: "{{ as_timestamp(now()) | timestamp_custom('%I:%M%p', true) }} - Your SSL Certificate will expire in {{ states.sensor.ssl_certificate_expiry.state }} days!"
+    title: "SSL Cert Expiry"
+    target: "Daryl's XL"

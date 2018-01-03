@@ -7,7 +7,7 @@ trigger:
   platform: event
   event_type: html5_notification.clicked
   event_data:
-   action: tell_her
+    action: tell_her
 action:
   service: notify.html5
   data:

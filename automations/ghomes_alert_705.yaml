@@ -24,7 +24,7 @@ action:
   - service: media_player.play_media
     data:
       entity_id: media_player.smart_speakers
-      media_content_id: /local/audio/harp-strumming-5s.mp3
+      media_content_id: "http://k003.kiwi6.com/hotlink/25os04bebs/harp-strumming-5s.mp3"
       media_content_type: MUSIC
   - delay: 0:00:05
   - service: tts.google_say

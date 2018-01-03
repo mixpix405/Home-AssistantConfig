@@ -76,7 +76,7 @@ light: !include lights.yaml
 binary_sensor: !include binary_sensors.yaml
 scene: !include scenes.yaml
 device_tracker: !include device_trackers.yaml
-#input_boolean: !include booleans.yaml
+input_boolean: !include booleans.yaml
 notify: !include notifiers.yaml
 frontend: !include frontend.yaml
 history_graph: !include history_graphs.yaml

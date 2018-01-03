@@ -1,0 +1,16 @@
+#######################################
+# Opens Megan's garage door if closed #
+#######################################
+
+alias: "Open Megan's door when he arrives"
+trigger:
+  platform: state
+  entity_id: binary_sensor.megan_home
+  to: 'on'
+condition:
+  condition: state
+  entity_id: sensor.megan_garage_status
+  state: closed
+action:
+  service: switch.toggle
+  entity_id: switch.garage_megan

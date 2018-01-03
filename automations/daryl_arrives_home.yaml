@@ -1,0 +1,16 @@
+#######################################
+# Opens Daryl's garage door if closed #
+#######################################
+
+alias: "Open Daryl's door when he arrives"
+trigger:
+  platform: state
+  entity_id: binary_sensor.daryl_home
+  to: 'on'
+condition:
+  condition: state
+  entity_id: sensor.daryl_garage_status
+  state: closed
+action:
+  service: switch.toggle
+  entity_id: switch.garage_daryl

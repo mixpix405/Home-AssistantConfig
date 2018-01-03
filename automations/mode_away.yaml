@@ -18,3 +18,5 @@ action:
     data:
       message: "Away mode enabled  at {{ as_timestamp(now()) | timestamp_custom('%I:%M', true) }} because nobody's home."
       title: "Roll Out!"
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.sleepy_time_mode

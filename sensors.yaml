@@ -9,22 +9,12 @@
     - temperature
     - apparent_temperature
     - dew_point
-    - wind_speed
-    - wind_bearing
-    - cloud_cover
     - humidity
-    - pressure
-    - visibility
-    - ozone
     - minutely_summary
     - hourly_summary
     - daily_summary
     - temperature_max
     - temperature_min
-    - apparent_temperature_max
-    - apparent_temperature_min
-    - precip_intensity_max
-    - uv_index
 
 - platform: plex
   host: !secret htpc_ip
@@ -114,6 +104,20 @@
   payload_off: "closed"
   device_class: "opening"
 
+- platform: mqtt
+  name: "Daryl's Garage Door"
+  state_topic: "smartthings/Daryl's Garage Door Sensor/contact/state"
+  payload_on: "open"
+  payload_off: "closed"
+  device_class: "opening"
+
+- platform: mqtt
+  name: "Megan's Garage Door"
+  state_topic: "smartthings/Megan's Garage Door Sensor/contact/state"
+  payload_on: "open"
+  payload_off: "closed"
+  device_class: "opening"
+
 - platform: cert_expiry
   host: !secret duck_domain
   port: !secret duck_port
@@ -124,10 +128,10 @@
   xuid:
     - !secret xbox_uid
 
-- platform: lastfm
-  api_key: 2f812625c3ae0506f71e999d2908f572
-  users:
-    - mixpix405
+# - platform: lastfm
+  # api_key: 2f812625c3ae0506f71e999d2908f572
+  # users:
+    # - mixpix405
 
 - platform: google_travel_time
   name: "Time to Home for Daryl"
@@ -151,89 +155,107 @@
 
 - platform: command_line
   name: ipinfo_city
-  command: "curl 10.0.0.2/ipinfo.php"
+  command: "curl http://10.0.0.2/city.txt"
 
 #############
 # Templates #
 #############
 - platform: template
   sensors:
-    # nest_mode:
-      # friendly_name: "Mode"
-      # value_template: "{% if is_state('sensor.hallway_thermostat_operation_mode', 'heat') %}Heating"
+    ### Staples ###
     htpc:
       friendly_name: "HTPC"
-      value_template: "{% if is_state('device_tracker.htpclan', 'home') %}Online{% else %}offline{% endif %}"
-    ghome_kitchen:
-      friendly_name: "GHome Kitchen"
-      value_template: "{% if is_state('device_tracker.googlehomelan', 'home') %}Online{% else %}offline{% endif %}"
+      value_template: "{% if is_state('device_tracker.htpclan', 'home') %}Online{% else %}Offline{% endif %}"
     range_extender:
       friendly_name: "Range Extender"
-      value_template: "{% if is_state('device_tracker.tlwa855relan', 'home') %}Online{% else %}offline{% endif %}"
-    ghome_mini_bedroom:
-      friendly_name: "GHome Mini (Bedroom)"
-      value_template: "{% if is_state('device_tracker.e4f0421cb224', 'home') %}Online{% else %}offline{% endif %}"
-    ghome_mini_bathroom:
-      friendly_name: "GHome Mini (Bathroom)"
-      value_template: "{% if is_state('device_tracker.ghome_bathroom', 'home') %}Online{% else %}offline{% endif %}"
-    xbox_one:
-      friendly_name: "XBOne"
-      value_template: "{% if is_state('device_tracker.xboxonelan', 'home') %}Online{% else %}offline{% endif %}"
+      value_template: "{% if is_state('device_tracker.tlwa855relan', 'home') %}Online{% else %}Offline{% endif %}"
     st_hub:
       friendly_name: "SmartThings Hub"
-      value_template: "{% if is_state('device_tracker.st24fd5b00000037a4lan', 'home') %}Online{% else %}offline{% endif %}"
-    sawyer_tablet:
-      friendly_name: "Sawyer's Tablet"
-      value_template: "{% if is_state('device_tracker.androidea8e397ef27b1c0elan', 'home') %}Online{% else %}offline{% endif %}"
-    cast_bedroom:
-      friendly_name: "Bedroom Chromecast"
-      value_template: "{% if is_state('device_tracker.6cadf82677a2', 'home') %}Online{% else %}offline{% endif %}"
+      value_template: "{% if is_state('device_tracker.st24fd5b00000037a4lan', 'home') %}Online{% else %}Offline{% endif %}"
     nest:
       friendly_name: "Nest Thermostat"
-      value_template: "{% if is_state('device_tracker.09aa01ac25160s7klan', 'home') %}Online{% else %}offline{% endif %}"
-    bathroom_door_status:
-      friendly_name: "Bathroom Door"
-      value_template: "{% if is_state('sensor.bathroom_door', 'open') %}open{% else %}closed{% endif %}"
-      icon_template: "{% if is_state('sensor.bathroom_door', 'open') %}mdi:door-open{% else %}mdi:door-closed{% endif %}"
+      value_template: "{% if is_state('device_tracker.09aa01ac25160s7klan', 'home') %}Online{% else %}Offline{% endif %}"
+    retropie:
+      friendly_name: "RetroPie"
+      value_template: "{% if is_state('device_tracker.retropielan', 'home') %}Online{% else %}Offline{% endif %}"
+    daryl_laptop:
+      friendly_name: "Daryl's Laptop"
+      value_template: "{% if is_state('device_tracker.darylt540plan', 'home') %}Online{% else %}Offline{% endif %}"
+    chromebook_lenovo:
+      friendly_name: "Lenovo Chromebook"
+      value_template: "{% if is_state('device_tracker.chromebook_lenovo', 'home') %}Online{% else %}Offline{% endif %}"
+    sonoff_01:
+      friendly_name: "Sonoff 01"
+      value_template: "{% if is_state('device_tracker.sonoff_01', 'home') %}Online{% else %}Offline{% endif %}"
+    sonoff_02:
+      friendly_name: "Sonoff 02"
+      value_template: "{% if is_state('device_tracker.sonoff_02', 'home') %}Online{% else %}Offline{% endif %}"
+    ### Cast Devices ###
+    ghome_kitchen:
+      friendly_name: "GHome Kitchen"
+      value_template: "{% if is_state('device_tracker.googlehomelan', 'home') %}Online{% else %}Offline{% endif %}"
+    ghome_mini_bedroom:
+      friendly_name: "GHome Mini (Bedroom)"
+      value_template: "{% if is_state('device_tracker.e4f0421cb224', 'home') %}Online{% else %}Offline{% endif %}"
+    ghome_mini_bathroom:
+      friendly_name: "GHome Mini (Bathroom)"
+      value_template: "{% if is_state('device_tracker.ghome_bathroom', 'home') %}Online{% else %}Offline{% endif %}"
+    cast_bedroom:
+      friendly_name: "Bedroom Chromecast"
+      value_template: "{% if is_state('device_tracker.6cadf82677a2', 'home') %}Online{% else %}Offline{% endif %}"
+    dat_dongle:
+      friendly_name: "Dat Dongle"
+      value_template: "{% if is_state('device_tracker.chromecastlan', 'home') %}Online{% else %}Offline{% endif %}"
+    ### Mobiles ###
+    sawyer_tablet:
+      friendly_name: "Sawyer's Tablet"
+      value_template: "{% if is_state('device_tracker.androidea8e397ef27b1c0elan', 'home') %}Online{% else %}Offline{% endif %}"
+    daryl_xl_nmap:
+      friendly_name: "Daryl's XL"
+      value_template: "{% if is_state('device_tracker.daryl_2xl', 'home') %}Online{% else %}Offline{% endif %}"
     daryl_charging:
       friendly_name: "Daryl Charging"
       value_template: "{% if is_state('binary_sensor.daryl_charging', 'on') %}Charging{% else %}Not Charging{% endif %}"
       icon_template: "{% if is_state('binary_sensor.daryl_charging', 'on') %}mdi:power-plug{% else %}mdi:power-plug-off{% endif %}"
-    megan_charging:
-      friendly_name: "Megan Charging"
-      value_template: "{% if is_state('binary_sensor.megan_charging', 'on') %}Charging{% else %}Not Charging{% endif %}"
-      icon_template: "{% if is_state('binary_sensor.megan_charging', 'on') %}mdi:power-plug{% else %}mdi:power-plug-off{% endif %}"
-    daryl_xl_nmap:
-      friendly_name: "Daryl's XL"
-      value_template: "{% if is_state('device_tracker.daryl_2xl', 'home') %}Online{% else %}offline{% endif %}"
-    daryl_watch:
-      friendly_name: "Daryl's Watch"
-      value_template: "{% if is_state('device_tracker.android5486ce199fee9d90lan', 'home') %}Online{% else %}offline{% endif %}"
-    megan_explorer:
-      friendly_name: "Megan's Explorer"
-      value_template: "{% if is_state('device_tracker.megan_explorer', 'home') %}Online{% else %}offline{% endif %}"
-    retropie:
-      friendly_name: "RetroPie"
-      value_template: "{% if is_state('device_tracker.retropielan', 'home') %}Online{% else %}offline{% endif %}"
-    megan_xl_nmap: # updated
-      friendly_name: "Megan's XL"
-      value_template: "{% if is_state('device_tracker.404e36256a50', 'home') %}Online{% else %}offline{% endif %}"
-    dat_dongle:
-      friendly_name: "Dat Dongle"
-      value_template: "{% if is_state('device_tracker.chromecastlan', 'home') %}Online{% else %}offline{% endif %}"
-    daryl_laptop:
-      friendly_name: "Daryl's Laptop"
-      value_template: "{% if is_state('device_tracker.darylt540plan', 'home') %}Online{% else %}offline{% endif %}"
-    htpc_city:
-      friendly_name: "PIA"
-      value_template: "{% if is_state('sensor.ipinfo_city', 'Gadsden') %}Disconnected{% else %}Connected{% endif %}"
     daryls_battery_dyn:
       friendly_name: "Daryl's XL"
       unit_of_measurement: "%"
       value_template: "{{states.sensor.daryls_battery.state}}"
       icon_template: "{%- if states.sensor.daryls_battery.state >= '95' %}mdi:battery{%- elif states.sensor.daryls_battery.state == '100' %}mdi:battery{%- elif states.sensor.daryls_battery.state == '' %}mdi:battery-unknown{%- elif states.sensor.daryls_battery.state <= '15' %}mdi:battery-outline{% else %}mdi:battery-{{(states.sensor.daryls_battery.state|float / 10)|round*10}}{%- endif %}"
+    daryl_watch:
+      friendly_name: "Daryl's Watch"
+      value_template: "{% if is_state('device_tracker.android5486ce199fee9d90lan', 'home') %}Online{% else %}Offline{% endif %}"
+    megan_xl_nmap: # updated
+      friendly_name: "Megan's XL"
+      value_template: "{% if is_state('device_tracker.404e36256a50', 'home') %}Online{% else %}Offline{% endif %}"
+    megan_charging:
+      friendly_name: "Megan Charging"
+      value_template: "{% if is_state('binary_sensor.megan_charging', 'on') %}Charging{% else %}Not Charging{% endif %}"
+      icon_template: "{% if is_state('binary_sensor.megan_charging', 'on') %}mdi:power-plug{% else %}mdi:power-plug-off{% endif %}"
     megans_battery_dyn:
       friendly_name: "Megan's XL"
       unit_of_measurement: "%"
       value_template: "{{states.sensor.megans_battery.state}}"
       icon_template: "{%- if states.sensor.megans_battery.state >= '95' %}mdi:battery{%- elif states.sensor.megans_battery.state == '100' %}mdi:battery{%- elif states.sensor.megans_battery.state == '' %}mdi:battery-unknown{%- elif states.sensor.megans_battery.state <= '15' %}mdi:battery-outline{% else %}mdi:battery-{{(states.sensor.megans_battery.state|float / 10)|round*10}}{%- endif %}"
+    ### Other Sensors ###
+    xbox_one:
+      friendly_name: "XBOne"
+      value_template: "{% if is_state('device_tracker.xboxonelan', 'home') %}Online{% else %}Offline{% endif %}"
+    bathroom_door_status:
+      friendly_name: "Bathroom Door"
+      value_template: "{% if is_state('sensor.bathroom_door', 'open') %}open{% else %}closed{% endif %}"
+      icon_template: "{% if is_state('sensor.bathroom_door', 'open') %}mdi:door-open{% else %}mdi:door-closed{% endif %}"
+    daryl_garage_status:
+      friendly_name: "Daryl's Garage Door"
+      value_template: "{% if is_state('sensor.daryls_garage_door', 'open') %}open{% else %}closed{% endif %}"
+      icon_template: "{% if is_state('sensor.daryls_garage_door', 'open') %}mdi:garage-open{% else %}mdi:garage{% endif %}"
+    megan_garage_status:
+      friendly_name: "Megan's Garage Door"
+      value_template: "{% if is_state('sensor.megans_garage_door', 'open') %}open{% else %}closed{% endif %}"
+      icon_template: "{% if is_state('sensor.megans_garage_door', 'open') %}mdi:garage-open{% else %}mdi:garage{% endif %}"
+    megan_explorer:
+      friendly_name: "Megan's Explorer"
+      value_template: "{% if is_state('device_tracker.megan_explorer', 'home') %}Online{% else %}Offline{% endif %}"
+    htpc_pia:
+      friendly_name: "PIA"
+      value_template: "{% if is_state('sensor.ipinfo_city', 'Gadsden') %}Disconnected{% else %}Protected{% endif %}"

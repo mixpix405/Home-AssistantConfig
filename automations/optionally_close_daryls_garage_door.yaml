@@ -1,0 +1,13 @@
+################################################################################
+# Closes Daryl's garage door, if he chooses, via HTML5 actionable notification #
+################################################################################
+
+alias: "Option to close Daryl's garage door"
+trigger:
+  platform: event
+  event_type: html5_notification.clicked
+  event_data:
+    action: close_daryls_door
+action:
+  service: switch.toggle
+  entity_id: switch.garage_daryl

@@ -1,0 +1,19 @@
+  trigger_daryls_garage_door:
+    alias: "Trigger Daryl's Garage Door"
+    sequence:
+      - service: switch.turn_on
+        entity_id: switch.garage_daryl_switch
+      - delay:
+          seconds: 3
+      - service: switch.turn_off
+        entity_id: switch.garage_daryl_switch
+
+  trigger_megans_garage_door:
+    alias: "Trigger Megan's Garage Door"
+    sequence:
+      - service: switch.turn_on
+        entity_id: switch.garage_megan_switch
+      - delay:
+          seconds: 3
+      - service: switch.turn_off
+        entity_id: switch.garage_megan_switch

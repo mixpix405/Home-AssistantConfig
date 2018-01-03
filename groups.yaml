@@ -5,6 +5,7 @@ default_view:
     - group.daryl_tracker
     - group.megan_tracker
     - group.lights_and_switches
+    - group.sonoffs
     # - group.zwave_devices
     # - group.smartthings_switches
     - climate.hallway
@@ -17,6 +18,15 @@ lights_and_switches:
     - switch.bathroom_switch
     - switch.landscaping_outlet_switch
     - light.peq_lamp
+    #- switch.garage_daryl_switch
+    - switch.garage_daryl
+    - switch.garage_megan
+
+sonoffs:
+  name: "Sonoffs"
+  entities:
+    - switch.sonoff_cord_01
+    - switch.sonoff_cord_02
 
 get_going_tab:
   name: "Get going!"
@@ -58,7 +68,11 @@ network_tab:
     - group.system
     - group.pi_hole
     - group.htpc
-    - group.network_devices
+    - group.network_devices_mobiles
+    - group.network_devices_sonoffs
+    - group.network_devices_staples
+    - group.network_devices_computers
+    - group.network_devices_casts
 
 google_wifi:
   name: "Google Wifi"
@@ -104,32 +118,53 @@ htpc:
   name: "HTPC"
   entities:
     - sensor.htpc
-    - sensor.htpc_city
+    - sensor.htpc_pia
+    - sensor.ipinfo_city
     - sensor.transmission_status
     - sensor.transmission_active_torrents
     - sensor.transmission_down_speed
     - sensor.transmission_up_speed
     - switch.transmission_turtle
 
-network_devices:
+network_devices_mobiles:
   name: "Network Devices"
   entities:
-    - sensor.nest
     - sensor.daryl_xl_nmap
     - sensor.megan_xl_nmap
     - sensor.sawyer_tablet
+    - sensor.daryl_watch
+    - sensor.megan_explorer
+
+network_devices_sonoffs:
+  name: "Sonoffs"
+  entities:
+    - sensor.sonoff_01
+    - sensor.sonoff_02
+
+network_devices_staples:
+  name: "Network Devices"
+  entities:
+    - sensor.range_extender
+    - sensor.st_hub
+    - sensor.nest
+    - sensor.retropie
+    - sensor.xbox_one
+    
+network_devices_computers:
+  name: "Computers"
+  entities:
+    - sensor.daryl_laptop
+    - sensor.chromebook_lenovo
+    
+network_devices_casts:
+  name: "Cast Devices"
+  entities:
     - sensor.ghome_kitchen
     - sensor.ghome_mini_bedroom
     - sensor.ghome_mini_bathroom
-    - sensor.retropie
-    - sensor.range_extender
-    - sensor.xbox_one
-    - sensor.st_hub
     - sensor.cast_bedroom
     - sensor.dat_dongle
-    - sensor.daryl_laptop
-    - sensor.daryl_watch
-    - sensor.megan_explorer
+    
 
 climate_tab:
   name: "Climate"
@@ -155,21 +190,20 @@ weather_now:
   name: "Now"
   entities:
     - sun.sun
-    - sensor.dark_sky_summary
     - sensor.dark_sky_temperature
+    - sensor.dark_sky_apparent_temperature
+    - sensor.dark_sky_summary
     - sensor.dark_sky_minutely_summary
     - sensor.dark_sky_humidity
-    - sensor.dark_sky_apparent_temperature
-    - sensor.dark_sky_wind_speed
     - sensor.dark_sky_nearest_storm_distance
 
 weather_today:
   name: "Today"
   entities:
-    - sensor.dark_sky_precip_probability
-    - sensor.dark_sky_hourly_summary
     - sensor.dark_sky_daily_high_temperature
     - sensor.dark_sky_daily_low_temperature
+    - sensor.dark_sky_precip_probability
+    - sensor.dark_sky_hourly_summary
     - sensor.dark_sky_daily_summary
 
 media_tab:
@@ -187,7 +221,7 @@ chromecasts:
   name: "Chromecasts"
   entities:
     - media_player.bedroom_tv
-    - media_player.dat_dongle
+    - media_player.den_tv
 
 chromecast_audios:
   name: "Chromecast Audio"
@@ -206,7 +240,7 @@ streaming:
   name: "Streaming Media"
   entities:
     - sensor.plex
-    - sensor.lastfm_mixpix405
+    #- sensor.lastfm_mixpix405
 
 xbox:
   name: "Xbox"
@@ -246,6 +280,7 @@ lights_and_switches_tab:
   icon: mdi:lightbulb-on-outline
   entities:
     - group.lights_and_switches
+    - group.sonoffs
     - group.smartthings_sensors
     - group.cameras
 
@@ -256,7 +291,8 @@ zwave_devices:
     - switch.bedroom_switch
     - switch.bathroom_switch
     - switch.landscaping_outlet_switch
-    - light.peq_lamp    
+    - light.peq_lamp
+    - switch.garage_daryl_switch
 
 smartthings_sensors:
   name: "Sensors"
@@ -265,6 +301,8 @@ smartthings_sensors:
     - sensor.bathroom_temp
     - sensor.bedroom_motion
     - sensor.bathroom_door_status
+    - sensor.daryl_garage_status
+    - sensor.megan_garage_status
 
 cameras:
   name: "Cameras"
@@ -296,11 +334,13 @@ away_mode_off:
 off_at_midnight:
   name: "Turn off at Midnight"
   entities:
-    - switch.bedroom_switch
     - switch.bathroom_switch
-    - switch.porch_switch
-    - light.peq_lamp
+    - switch.bedroom_switch
     - switch.landscaping_outlet_switch
+    - switch.porch_switch
+    - switch.sonoff_cord_01
+    - switch.sonoff_cord_02
+    - light.peq_lamp
 
 zwave_nodes:
   name: "Z-Wave Nodes"
@@ -314,13 +354,15 @@ zwave_nodes:
 homeless_stuff:
   name: "Homeless"
   entities:
+    ### Device Trackers, etc
+    - binary_sensor.anyone_home
     - binary_sensor.megan_home
-    - sensor.megans_battery
-    - binary_sensor.megan_charging
-    - device_tracker.404e36256a50
     - binary_sensor.daryl_home
+    - sensor.megans_battery
     - sensor.daryls_battery
+    - binary_sensor.megan_charging
     - binary_sensor.daryl_charging
+    - device_tracker.404e36256a50
     - device_tracker.chromecastlan
     - device_tracker.darylt540plan
     - device_tracker.googlehomelan
@@ -333,23 +375,9 @@ homeless_stuff:
     - device_tracker.09aa01ac25160s7klan
     - device_tracker.android5486ce199fee9d90lan
     - device_tracker.retropielan
-    - binary_sensor.anyone_home
     - device_tracker.testwifihere
     - device_tracker.htpclan
-    - sensor.bathroom_door
-    - group.away_mode_off
-    - sensor.dark_sky_pressure
-    - sensor.dark_sky_icon
-    - sensor.dark_sky_cloud_coverage
-    - sensor.dark_sky_uv_index
-    - sensor.dark_sky_visibility
-    - sensor.dark_sky_wind_bearing
-    - sensor.dark_sky_precip
-    - sensor.dark_sky_ozone
-    - sensor.dark_sky_daily_high_apparent_temperature
-    - sensor.dark_sky_daily_low_apparent_temperature
-    - sensor.dark_sky_daily_max_precip_intensity
-    - sensor.dark_sky_dew_point
+    ### Nest Sensors
     - binary_sensor.hallway_thermostat_has_leaf
     - binary_sensor.hallway_thermostat_is_locked
     - binary_sensor.hallway_thermostat_is_using_emergency_heat
@@ -359,6 +387,12 @@ homeless_stuff:
     - sensor.hallway_thermostat_target
     - sensor.hallway_thermostat_hvac_state
     - sensor.google_wifi_current_version
+    ### Google WiFi Sensors
     - sensor.google_wifi_last_restart
     - sensor.since_last_boot
+    ### Other Stuff
+    - sensor.bathroom_door
+    - sensor.daryls_garage_door
+    - sensor.megans_garage_door
+    - group.away_mode_off
     - group.zwave_nodes

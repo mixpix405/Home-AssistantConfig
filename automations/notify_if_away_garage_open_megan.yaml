@@ -1,0 +1,24 @@
+##########################################################
+# Notify Megan if she leaves and her garage door is open #
+##########################################################
+
+alias: "Garage Open - Megan"
+trigger:
+  platform: state
+  entity_id: binary_sensor.megan_home
+  from: 'on'
+condition:
+  condition: state
+  entity_id: sensor.megan_garage_status
+  state: open
+action:
+  - service: notify.html5
+    data:
+      message: "{{ as_timestamp(now()) | timestamp_custom('%I:%M', true) }}: You left your garage door open!"
+      title: "Oops!"
+      target: "Megan's XL"
+      data:
+        actions:
+          - action: "close_megans_door"
+            title: "Close it!"
+            icon: mdi:garage
