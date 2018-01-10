@@ -1,0 +1,14 @@
+#############################################################
+# Closes Daryl's garage door when he's been home 10 minutes #
+#############################################################
+
+alias: "Close Daryl's door after 10 minutes home"
+trigger:
+  platform: state
+  entity_id: binary_sensor.daryl_home
+  to: 'on'
+  for:
+    minutes: 10
+action:
+  service: cover.close_cover
+  entity_id: cover.daryls_garage_door

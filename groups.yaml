@@ -18,9 +18,6 @@ lights_and_switches:
     - switch.bathroom_switch
     - switch.landscaping_outlet_switch
     - light.peq_lamp
-    #- switch.garage_daryl_switch
-    - switch.garage_daryl
-    - switch.garage_megan
 
 sonoffs:
   name: "Sonoffs"
@@ -66,13 +63,13 @@ network_tab:
     - group.google_wifi
     - group.speedtest
     - group.system
-    - group.pi_hole
     - group.htpc
     - group.network_devices_mobiles
     - group.network_devices_sonoffs
     - group.network_devices_staples
     - group.network_devices_computers
     - group.network_devices_casts
+    - group.network_devices_others_mobiles
 
 google_wifi:
   name: "Google Wifi"
@@ -102,18 +99,6 @@ system:
     - sensor.cpu_used
     - sensor.ssl_cert
 
-pi_hole:
-  name: "Pi-Hole"
-  entities:
-    - sensor.pihole_ads_blocked_today
-    - sensor.pihole_ads_percentage_blocked_today
-    # - sensor.pihole_dns_queries_cached
-    # - sensor.pihole_dns_queries_forwarded
-    # - sensor.pihole_dns_queries_today
-    - sensor.pihole_dns_unique_clients
-    # - sensor.pihole_dns_unique_domains
-    # - sensor.pihole_domains_blocked
-
 htpc:
   name: "HTPC"
   entities:
@@ -131,9 +116,17 @@ network_devices_mobiles:
   entities:
     - sensor.daryl_xl_nmap
     - sensor.megan_xl_nmap
-    - sensor.sawyer_tablet
+    - sensor.sawyers_tablet
+    - sensor.audreys_tablet
     - sensor.daryl_watch
     - sensor.megan_explorer
+
+network_devices_others_mobiles:
+  name: "Others' Mobiles"
+  entities:
+    - sensor.beckys_phone
+    - sensor.josh_iphone
+    - sensor.josh_apple_watch
 
 network_devices_sonoffs:
   name: "Sonoffs"
@@ -149,6 +142,7 @@ network_devices_staples:
     - sensor.nest
     - sensor.retropie
     - sensor.xbox_one
+    - sensor.wyze_cam
     
 network_devices_computers:
   name: "Computers"
@@ -263,6 +257,7 @@ daryl_tracker:
     - sensor.daryls_battery_dyn
     - sensor.daryl_charging
     - sensor.time_to_home_for_daryl
+    - cover.daryls_garage_door
     - camera.daryl
 
 megan_tracker:
@@ -272,6 +267,7 @@ megan_tracker:
     - sensor.megans_battery_dyn
     - sensor.megan_charging
     - sensor.time_to_home_for_megan
+    - cover.megans_garage_door
     - camera.megan
 
 lights_and_switches_tab:
@@ -281,8 +277,15 @@ lights_and_switches_tab:
   entities:
     - group.lights_and_switches
     - group.sonoffs
+    - group.covers
     - group.smartthings_sensors
     - group.cameras
+
+covers:
+  name: "Covers"
+  entities:
+    - cover.daryls_garage_door
+    - cover.megans_garage_door
 
 zwave_devices:
   name: "Lights & Switches"
@@ -293,6 +296,7 @@ zwave_devices:
     - switch.landscaping_outlet_switch
     - light.peq_lamp
     - switch.garage_daryl_switch
+    - switch.garage_megan_switch
 
 smartthings_sensors:
   name: "Sensors"
@@ -320,6 +324,13 @@ autos_tab:
   entities:
     - group.all_automations
     #- input_boolean.notify_home
+
+all_devices_tab:
+  name: "All Devices"
+  view: yes
+  icon: mdi:cellphone-link
+  entities:
+    - group.all_devices
 
 ############################################################################
 # Grouped, but only for automations, or pure organization - maybe homeless #

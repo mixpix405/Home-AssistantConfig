@@ -1,0 +1,31 @@
+- platform: template
+  covers:
+    daryls_garage_door:
+      friendly_name: "Daryl's Garage Door"
+      value_template: "{{ states('sensor.daryls_garage_door') }}"
+      open_cover:
+        service: script.open_daryls_garage_door
+      close_cover:
+        service: script.close_daryls_garage_door
+      icon_template: >-
+        {% if is_state('sensor.daryls_garage_door', 'open') %}
+          mdi:garage-open
+        {% else %}
+          mdi:garage
+        {% endif %}
+
+- platform: template
+  covers:
+    megans_garage_door:
+      friendly_name: "Megan's Garage Door"
+      value_template: "{{ states('sensor.megans_garage_door') }}"
+      open_cover:
+        service: script.open_megans_garage_door
+      close_cover:
+        service: script.close_megans_garage_door
+      icon_template: >-
+        {% if is_state('sensor.megans_garage_door', 'open') %}
+          mdi:garage-open
+        {% else %}
+          mdi:garage
+        {% endif %}

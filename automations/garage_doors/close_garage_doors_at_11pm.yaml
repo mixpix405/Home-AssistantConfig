@@ -1,0 +1,13 @@
+#####################################
+# Closes both garage doors at 11 pm #
+#####################################
+
+alias: "Close Garage Doors @ 11pm"
+trigger:
+  platform: time
+  at: '23:00:00'
+action:
+  - service: cover.close_cover
+    entity_id: cover.daryls_garage_door
+  - service: cover.close_cover
+    entity_id: cover.megans_garage_door

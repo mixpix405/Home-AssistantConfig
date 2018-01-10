@@ -1,0 +1,14 @@
+##############################################################
+# Closes Megan's garage door when she's been home 10 minutes #
+##############################################################
+
+alias: "Close Megan's door after 10 minutes home"
+trigger:
+  platform: state
+  entity_id: binary_sensor.megan_home
+  to: 'on'
+  for:
+    minutes: 10
+action:
+  service: cover.close_cover
+  entity_id: cover.megans_garage_door

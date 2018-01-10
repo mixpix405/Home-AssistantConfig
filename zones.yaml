@@ -19,7 +19,7 @@
 - name: Walmart
   latitude: !secret latitude_wally
   longitude: !secret longitude_wally
-  radius: 300
+  radius: 125
   icon: mdi:cart
 
 - name: "BB & Pawpaws"

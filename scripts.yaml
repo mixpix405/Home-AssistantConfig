@@ -1,6 +1,29 @@
-  trigger_daryls_garage_door:
-    alias: "Trigger Daryl's Garage Door"
+  # trigger_daryls_garage_door:
+    # alias: "Trigger Daryl's Garage Door"
+    # sequence:
+      # - service: switch.turn_on
+        # entity_id: switch.garage_daryl_switch
+      # - delay:
+          # seconds: 3
+      # - service: switch.turn_off
+        # entity_id: switch.garage_daryl_switch
+
+  # trigger_megans_garage_door:
+    # alias: "Trigger Megan's Garage Door"
+    # sequence:
+      # - service: switch.turn_on
+        # entity_id: switch.garage_megan_switch
+      # - delay:
+          # seconds: 3
+      # - service: switch.turn_off
+        # entity_id: switch.garage_megan_switch
+
+  open_daryls_garage_door:
+    alias: "Open Daryl's Garage Door"
     sequence:
+      - condition: state
+        entity_id: sensor.daryls_garage_door
+        state: 'closed'
       - service: switch.turn_on
         entity_id: switch.garage_daryl_switch
       - delay:
@@ -8,9 +31,38 @@
       - service: switch.turn_off
         entity_id: switch.garage_daryl_switch
 
-  trigger_megans_garage_door:
-    alias: "Trigger Megan's Garage Door"
+  close_daryls_garage_door:
+    alias: "Close Daryl's Garage Door"
     sequence:
+      - condition: state
+        entity_id: sensor.daryls_garage_door
+        state: 'open'
+      - service: switch.turn_on
+        entity_id: switch.garage_daryl_switch
+      - delay:
+          seconds: 3
+      - service: switch.turn_off
+        entity_id: switch.garage_daryl_switch
+
+  open_megans_garage_door:
+    alias: "Open Megan's Garage Door"
+    sequence:
+      - condition: state
+        entity_id: sensor.megans_garage_door
+        state: 'closed'
+      - service: switch.turn_on
+        entity_id: switch.garage_megan_switch
+      - delay:
+          seconds: 3
+      - service: switch.turn_off
+        entity_id: switch.garage_megan_switch
+
+  close_megans_garage_door:
+    alias: "Close Megan's Garage Door"
+    sequence:
+      - condition: state
+        entity_id: sensor.megans_garage_door
+        state: 'open'
       - service: switch.turn_on
         entity_id: switch.garage_megan_switch
       - delay:

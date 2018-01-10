@@ -82,6 +82,7 @@ frontend: !include frontend.yaml
 history_graph: !include history_graphs.yaml
 #android_ip_webcam: !include aip_webcams.yaml
 input_text: !include input_texts.yaml
+cover: !include covers.yaml
 
 zwave:
   usb_path: /dev/ttyACM0
@@ -111,6 +112,8 @@ google_assistant:
   project_id: !secret gass_project_id
   client_id: !secret gass_client_id
   access_token: !secret gass_token
+  agent_user_id: !secret gass_agent_userid
+  api_key: !secret gass_api_key
   exposed_domains:
     - switch
     - light

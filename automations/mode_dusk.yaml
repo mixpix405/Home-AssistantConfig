@@ -9,3 +9,10 @@ action:
   - service: frontend.set_theme
     data:
       name: dusk
+  ### Checks for someone to be home. If so, turn on above-cabinet lighting ###
+  # - condition:
+      # condition: state
+      # entity_id: binary_sensor.anyone_home
+      # state: 'on'
+  # - service: switch.turn_on
+    # entity_id: switch.sonoff_cord_02

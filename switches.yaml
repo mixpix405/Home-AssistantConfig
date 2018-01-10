@@ -25,28 +25,28 @@
   payload_off: "OFF"
   retain: "true"
 
-- platform: template
-  switches:
-    garage_daryl:
-      value_template: '{% if is_state("sensor.daryls_garage_door", "closed") %}off{% else %}on{% endif %}'
-      turn_on:
-        service: script.turn_on
-        entity_id: script.trigger_daryls_garage_door
-      turn_off:
-        service: script.turn_on
-        entity_id: script.trigger_daryls_garage_door
-      entity_id: sensor.daryls_garage_door
-      friendly_name: "Daryl's Garage Door"
+# - platform: template
+  # switches:
+    # garage_daryl:
+      # value_template: '{% if is_state("sensor.daryls_garage_door", "closed") %}off{% else %}on{% endif %}'
+      # turn_on:
+        # service: script.turn_on
+        # entity_id: script.trigger_daryls_garage_door
+      # turn_off:
+        # service: script.turn_on
+        # entity_id: script.trigger_daryls_garage_door
+      # entity_id: sensor.daryls_garage_door
+      # friendly_name: "Daryl's Garage Door"
 
-- platform: template
-  switches:
-    garage_megan:
-      value_template: '{% if is_state("sensor.megans_garage_door", "closed") %}off{% else %}on{% endif %}'
-      turn_on:
-        service: script.turn_on
-        entity_id: script.trigger_megans_garage_door
-      turn_off:
-        service: script.turn_on
-        entity_id: script.trigger_megans_garage_door
-      entity_id: sensor.megans_garage_door
-      friendly_name: "Megan's Garage Door"
+# - platform: template
+  # switches:
+    # garage_megan:
+      # value_template: '{% if is_state("sensor.megans_garage_door", "closed") %}off{% else %}on{% endif %}'
+      # turn_on:
+        # service: script.turn_on
+        # entity_id: script.trigger_megans_garage_door
+      # turn_off:
+        # service: script.turn_on
+        # entity_id: script.trigger_megans_garage_door
+      # entity_id: sensor.megans_garage_door
+      # friendly_name: "Megan's Garage Door"

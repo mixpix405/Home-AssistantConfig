@@ -1,0 +1,12 @@
+###########################################
+# Opens Megan's garage when she gets home #
+###########################################
+
+alias: "Open Megan's door when she arrives"
+trigger:
+  platform: state
+  entity_id: binary_sensor.megan_home
+  to: 'on'
+action:
+  service: cover.open_cover
+  entity_id: cover.megans_garage_door

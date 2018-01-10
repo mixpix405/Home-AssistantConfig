@@ -9,5 +9,5 @@ trigger:
   event_data:
     action: close_daryls_door
 action:
-  service: switch.toggle
-  entity_id: switch.garage_daryl
+  service: cover.close_cover
+  entity_id: cover.daryls_garage_door

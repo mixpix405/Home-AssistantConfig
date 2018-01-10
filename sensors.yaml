@@ -190,6 +190,9 @@
     sonoff_02:
       friendly_name: "Sonoff 02"
       value_template: "{% if is_state('device_tracker.sonoff_02', 'home') %}Online{% else %}Offline{% endif %}"
+    wyze_cam:
+      friendly_name: "Wyze Cam"
+      value_template: "{% if is_state('device_tracker.wyze_cam', 'home') %}Online{% else %}Offline{% endif %}"
     ### Cast Devices ###
     ghome_kitchen:
       friendly_name: "GHome Kitchen"
@@ -207,9 +210,12 @@
       friendly_name: "Dat Dongle"
       value_template: "{% if is_state('device_tracker.chromecastlan', 'home') %}Online{% else %}Offline{% endif %}"
     ### Mobiles ###
-    sawyer_tablet:
+    sawyers_tablet:
       friendly_name: "Sawyer's Tablet"
-      value_template: "{% if is_state('device_tracker.androidea8e397ef27b1c0elan', 'home') %}Online{% else %}Offline{% endif %}"
+      value_template: "{% if is_state('device_tracker.sawyers_tablet', 'home') %}Online{% else %}Offline{% endif %}"
+    audreys_tablet:
+      friendly_name: "Audrey's Tablet"
+      value_template: "{% if is_state('device_tracker.audreys_tablet', 'home') %}Online{% else %}Offline{% endif %}"
     daryl_xl_nmap:
       friendly_name: "Daryl's XL"
       value_template: "{% if is_state('device_tracker.daryl_2xl', 'home') %}Online{% else %}Offline{% endif %}"
@@ -237,6 +243,16 @@
       unit_of_measurement: "%"
       value_template: "{{states.sensor.megans_battery.state}}"
       icon_template: "{%- if states.sensor.megans_battery.state >= '95' %}mdi:battery{%- elif states.sensor.megans_battery.state == '100' %}mdi:battery{%- elif states.sensor.megans_battery.state == '' %}mdi:battery-unknown{%- elif states.sensor.megans_battery.state <= '15' %}mdi:battery-outline{% else %}mdi:battery-{{(states.sensor.megans_battery.state|float / 10)|round*10}}{%- endif %}"
+    ### Other people's mobiles ###
+    beckys_phone:
+      friendly_name: "Mom's Phone"
+      value_template: "{% if is_state('device_tracker.moms_phone', 'home') %}Online{% else %}Offline{% endif %}"
+    josh_iphone:
+      friendly_name: "Josh's iPhone X"
+      value_template: "{% if is_state('device_tracker.josh_iphone_x', 'home') %}Online{% else %}Offline{% endif %}"
+    josh_apple_watch:
+      friendly_name: "Josh's Apple Watch"
+      value_template: "{% if is_state('device_tracker.josh_apple_watch', 'home') %}Online{% else %}Offline{% endif %}"
     ### Other Sensors ###
     xbox_one:
       friendly_name: "XBOne"

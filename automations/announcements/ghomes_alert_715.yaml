@@ -1,8 +1,8 @@
-alias: "Tell the family it's 7:10"
+alias: "Tell the family it's 7:15"
 trigger:
   platform: time
   # Military time format.
-  at: '07:10:00'
+  at: '07:15:00'
 condition:
   condition: and
   conditions:
@@ -28,4 +28,4 @@ action:
   - service: tts.google_say
     entity_id: media_player.smart_speakers
     data:
-      message: "It is 7:10, and time to leave. Have a good day!"
+      message: "It is 7:15! Get out of the house! Go go go go!"

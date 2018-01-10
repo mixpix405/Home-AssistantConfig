@@ -1,8 +1,8 @@
-alias: "Tell the family it's 7:09"
+alias: "Tell the family it's 7:10"
 trigger:
   platform: time
   # Military time format.
-  at: '07:09:00'
+  at: '07:10:00'
 condition:
   condition: and
   conditions:
@@ -27,4 +27,4 @@ action:
     entity_id: media_player.smart_speakers
     data_template:
       message: >
-        '{{ ["Hey! It is seven oh nine! Better get a move on!", "Toot toot! 9 minutes after 7! Get going."] | random }}'
+        '{{ ["Hey! It is seven ten! Better get a move on!", "Toot toot! 10 minutes after 7! Get going."] | random }}'

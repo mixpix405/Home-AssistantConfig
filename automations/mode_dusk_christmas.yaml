@@ -3,6 +3,9 @@ trigger:
   platform: sun
   event: sunset
   offset: '-00:10:00'
+condition:
+  condition: template
+  value_template: '{% if now().month in [12] %}True{% else %}False{% endif %}'
 action:
   - service: switch.turn_off
     entity_id: switch.porch_switch

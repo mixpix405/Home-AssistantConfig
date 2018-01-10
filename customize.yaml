@@ -142,7 +142,9 @@ sensor.xbox_one:
   icon: mdi:xbox
 sensor.st_hub:
   icon: mdi:white-balance-iridescent
-sensor.sawyer_tablet:
+sensor.sawyers_tablet:
+  icon: mdi:tablet-android
+sensor.audreys_tablet:
   icon: mdi:tablet-android
 sensor.cast_bedroom:
   icon: mdi:cast
@@ -172,9 +174,9 @@ sensor.chromebook_lenovo:
 # Better icons for automations
 automation.tell_the_family_its_705:
   icon: mdi:numeric-1-box-outline
-automation.tell_the_family_its_709:
-  icon: mdi:numeric-2-box-outline
 automation.tell_the_family_its_710:
+  icon: mdi:numeric-2-box-outline
+automation.tell_the_family_its_715:
   icon: mdi:numeric-3-box-outline
 automation.pushbullet_test:
   icon: mdi:message
@@ -182,6 +184,18 @@ automation.midnight:
   icon: mdi:sleep
 automation.home_mode:
   icon: mdi:home-map-marker
+automation.bedroom_lights_with_motion:
+  icon: mdi:walk
+automation.close_daryls_door__11pm:
+  icon: mdi:garage
+automation.close_megans_door__11pm:
+  icon: mdi:garage
+automation.early_morning_mode:
+  icon: mdi:weather-sunset-up
+automation.garage_open__daryl:
+  icon: mdi:garage-open
+automation.garage_open__megan:
+  icon: mdi:garage-open
 automation.bedroom_no_motion:
   icon: mdi:walk
 automation.bathroom_lights_auto:
@@ -252,3 +266,6 @@ sensor.log_db_file_size:
 group.all_automations:
   hidden: false
   friendly_name: "All Automations"
+group.all_devices:
+  hidden: false
+  friendly_name: "All Devices"

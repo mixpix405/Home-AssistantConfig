@@ -1,0 +1,12 @@
+###############################################
+# Opens Daryl's garage door when he gets home #
+###############################################
+
+alias: "Open Daryl's door when he arrives"
+trigger:
+  platform: state
+  entity_id: binary_sensor.daryl_home
+  to: 'on'
+action:
+  service: cover.open_cover
+  entity_id: cover.daryls_garage_door

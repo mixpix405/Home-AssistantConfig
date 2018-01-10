@@ -9,5 +9,5 @@ trigger:
   event_data:
     action: close_megans_door
 action:
-  service: switch.toggle
-  entity_id: switch.garage_megan
+  service: cover.close_cover
+  entity_id: cover.megans_garage_door
