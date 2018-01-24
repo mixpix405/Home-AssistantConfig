@@ -2,9 +2,9 @@
     sensors:
       anyone_home:
         friendly_name: "Anyone Home?"
-        entity_id:
-          - binary_sensor.daryl_home
-          - binary_sensor.megan_home
+        # entity_id:
+          # - binary_sensor.daryl_home
+          # - binary_sensor.megan_home
         value_template: >-
           {{ is_state('binary_sensor.daryl_home', 'on')
              or is_state('binary_sensor.megan_home', 'on') }}
@@ -14,9 +14,9 @@
       daryl_home:
         friendly_name: "Daryl Home?"
         #entity_picture: /local/images/people/avi_daryl.png
-        entity_id:
-          - device_tracker.mixpix405_2xl
-          - device_tracker.daryl_2xl
+        # entity_id:
+          # - device_tracker.mixpix405_2xl
+          # - device_tracker.daryl_2xl
         value_template: >-
           {{ is_state('device_tracker.mixpix405_2xl', 'home')
              or is_state('device_tracker.daryl_2xl', 'home') }}
@@ -26,9 +26,9 @@
       megan_home:
         friendly_name: "Megan Home?"
         #entity_picture: /local/images/people/avi_megan.png
-        entity_id:
-          - device_tracker.mixpix405_megans_xl
-          - device_tracker.404e36256a50
+        # entity_id:
+          # - device_tracker.mixpix405_megans_xl
+          # - device_tracker.404e36256a50
         value_template: >-
           {{ is_state('device_tracker.mixpix405_megans_xl', 'home')
              or is_state('device_tracker.404e36256a50', 'home') }}

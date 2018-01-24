@@ -1,0 +1,27 @@
+#######################################################
+# Hides Packages card if no package data is available #
+#######################################################
+alias: "Hide packages when there's no data."
+trigger:
+  - platform: state
+    entity_id: sensor.ups_my_choice
+    to: '0'
+  - platform: state
+    entity_id: sensor.fedex_manager
+    to: '0'
+  - platform: homeassistant
+    event: start
+condition:
+  condition: and
+  conditions:
+    - condition: state
+      entity_id: sensor.ups_my_choice
+      state: '0'
+    - condition: state
+      entity_id: sensor.fedex_manager
+      state: '0'
+action:
+  - service: group.set_visibility
+    entity_id: group.packages
+    data:
+      visible: false

@@ -16,7 +16,7 @@ action:
     data:
       message: "{{ as_timestamp(now()) | timestamp_custom('%I:%M', true) }}: You left your garage door open!"
       title: "Oops!"
-      target: "Daryl's XL"
+      target: "Daryl's 2XL"
       data:
         actions:
           - action: "close_daryls_door"

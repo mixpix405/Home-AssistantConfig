@@ -13,4 +13,4 @@ action:
   data: 
     message: "{{ as_timestamp(now()) | timestamp_custom('%I:%M%p', true) }} - Your SSL Certificate will expire in {{ states.sensor.ssl_certificate_expiry.state }} days!"
     title: "SSL Cert Expiry"
-    target: "Daryl's XL"
+    target: "Daryl's 2XL"

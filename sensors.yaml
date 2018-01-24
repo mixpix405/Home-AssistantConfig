@@ -123,10 +123,10 @@
   port: !secret duck_port
   name: "SSL Cert"
 
-- platform: xbox_live
-  api_key: !secret xboxapi_key
-  xuid:
-    - !secret xbox_uid
+# - platform: xbox_live
+  # api_key: !secret xboxapi_key
+  # xuid:
+    # - !secret xbox_uid
 
 # - platform: lastfm
   # api_key: 2f812625c3ae0506f71e999d2908f572
@@ -156,6 +156,13 @@
 - platform: command_line
   name: ipinfo_city
   command: "curl http://10.0.0.2/city.txt"
+
+###################
+# HTPC Monitoring #
+###################
+# - platform: mqtt
+  # state_topic: "HTPC/freememory"
+  # name: "HTPC freememory"
 
 #############
 # Templates #

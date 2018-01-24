@@ -1,0 +1,16 @@
+#################################################
+# Shows Packages card only if data is available #
+#################################################
+alias: "Show packages when there's data."
+trigger:
+  - platform: state
+    entity_id: sensor.ups_my_choice
+    from: '0'
+  - platform: state
+    entity_id: sensor.fedex_manager
+    from: '0'
+action:
+  - service: group.set_visibility
+    entity_id: group.packages
+    data:
+      visible: true

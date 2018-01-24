@@ -1,23 +1,3 @@
-  # trigger_daryls_garage_door:
-    # alias: "Trigger Daryl's Garage Door"
-    # sequence:
-      # - service: switch.turn_on
-        # entity_id: switch.garage_daryl_switch
-      # - delay:
-          # seconds: 3
-      # - service: switch.turn_off
-        # entity_id: switch.garage_daryl_switch
-
-  # trigger_megans_garage_door:
-    # alias: "Trigger Megan's Garage Door"
-    # sequence:
-      # - service: switch.turn_on
-        # entity_id: switch.garage_megan_switch
-      # - delay:
-          # seconds: 3
-      # - service: switch.turn_off
-        # entity_id: switch.garage_megan_switch
-
   open_daryls_garage_door:
     alias: "Open Daryl's Garage Door"
     sequence:
@@ -30,6 +10,17 @@
           seconds: 3
       - service: switch.turn_off
         entity_id: switch.garage_daryl_switch
+      - service: notify.html5
+        data:
+          message: "Your garage door was opened at {{ as_timestamp(now()) | timestamp_custom('%I:%M%p', true) }}."
+          title: "Alert:"
+          target: "Daryl's 2XL"
+          data:
+            tag: 'garage-opened'
+            actions:
+              - action: "close_daryls_door"
+                title: "Close it!"
+                icon: mdi:garage
 
   close_daryls_garage_door:
     alias: "Close Daryl's Garage Door"

@@ -8,4 +8,4 @@ action:
   data:
     message: "Safe and sound at {{ as_timestamp(now()) | timestamp_custom('%I:%M%p', true) }}"
     title: "Megan arrived home"
-    target: "Daryl's XL"
+    target: "Daryl's 2XL"

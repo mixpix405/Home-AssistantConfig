@@ -110,6 +110,8 @@ htpc:
     - sensor.transmission_down_speed
     - sensor.transmission_up_speed
     - switch.transmission_turtle
+    # - camera.htpc
+    # - sensor.htpc_freememory
 
 network_devices_mobiles:
   name: "Network Devices"
@@ -341,6 +343,8 @@ away_mode_off:
     - switch.bedroom_switch
     - switch.bathroom_switch
     - light.peq_lamp
+    - switch.sonoff_cord_01
+    - switch.sonoff_cord_02
 
 off_at_midnight:
   name: "Turn off at Midnight"

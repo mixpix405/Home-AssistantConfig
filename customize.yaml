@@ -103,7 +103,7 @@ switch.landscaping_outlet_switch:
 
 # Better icons for Sonoff switches
 switch.sonoff_cord_01:
-  friendly_name: "Trees by Front Door"
+  friendly_name: "Megan's Bedside Lamp"
   icon: mdi:power-socket-us
 switch.sonoff_cord_02:
   friendly_name: "Above Cabinet Lighting"

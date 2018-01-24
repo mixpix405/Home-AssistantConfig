@@ -7,9 +7,9 @@ trigger:
 action:
   service: notify.html5
   data_template:
-    message: >
-      {{ states.input_text.reminder.state }}
-    target: ["Daryl's XL", "Daryl's Laptop"]
+    message: test message
+    title: test title
+    target: ["Daryl's 2XL", "Daryl's Laptop"]
     #data:
       #actions:
       #  - action: "button_on"

@@ -7,62 +7,6 @@ homeassistant:
   time_zone: America/Chicago
   customize: !include customize.yaml
 
-# Adds Configurator panel
-panel_iframe:
-  configurator:
-    title: Configurator
-    icon: mdi:wrench
-    url: !secret configurator_url
-  ide:
-    title: IDE
-    icon: mdi:code-braces
-    url: !secret ide_url
-  terminal:
-    title: Terminal
-    icon: mdi:console
-    url: !secret terminal_url
-
-# Enables configuration UI
-config:
-
-http:
-  api_password: !secret api_password
-  trusted_networks:
-    - 127.0.0.1
-    - 10.0.0.0/24
-  base_url: !secret base_url_secret
-  ssl_certificate: /ssl/fullchain.pem
-  ssl_key: /ssl/privkey.pem
-
-# Checks for available updates
-updater:
-
-# Discover some devices automatically
-discovery:
-
-# Allows you to issue voice commands from the frontend in enabled browsers
-#conversation:
-
-# Enables support for tracking state changes over time
-history:
-
-# Somehow deals with the database, in addition to the history: junk. It's confusing, but it is what it is. This is set to purge every day, and keep 7 days of data when it does so.
-recorder:
-  purge_interval: 1
-  purge_keep_days: 7
-
-# View all events in a logbook
-logbook:
-
-# Enables a map showing the location of tracked devices
-map:
-
-# Track the sun
-sun:
-
-# Text to speech
-tts:
-  - platform: google
 
 # Includes for better organization
 group: !include groups.yaml
@@ -80,29 +24,61 @@ input_boolean: !include booleans.yaml
 notify: !include notifiers.yaml
 frontend: !include frontend.yaml
 history_graph: !include history_graphs.yaml
-#android_ip_webcam: !include aip_webcams.yaml
 input_text: !include input_texts.yaml
 cover: !include covers.yaml
 
-zwave:
+updater: # Checks for available updates
+discovery: # Discover some devices automatically
+history: # Enables support for tracking state changes over time
+config: # Enables configuration UI
+logbook: # View all events in a logbook
+map: # Enables a map showing the location of tracked devices
+sun: # for sunset/sunrise automations, etc
+
+panel_iframe: # Adds links in sidebar to include helpful resources
+  configurator: # For Configurator add-on | web-based config editing
+    title: Configurator
+    icon: mdi:wrench
+    url: !secret configurator_url
+  ide: # For IDE add-on | more robust web-based config editing
+    title: IDE
+    icon: mdi:code-braces
+    url: !secret ide_url
+  terminal: # For Terminal add-on | web-based hass.io terminal
+    title: Terminal
+    icon: mdi:console
+    url: !secret terminal_url
+
+
+http: # Enables and configures the web interface
+  api_password: !secret api_password
+  trusted_networks:
+    - 127.0.0.1
+    - 10.0.0.0/24
+  base_url: !secret base_url_secret
+  ssl_certificate: /ssl/fullchain.pem
+  ssl_key: /ssl/privkey.pem
+
+recorder: # Database management
+  purge_interval: 1
+  purge_keep_days: 7
+
+tts: # Text to speech engine selection
+  - platform: google
+
+zwave: # Enables z-wave and tells Hass what USB to use
   usb_path: /dev/ttyACM0
 
 mqtt:
-  broker: localhost
+  broker: core-mosquitto
   username: !secret mqtt_user
   password: !secret mqtt_pass
-  discovery: true
-  discovery_prefix: homeassistant
+  # discovery: true
+  # discovery_prefix: homeassistant
 
 nest:
   client_id: !secret nest_id
   client_secret: !secret nest_secret
-
-# media_player:
-  # - platform: plex
-    # include_non_clients: true
-    # scan_interval: 5
-    # use_episode_art: true
 
 google: # For Google Calendar integration
   client_id: !secret google_client_id
@@ -118,12 +94,19 @@ google_assistant:
     - switch
     - light
     - cover
-    - scene
-    - script
-
-# Currently broken, check:
-# https://github.com/home-assistant/home-assistant/issues/9143#issuecomment-343496444 and
-# https://github.com/happyleavesaoc/python-myusps/issues/9
-# usps:
-  # username: !secret usps_user
-  # password: !secret usps_pass
+  entity_config:
+    switch.garage_daryl_switch:
+      expose: false
+    switch.garage_megan_switch:
+      expose: false
+    switch.bathroom_switch:
+      aliases:
+        - "Bathroom Lights"
+    light.peq_lamp:
+      aliases:
+        - "Daryl's Bedside Lamp"
+    switch.porch_switch:
+      aliases:
+        - "Porch Light"
+    switch.sonoff_cord_01:
+      type: light
