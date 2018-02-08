@@ -116,7 +116,7 @@ sensor.sonoff_02:
 # Better icons for SmartThings stuff
 light.peq_lamp:
   icon: mdi:lamp
-sensor.bedroom_motion:
+sensor.kitchen_motion:
   icon: mdi:walk
 sensor.bathroom_door:
   icon: mdi:door

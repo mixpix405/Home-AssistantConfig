@@ -1,0 +1,24 @@
+################################################################
+# Sets turns some lights on, etc, if we arrive home after dusk #
+################################################################
+
+alias: "Home After Dusk"
+trigger:
+  platform: state
+  entity_id: binary_sensor.anyone_home
+  to: 'on'
+condition:
+  condition: or
+  conditions:
+    - condition: sun
+      after: sunset 
+      after_offset: "-0:30:00"
+    - condition: sun 
+      before: sunrise 
+action:
+  - service: switch.turn_on
+    entity_id: switch.sonoff_cord_02
+  - service: light.turn_on
+    entity_id: light.under_cabinet_lighting
+    data:
+      brightness_pct: 100

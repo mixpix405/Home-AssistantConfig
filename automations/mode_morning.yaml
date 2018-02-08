@@ -1,14 +1,20 @@
+#########################################################################################
+# Turns off sleepy time mode, porch light, and under-cabinet lighting 1hr after sunrise #
+#########################################################################################
+
 alias: "Morning Mode"
 trigger:
   platform: sun
   event: sunrise
-  offset: '+00:15:00'
+  offset: '+01:00:00'
 action:
   - service: frontend.set_theme
     data:
       name: default
   - service: switch.turn_off
     entity_id: switch.porch_switch
+  - service: light.turn_off
+    entity_id: light.under_cabinet_lighting
   - service: input_boolean.turn_off
     data:
       entity_id: input_boolean.sleepy_time_mode

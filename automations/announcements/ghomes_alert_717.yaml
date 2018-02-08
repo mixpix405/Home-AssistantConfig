@@ -1,8 +1,8 @@
-alias: "Tell the family it's 7:15"
+alias: "Tell the family it's 7:17"
 trigger:
   platform: time
   # Military time format.
-  at: '07:15:00'
+  at: '07:17:00'
 condition:
   condition: and
   conditions:
@@ -21,7 +21,7 @@ action:
     data:
       entity_id: media_player.smart_speakers
       #media_content_id: "https://hassio.s3.amazonaws.com/audio/nuclear-warning-5s.mp3"
-      media_content_id: '{{ ["https://hassio.s3.amazonaws.com/audio/foghorn-5s.mp3", "https://hassio.s3.amazonaws.com/audio/nuclear-warning-5s.mp3", "https://hassio.s3.amazonaws.com/audio/belch-5s.mp3"] | random }}'
+      media_content_id: '{{ ["https://hassio.s3.amazonaws.com/audio/sad-trombone-5s.mp3", "https://hassio.s3.amazonaws.com/audio/belch-5s.mp3", "https://hassio.s3.amazonaws.com/audio/1-person-yay-3s.mp3"] | random }}'
       media_content_type: MUSIC
   - delay: 0:00:5   
   - service: tts.google_say
@@ -29,7 +29,7 @@ action:
     data_template:
       message: >
         '{{ [
-        "It's 7:15! Get out of the house! Go go go go!",
-        "Woah! You're gonna be late! Leave! Now!",
-        "I mean, seriously, if you don't leave like right now, you'll be late."
+        "Looks like you're gonna be late. Might as well crack open a cold one and enjoy the lateness at this point.",
+        "Welp, now you've done it. You're late. Good going.",
+        "If you haven't listened to me before, you won't listen to me now, but... You're late, yo."
         ] | random }}'

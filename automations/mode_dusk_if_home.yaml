@@ -1,0 +1,20 @@
+#########################################################################
+# Turns on under- and above-cabinet lighting if we are home around dusk #
+#########################################################################
+
+alias: "Dusk Mode if Home"
+trigger:
+  platform: sun
+  event: sunset
+  offset: '-00:30:00'
+condition:
+  condition: state
+  entity_id: binary_sensor.anyone_home
+  state: 'on'
+action:
+  - service: switch.turn_on
+    entity_id: switch.sonoff_cord_02
+  - service: light.turn_on
+    entity_id: light.under_cabinet_lighting
+    data:
+      brightness_pct: 100

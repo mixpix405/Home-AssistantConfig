@@ -82,7 +82,7 @@
 
 - platform: mqtt
   state_topic: "smartthings/PEQ Motion Sensor/temperature/state"
-  name: "Bedroom Temp"
+  name: "Kitchen Temp"
   unit_of_measurement: "°F"
 
 - platform: mqtt
@@ -91,7 +91,7 @@
   unit_of_measurement: "°F"
 
 - platform: mqtt
-  name: "Bedroom Motion"
+  name: "Kitchen Motion"
   state_topic: "smartthings/PEQ Motion Sensor/motion/state"
   payload_on: "active"
   payload_off: "inactive"

@@ -1,0 +1,16 @@
+########################################################
+# Turns on under-cabinet lighting when motion detected #
+########################################################
+
+alias: "Under-Cabinet Lights with Motion"
+trigger:
+  platform: state
+  entity_id: sensor.kitchen_motion
+  to: 'active'
+# condition:
+  # condition: state
+  # entity_id: input_boolean.sleepy_time_mode
+  # state: 'off'
+action:
+  service: light.turn_on
+  entity_id: light.under_cabinet_lighting

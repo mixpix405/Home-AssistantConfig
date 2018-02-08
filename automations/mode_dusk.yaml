@@ -1,3 +1,7 @@
+############################################################
+# Turns on the porch light and sets frontend theme at dusk #
+############################################################
+
 alias: "Dusk Mode"
 trigger:
   platform: sun
@@ -6,8 +10,8 @@ trigger:
 action:
   - service: switch.turn_on
     entity_id: switch.porch_switch
-  - service: switch.turn_on
-    entity_id: switch.sonoff_cord_02
+  # - service: switch.turn_on
+    # entity_id: switch.sonoff_cord_02
   - service: frontend.set_theme
     data:
       name: dusk

@@ -20,11 +20,14 @@ action:
   - service: media_player.play_media
     data:
       entity_id: media_player.smart_speakers
-      media_content_id: "http://k003.kiwi6.com/hotlink/we2yvs4g3s/train-whistle-5s.mp3"
+      media_content_id: "https://hassio.s3.amazonaws.com/audio/train-whistle-5s.mp3"
       media_content_type: MUSIC
   - delay: 0:00:05
   - service: tts.google_say
     entity_id: media_player.smart_speakers
     data_template:
       message: >
-        '{{ ["Hey! It is seven ten! Better get a move on!", "Toot toot! 10 minutes after 7! Get going."] | random }}'
+        '{{ [
+        "Hey! It's 7:10! Better get a move on!",
+        "Toot toot! 10 minutes after 7! Get going."
+        ] | random }}'

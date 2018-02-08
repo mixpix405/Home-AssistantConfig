@@ -18,6 +18,7 @@ lights_and_switches:
     - switch.bathroom_switch
     - switch.landscaping_outlet_switch
     - light.peq_lamp
+    - light.under_cabinet_lighting
 
 sonoffs:
   name: "Sonoffs"
@@ -179,7 +180,7 @@ climate:
     - climate.hallway
     - binary_sensor.hallway_thermostat_fan
     - sensor.hallway_thermostat_humidity
-    - sensor.bedroom_temp
+    - sensor.kitchen_temp
     - sensor.bathroom_temp
 
 weather_now:
@@ -303,9 +304,9 @@ zwave_devices:
 smartthings_sensors:
   name: "Sensors"
   entities:
-    - sensor.bedroom_temp
+    - sensor.kitchen_temp
     - sensor.bathroom_temp
-    - sensor.bedroom_motion
+    - sensor.kitchen_motion
     - sensor.bathroom_door_status
     - sensor.daryl_garage_status
     - sensor.megan_garage_status
@@ -345,6 +346,7 @@ away_mode_off:
     - light.peq_lamp
     - switch.sonoff_cord_01
     - switch.sonoff_cord_02
+    - light.under_cabinet_lighting
 
 off_at_midnight:
   name: "Turn off at Midnight"
@@ -356,6 +358,7 @@ off_at_midnight:
     - switch.sonoff_cord_01
     - switch.sonoff_cord_02
     - light.peq_lamp
+    - light.under_cabinet_lighting
 
 zwave_nodes:
   name: "Z-Wave Nodes"

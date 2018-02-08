@@ -8,3 +8,11 @@
   payload_on: "on"
   payload_off: "off"
   retain: true
+
+- platform: flux_led
+  #automatic_add: True
+  devices:
+    10.0.0.112:
+      name: "Under Cabinet Lighting"
+      mode: "rgbw"
+      #protocol: 'ledenet'

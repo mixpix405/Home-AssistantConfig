@@ -12,8 +12,3 @@ action:
     data:
       entity_id: climate.hallway
       away_mode: 'off'
-  # - condition:
-      # condition: sun
-      # after: sunset
-  # - service: switch.turn_on
-    # entity_id: switch.sonoff_cord_02
