@@ -5,12 +5,8 @@
     light.peq_lamp:
       state: on
       brightness_pct: 50
-    input_boolean.sleepy_time_mode:
-      state: 'on'
 
 - name: "Daryl Bedtime"
   entities:
     switch.bedroom_switch:
       state: off
-    input_boolean.sleepy_time_mode:
-      state: 'on'

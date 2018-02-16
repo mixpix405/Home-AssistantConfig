@@ -1,0 +1,14 @@
+############################################################
+# Turns off under-cabinet lighting when no motion detected #
+############################################################
+
+alias: "Under-Cabinet Lights no Motion"
+trigger:
+  platform: state
+  entity_id: sensor.kitchen_motion
+  to: 'inactive'
+  for:
+    minutes: 5
+action:
+  service: light.turn_off
+  entity_id: light.under_cabinet_lighting

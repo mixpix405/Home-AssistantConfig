@@ -1,0 +1,14 @@
+##################################################
+# Sends notification to Daryl when Hassio starts #
+##################################################
+alias: 'Notify Daryl at startup'
+initial_state: 'on'
+trigger:
+  platform: homeassistant
+  event: start
+action:
+  service: notify.html5
+  data:
+    message: "It came up at {{ as_timestamp(now()) | timestamp_custom('%I:%M%p', true) }}. Hooray!"
+    title: "Hassio has started!"
+    target: "Daryl's 2XL"

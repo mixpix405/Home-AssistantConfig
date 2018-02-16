@@ -1,0 +1,14 @@
+#########################################################
+# Alerts Daryl that HQ is about to start, evening game  #
+#########################################################
+
+alias: "Notify Daryl when HQ is about to start (8pm)"
+trigger:
+  platform: time
+  at: '20:00:00'
+action:
+  service: notify.html5
+  data:
+    message: "Go play! But you probably won't win."
+    title: "It's HQ time!"
+    target: "Daryl's 2XL"

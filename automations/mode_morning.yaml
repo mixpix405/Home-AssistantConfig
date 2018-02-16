@@ -15,6 +15,3 @@ action:
     entity_id: switch.porch_switch
   - service: light.turn_off
     entity_id: light.under_cabinet_lighting
-  - service: input_boolean.turn_off
-    data:
-      entity_id: input_boolean.sleepy_time_mode

@@ -1,5 +1,0 @@
-sleepy_time_mode:
-  name: "Sleepy Time Mode"
-  initial: off
-  icon: mdi:sleep
-  
