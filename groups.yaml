@@ -33,7 +33,6 @@ get_going_tab:
   entities:
     - group.packages
     - group.calendars
-    - input_text.reminder
 
 packages:
   name: "Packages"
@@ -211,14 +210,31 @@ media_tab:
     - group.chromecasts
     - group.chromecast_audios
     - group.google_homes
-    - group.streaming
     - group.xbox
+    - group.streaming
+    - group.den_media
+
+den_media:
+  name: "Den Media"
+  control: hidden
+  entities:
+    - switch.vizio_playpause
+    - switch.vizio_power_toggle_broken
+    - switch.vizio_power
+    - switch.vizio_input
+    - switch.avr_power
+    - switch.avr_power_toggle
+    - switch.avr_input_tv
+    - switch.avr_input_xbox
+    - switch.xbox_power
 
 chromecasts:
   name: "Chromecasts"
   entities:
     - media_player.bedroom_tv
     - media_player.den_tv
+    - media_player.sawyers_tv
+    - media_player.basement_tv
 
 chromecast_audios:
   name: "Chromecast Audio"
@@ -231,12 +247,14 @@ google_homes:
     - media_player.kitchen_home
     - media_player.master_bedroom_speaker
     - media_player.master_bathroom_speaker
+    - media_player.basement_speaker
     - media_player.smart_speakers
 
 streaming:
   name: "Streaming Media"
   entities:
     - sensor.plex
+    - media_player.vizio_smartcast
     #- sensor.lastfm_mixpix405
 
 xbox:
@@ -326,7 +344,6 @@ autos_tab:
   icon: mdi:home-automation
   entities:
     - group.all_automations
-    #- input_boolean.notify_home
 
 all_devices_tab:
   name: "All Devices"
@@ -396,9 +413,6 @@ homeless_stuff:
     - device_tracker.testwifihere
     - device_tracker.htpclan
     ### Nest Sensors
-    - binary_sensor.hallway_thermostat_has_leaf
-    - binary_sensor.hallway_thermostat_is_locked
-    - binary_sensor.hallway_thermostat_is_using_emergency_heat
     - binary_sensor.hallway_thermostat_online
     - sensor.hallway_thermostat_operation_mode
     - sensor.hallway_thermostat_temperature

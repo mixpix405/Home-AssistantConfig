@@ -6,6 +6,7 @@ alias: "Open Daryl's door when he arrives"
 trigger:
   platform: state
   entity_id: binary_sensor.daryl_home
+  from: 'off'
   to: 'on'
 action:
   service: cover.open_cover

@@ -1,0 +1,8 @@
+- platform: vizio
+  host: 10.0.0.5
+  access_token: !secret vizio_auth_token
+
+- platform: plex
+  entity_namespace: 'plex'
+  use_custom_entity_ids: true
+  use_episode_art: true

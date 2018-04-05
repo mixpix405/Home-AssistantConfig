@@ -67,13 +67,6 @@ sensor.hallway_thermostat_temperature:
 binary_sensor.hallway_thermostat_fan:
   friendly_name: "Fan"
   icon: mdi:fan
-binary_sensor.hallway_thermostat_has_leaf:
-  friendly_name: "Leaf Status"
-binary_sensor.hallway_thermostat_is_locked:
-  friendly_name: "Locked"
-  icon: mdi:lock
-binary_sensor.hallway_thermostat_is_using_emergency_heat:
-  friendly_name: "Emergency Heat"
 binary_sensor.hallway_thermostat_online:
   friendly_name: "Online"
 

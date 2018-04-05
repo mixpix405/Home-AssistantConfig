@@ -1,0 +1,13 @@
+######################################################
+# Switches AVR to Xbox when Den TV is on Xbox Input  #
+######################################################
+
+alias: "Auto AVR to TV Xbox"
+trigger:
+  platform: state
+  entity_id: sensor.den_tv_source
+  from: "CAST"
+  to: "HDMI-1"
+action:
+  service: switch.toggle
+  entity_id: switch.avr_input_xbox

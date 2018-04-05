@@ -1,3 +1,11 @@
+# - platform: coinmarketcap
+  # currency: electroneum
+  # dusplay_currency: USD
+
+# - platform: coinmarketcap
+  # currency: bitcoin
+  # display_currency: USD
+
 - platform: darksky
   api_key: !secret darksky_key
   monitored_conditions:
@@ -282,3 +290,6 @@
     htpc_pia:
       friendly_name: "PIA"
       value_template: "{% if is_state('sensor.ipinfo_city', 'Gadsden') %}Disconnected{% else %}Protected{% endif %}"
+    den_tv_source:
+      friendly_name: "Den TV Source"
+      value_template: '{{ states.media_player.vizio_smartcast.attributes.source }}'

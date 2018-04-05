@@ -1,5 +1,0 @@
-- host: 10.0.0.51
-  name: "HTC Cam"
-  port: 8080
-  switches:
-    - torch

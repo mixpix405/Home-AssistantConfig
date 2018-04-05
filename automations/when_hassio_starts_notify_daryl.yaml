@@ -7,8 +7,10 @@ trigger:
   platform: homeassistant
   event: start
 action:
-  service: notify.html5
-  data:
-    message: "It came up at {{ as_timestamp(now()) | timestamp_custom('%I:%M%p', true) }}. Hooray!"
-    title: "Hassio has started!"
-    target: "Daryl's 2XL"
+  - delay:
+      minutes: 1
+  - service: notify.html5
+    data:
+      message: "It came up at {{ as_timestamp(now()) | timestamp_custom('%I:%M%p', true) }}. Hooray!"
+      title: "Hassio has started!"
+      target: "Daryl's 2XL"

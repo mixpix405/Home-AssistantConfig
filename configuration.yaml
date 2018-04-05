@@ -23,8 +23,9 @@ device_tracker: !include device_trackers.yaml
 notify: !include notifiers.yaml
 frontend: !include frontend.yaml
 history_graph: !include history_graphs.yaml
-input_text: !include input_texts.yaml
 cover: !include covers.yaml
+media_player: !include media_players.yaml
+nest: !include nest.yaml
 
 updater: # Checks for available updates
 discovery: # Discover some devices automatically
@@ -75,10 +76,6 @@ mqtt:
   # discovery: true
   # discovery_prefix: homeassistant
 
-nest:
-  client_id: !secret nest_id
-  client_secret: !secret nest_secret
-
 google: # For Google Calendar integration
   client_id: !secret google_client_id
   client_secret: !secret google_secret
@@ -107,5 +104,3 @@ google_assistant:
     switch.porch_switch:
       aliases:
         - "Porch Light"
-    switch.sonoff_cord_01:
-      type: light

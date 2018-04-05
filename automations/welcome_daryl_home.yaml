@@ -6,6 +6,7 @@ alias: "Welcome Daryl home"
 trigger:
   platform: state
   entity_id: binary_sensor.daryl_home
+  from: 'off'
   to: 'on'
 action:
   service: notify.html5

@@ -1,0 +1,21 @@
+##################################
+# Creates a weekly full snapshot #
+##################################
+
+  alias: "Weekly Snapshot"
+  trigger:
+    platform: time
+    at: '01:00:00'
+  condition:
+    condition: time
+    weekday:
+      - mon
+  action:
+    - service: hassio.snapshot_full
+      data_template:
+        name: "Snapshot {{ now().strftime('%Y-%m-%d') }}"
+    - service: notify.push
+      data:
+        message: "Named: Snapshot {{ now().strftime('%Y-%m-%d') }} successfully!"
+        title: "Snapshot Success!"
+        target: "Daryl's 2XL"

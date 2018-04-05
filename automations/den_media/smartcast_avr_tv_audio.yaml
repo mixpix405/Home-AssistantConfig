@@ -1,0 +1,13 @@
+#########################################################
+# Switches AVR to TV Audio when Den TV is on SmartCast  #
+#########################################################
+
+alias: "Auto AVR to TV Audio Input"
+trigger:
+  platform: state
+  entity_id: sensor.den_tv_source
+  from: "HDMI-1"
+  to: "CAST"
+action:
+  service: switch.toggle
+  entity_id: switch.avr_input_tv

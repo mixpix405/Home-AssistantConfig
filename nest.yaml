@@ -1,0 +1,6 @@
+  client_id: !secret nest_id
+  client_secret: !secret nest_secret
+  binary_sensors:
+    monitored_conditions:
+      - 'online'
+      - 'fan'

@@ -8,10 +8,9 @@ trigger:
   entity_id: binary_sensor.anyone_home
   to: 'off'
 action:
-  - service: climate.set_away_mode
+  - service: nest.set_mode
     data:
-      entity_id: climate.hallway
-      away_mode: 'on'
+      home_mode: away
   - service: homeassistant.turn_off
     entity_id: group.away_mode_off
   - service: notify.html5

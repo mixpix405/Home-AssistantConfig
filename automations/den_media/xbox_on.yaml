@@ -1,0 +1,17 @@
+###########################################################
+# Switches AVR & TV to correct inputs when xbox powers up #
+###########################################################
+
+alias: "Auto AVR & TV to Xbox"
+trigger:
+  platform: state
+  entity_id: sensor.xbox_one
+  from: "Offline"
+  to: "Online"
+action:
+  - service: switch.toggle
+    entity_id: switch.avr_input_xbox
+  - service: media_player.select_source
+    entity_id: media_player.vizio_smartcast
+    data:
+      source: "HDMI-1"
