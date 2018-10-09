@@ -1,7 +1,7 @@
 # Home-Assistant Config by [@mixpix405](http://www.twitter.com/mixpix405)
 [Home Assistant](https://home-assistant.io/) configuration files (and some referenced files)
 
-**This readme is really old... I'll update it eventually...
+##This readme is really old... I'll update it eventually...
 
 ![Screenshot of all stuff in Home Assistant](https://imgur.com/QzSgzEZ.gif)
 
