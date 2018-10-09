@@ -1,0 +1,39 @@
+alias: "Night Time Routine - 7:30"
+trigger:
+  platform: time
+  # Military time format.
+  at: '19:30:00'
+condition:
+  condition: and
+  conditions:
+    - condition: time
+      weekday:
+        - sun
+        - mon
+        - tue
+        - wed
+        - thu
+    - condition: state
+      entity_id: calendar.scheduling_nowork
+      state: 'off'
+action:
+  - service: media_player.volume_set
+    data_template:
+      entity_id: media_player.kitchen_home
+      volume_level: 0.75
+  - service: media_player.play_media
+    data_template:
+      entity_id: media_player.kitchen_home
+      media_content_id: http://hassio.s3.amazonaws.com/audio/computer-magic-5s.mp3
+      #media_content_id: '{{ ["https://hassio.s3.amazonaws.com/audio/sad-trombone-5s.mp3", "https://hassio.s3.amazonaws.com/audio/belch-5s.mp3", "https://hassio.s3.amazonaws.com/audio/1-person-yay-3s.mp3"] | random }}'
+      media_content_type: MUSIC
+  - delay: 0:00:07
+  - service: tts.google_say
+    entity_id: media_player.kitchen_home
+    data_template:
+      message: >
+        '{{ [
+        "Hello, Hensons! Just wanted to let you guys know that it's 7:30, we've got school and work tomorrow. It's about time to get ready for bed and read a story!",
+        "Hello, Hensons! Just wanted to let you guys know that it's 7:30, we've got school and work tomorrow. It's about time to get ready for bed and read a story!",
+        "Hello, Hensons! Just wanted to let you guys know that it's 7:30, we've got school and work tomorrow. It's about time to get ready for bed and read a story!"
+        ] | random }}'

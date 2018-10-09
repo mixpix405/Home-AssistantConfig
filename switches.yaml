@@ -6,6 +6,11 @@
   # username: !secret transmission_user
   # password: !secret transmission_pass
 
+# - platform: deluge
+  # host: 10.0.0.2
+  # username : daryl
+  # password : 4ndr0idG33k
+
 # Broadlink RM Mini 3
 - platform: broadlink
   host: 10.0.0.62

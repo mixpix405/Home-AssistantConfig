@@ -1,0 +1,11 @@
+  intents:
+    HassLightSet:
+      sentences:
+        - Toggle {name}
+      conversations:
+        - id: "Ugx4ZcWWcAmCOENFrVp4AaABAagBo8eNDg"
+    Ping:
+      sentences:
+        - How many Conversations do you know
+  error_suppressed_conversations:
+    - id: CONVERSATION_ID2

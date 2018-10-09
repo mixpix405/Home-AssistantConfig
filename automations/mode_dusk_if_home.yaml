@@ -16,5 +16,3 @@ action:
     entity_id: switch.sonoff_cord_02
   - service: light.turn_on
     entity_id: light.under_cabinet_lighting
-    data:
-      brightness_pct: 100

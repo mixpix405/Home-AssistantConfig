@@ -117,7 +117,7 @@ network_devices_mobiles:
   name: "Network Devices"
   entities:
     - sensor.daryl_xl_nmap
-    - sensor.megan_xl_nmap
+    - sensor.megan_nmap
     - sensor.sawyers_tablet
     - sensor.audreys_tablet
     - sensor.daryl_watch
@@ -167,6 +167,7 @@ climate_tab:
   view: yes
   icon: mdi:weather-partlycloudy
   entities:
+    - weather.dark_sky
     - group.climate
     - group.weather_now
     - group.weather_today
@@ -185,19 +186,14 @@ climate:
 weather_now:
   name: "Now"
   entities:
-    - sun.sun
-    - sensor.dark_sky_temperature
     - sensor.dark_sky_apparent_temperature
     - sensor.dark_sky_summary
     - sensor.dark_sky_minutely_summary
-    - sensor.dark_sky_humidity
     - sensor.dark_sky_nearest_storm_distance
 
 weather_today:
   name: "Today"
   entities:
-    - sensor.dark_sky_daily_high_temperature
-    - sensor.dark_sky_daily_low_temperature
     - sensor.dark_sky_precip_probability
     - sensor.dark_sky_hourly_summary
     - sensor.dark_sky_daily_summary
@@ -248,13 +244,12 @@ google_homes:
     - media_player.master_bedroom_speaker
     - media_player.master_bathroom_speaker
     - media_player.basement_speaker
-    - media_player.smart_speakers
-
+    - media_player.pa_system
 streaming:
   name: "Streaming Media"
   entities:
     - sensor.plex
-    - media_player.vizio_smartcast
+    - media_player.den_vizio
     #- sensor.lastfm_mixpix405
 
 xbox:
@@ -397,9 +392,10 @@ homeless_stuff:
     - sensor.daryls_battery
     - binary_sensor.megan_charging
     - binary_sensor.daryl_charging
-    - device_tracker.404e36256a50
+    - device_tracker.megans_pixel_2
     - device_tracker.chromecastlan
     - device_tracker.darylt540plan
+    - device_tracker.darylt580
     - device_tracker.googlehomelan
     - device_tracker.tlwa855relan
     - device_tracker.e4f0421cb224

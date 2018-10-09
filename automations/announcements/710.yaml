@@ -1,0 +1,48 @@
+alias: "Morning Routine - 7:10"
+trigger:
+  platform: time
+  # Military time format.
+  at: '07:10:00'
+condition:
+  condition: and
+  conditions:
+    - condition: time
+      weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+    - condition: state
+      entity_id: calendar.scheduling_nowork
+      state: 'off'
+action:
+  - service: media_player.play_media
+    data:
+      entity_id: media_player.pa_system
+      media_content_id: "https://hassio.s3.amazonaws.com/audio/news-intro-5-25s.mp3"
+      media_content_type: MUSIC
+  - delay: 0:00:05
+  - service: media_player.turn_off
+    entity_id: media_player.den_vizio
+  - service: tts.google_say
+    entity_id: media_player.pa_system
+    data_template:
+      message: >
+        '{{ [
+        "Alright, Sawyer and Dad! I've turned the TV off, and it's time to load up. Don't forget your backpacks!",
+        "Ok, Sawyer and Daddy. I hope you have a great day today! Don't forget your things!"
+        ] | random }}'
+  - service: cover.open_cover
+    entity_id: cover.daryls_garage_door
+  # - service: cover.open_cover
+    # entity_id: cover.megans_garage_door
+  - delay: 0:00:10
+  - service: tts.google_say
+    entity_id: media_player.pa_system
+    data_template:
+      message: >
+        '{{ [
+        "I've opened Dad's garage door. One less thing for you guys to worry about. See you this afternoon!",
+        "Psst. I opened your garage door. Get going!"
+        ] | random }}'

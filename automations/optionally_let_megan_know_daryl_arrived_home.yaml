@@ -13,4 +13,4 @@ action:
   data:
     message: "Safe and sound at {{ as_timestamp(now()) | timestamp_custom('%I:%M%p', true) }}"
     title: "Daryl arrived home"
-    target: "Megan's XL"
+    target: "Megan's Pixel 2"

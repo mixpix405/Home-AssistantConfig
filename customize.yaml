@@ -149,7 +149,7 @@ sensor.transmission_up_speed:
   icon: mdi:upload-network
 sensor.daryl_xl_nmap:
   icon: mdi:cellphone
-sensor.megan_xl_nmap:
+sensor.megan_nmap:
   icon: mdi:cellphone
 sensor.dat_dongle:
   icon: mdi:cast

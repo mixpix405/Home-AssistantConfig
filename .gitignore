@@ -8,6 +8,8 @@ secrets.yaml
 ###############################
 tts
 deps
+android
+.storage
 
 #########################
 # Ignore specific files #

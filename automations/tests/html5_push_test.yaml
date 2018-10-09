@@ -9,7 +9,7 @@ action:
   data_template:
     message: test message
     title: test title
-    target: ["Daryl's 2XL", "Daryl's Laptop"]
+    target: ["Daryl's 2XL", "Daryl's T580"]
     #data:
       #actions:
       #  - action: "button_on"

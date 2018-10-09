@@ -1,0 +1,23 @@
+##################################
+# Notifies Daryl when PIA is off #
+##################################
+
+alias: "PIA Unprotected Notification"
+trigger:
+  platform: state
+  entity_id: sensor.htpc_pia
+  from: 'Protected'
+  to: 'Disconnected'
+action:
+  service: notify.html5
+  data:
+    message: "As of {{ as_timestamp(now()) | timestamp_custom('%I:%M%p', true) }}, PIA is offline."
+    title: "PIA Unprotected"
+    target: "Daryl's 2XL"
+    data:
+      tag: 'pia-status'
+    # data:
+      # actions:
+        # - action: "tell_her"
+          # title: "Sure..."
+          # icon: "/local/icons/human-female_hab.png"

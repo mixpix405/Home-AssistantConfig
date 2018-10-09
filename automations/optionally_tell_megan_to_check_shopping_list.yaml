@@ -13,4 +13,4 @@ action:
   data:
     message: "{{ as_timestamp(now()) | timestamp_custom('%I:%M%p', true) }} - Check the list or message him."
     title: "Daryl needs something from Walmart"
-    target: "Megan's XL"
+    target: "Megan's Pixel 2"

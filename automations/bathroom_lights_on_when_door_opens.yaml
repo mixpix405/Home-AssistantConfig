@@ -1,7 +1,7 @@
 alias: "Bathroom Lights Auto"
 trigger:
   platform: state
-  entity_id: sensor.bathroom_door
+  entity_id: sensor.bathroom_door_status
   to: "open"
 action:
   service: switch.turn_on

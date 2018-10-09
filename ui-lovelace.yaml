@@ -1,0 +1,46 @@
+name: My Lovelace Home
+views:
+  - name: "Example View"
+    theme: darkred
+    cards:
+      - type: entities
+        title: "Entities Card"
+        entities:
+          - light.under_cabinet_lighting
+          - switch.sonoff_cord_02
+          - light.peq_lamp
+          - switch.bathroom_switch
+          - switch.bedroom_switch
+          - switch.landscaping_outlet_switch
+          - switch.porch_switch
+          - switch.sonoff_cord_01
+      - type: entity-filter
+        filter:
+          - domain: automation
+            state: 'off'
+        card_config:
+          title: "Automations that are off"
+      - type: entity-filter
+        filter:
+          - domain: automation
+            state: 'on'
+        card_config:
+          title: "Automations that are on"
+  - name: "Second View"
+    tab_icon: mdi:home-assistant
+    cards:
+      - type: entities
+        title: "Bedroom & Bathroom"
+        entities:
+          - switch.bedroom_switch
+          - light.peq_lamp
+          - switch.sonoff_cord_01
+          - switch.bathroom_switch
+  # - icon: mdi:weather-cloudy
+    # id: weather
+    # title: Weather
+    # garage_door_tilt_sensor_alarm_level: Weather
+    # cards:
+      # - type: "custom:weather-card"
+        # entity_weather: weather.yweather
+        # entity_sun: sun.sun

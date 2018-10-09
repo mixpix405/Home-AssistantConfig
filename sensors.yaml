@@ -14,15 +14,13 @@
     - nearest_storm_distance
     - precip_type
     - precip_probability
-    - temperature
     - apparent_temperature
     - dew_point
-    - humidity
     - minutely_summary
     - hourly_summary
     - daily_summary
-    - temperature_max
-    - temperature_min
+    - temperature_high
+    - temperature_low
 
 - platform: plex
   host: !secret htpc_ip
@@ -32,11 +30,11 @@
   username: !secret ups_user
   password: !secret ups_pass
 
-- platform: fedex
-  name: "FedEx Manager"
-  username: !secret fedex_user
-  password: !secret fedex_pass
-  update_interval: '00:15:00'
+# - platform: fedex
+  # name: "FedEx Manager"
+  # username: !secret fedex_user
+  # password: !secret fedex_pass
+  # update_interval: '00:15:00'
 
 - platform: speedtest
   minute: 0
@@ -103,28 +101,28 @@
   state_topic: "smartthings/PEQ Motion Sensor/motion/state"
   payload_on: "active"
   payload_off: "inactive"
-  device_class: "motion"
+  # device_class: "motion"
 
 - platform: mqtt
   name: "Bathroom Door"
   state_topic: "smartthings/PEQ Door Sensor/contact/state"
-  payload_on: "open"
-  payload_off: "closed"
-  device_class: "opening"
+  # payload_on: "closed"
+  # payload_off: "open"
+  # device_class: "opening"
 
 - platform: mqtt
   name: "Daryl's Garage Door"
   state_topic: "smartthings/Daryl's Garage Door Sensor/contact/state"
   payload_on: "open"
   payload_off: "closed"
-  device_class: "opening"
+  # device_class: "opening"
 
 - platform: mqtt
   name: "Megan's Garage Door"
   state_topic: "smartthings/Megan's Garage Door Sensor/contact/state"
   payload_on: "open"
   payload_off: "closed"
-  device_class: "opening"
+  # device_class: "opening"
 
 - platform: cert_expiry
   host: !secret duck_domain
@@ -143,13 +141,13 @@
 
 - platform: google_travel_time
   name: "Time to Home for Daryl"
-  api_key: !secret google_api_key
+  api_key: !secret hensonhass_api_key
   origin: device_tracker.mixpix405_2xl
   destination: zone.home
 
 - platform: google_travel_time
   name: "Time to Home for Megan"
-  api_key: !secret google_api_key
+  api_key: !secret hensonhass_api_key
   origin: device_tracker.mixpix405_megans_xl
   destination: zone.home
 
@@ -195,7 +193,7 @@
       value_template: "{% if is_state('device_tracker.retropielan', 'home') %}Online{% else %}Offline{% endif %}"
     daryl_laptop:
       friendly_name: "Daryl's Laptop"
-      value_template: "{% if is_state('device_tracker.darylt540plan', 'home') %}Online{% else %}Offline{% endif %}"
+      value_template: "{% if is_state('device_tracker.darylt580', 'home') %}Online{% else %}Offline{% endif %}"
     chromebook_lenovo:
       friendly_name: "Lenovo Chromebook"
       value_template: "{% if is_state('device_tracker.chromebook_lenovo', 'home') %}Online{% else %}Offline{% endif %}"
@@ -246,15 +244,15 @@
     daryl_watch:
       friendly_name: "Daryl's Watch"
       value_template: "{% if is_state('device_tracker.android5486ce199fee9d90lan', 'home') %}Online{% else %}Offline{% endif %}"
-    megan_xl_nmap: # updated
-      friendly_name: "Megan's XL"
-      value_template: "{% if is_state('device_tracker.404e36256a50', 'home') %}Online{% else %}Offline{% endif %}"
+    megan_nmap: # updated
+      friendly_name: "Megan's Pixel 2"
+      value_template: "{% if is_state('device_tracker.megans_pixel_2', 'home') %}Online{% else %}Offline{% endif %}"
     megan_charging:
       friendly_name: "Megan Charging"
       value_template: "{% if is_state('binary_sensor.megan_charging', 'on') %}Charging{% else %}Not Charging{% endif %}"
       icon_template: "{% if is_state('binary_sensor.megan_charging', 'on') %}mdi:power-plug{% else %}mdi:power-plug-off{% endif %}"
     megans_battery_dyn:
-      friendly_name: "Megan's XL"
+      friendly_name: "Megan's Pixel 2"
       unit_of_measurement: "%"
       value_template: "{{states.sensor.megans_battery.state}}"
       icon_template: "{%- if states.sensor.megans_battery.state >= '95' %}mdi:battery{%- elif states.sensor.megans_battery.state == '100' %}mdi:battery{%- elif states.sensor.megans_battery.state == '' %}mdi:battery-unknown{%- elif states.sensor.megans_battery.state <= '15' %}mdi:battery-outline{% else %}mdi:battery-{{(states.sensor.megans_battery.state|float / 10)|round*10}}{%- endif %}"
@@ -274,8 +272,8 @@
       value_template: "{% if is_state('device_tracker.xboxonelan', 'home') %}Online{% else %}Offline{% endif %}"
     bathroom_door_status:
       friendly_name: "Bathroom Door"
-      value_template: "{% if is_state('sensor.bathroom_door', 'open') %}open{% else %}closed{% endif %}"
-      icon_template: "{% if is_state('sensor.bathroom_door', 'open') %}mdi:door-open{% else %}mdi:door-closed{% endif %}"
+      value_template: "{% if is_state('sensor.bathroom_door', 'open') %}closed{% else %}open{% endif %}"
+      icon_template: "{% if is_state('sensor.bathroom_door_status', 'open') %}mdi:door-open{% else %}mdi:door-closed{% endif %}"
     daryl_garage_status:
       friendly_name: "Daryl's Garage Door"
       value_template: "{% if is_state('sensor.daryls_garage_door', 'open') %}open{% else %}closed{% endif %}"
@@ -292,4 +290,4 @@
       value_template: "{% if is_state('sensor.ipinfo_city', 'Gadsden') %}Disconnected{% else %}Protected{% endif %}"
     den_tv_source:
       friendly_name: "Den TV Source"
-      value_template: '{{ states.media_player.vizio_smartcast.attributes.source }}'
+      value_template: '{{ states.media_player.den_vizio.attributes.source }}'

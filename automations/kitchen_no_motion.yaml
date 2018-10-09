@@ -8,7 +8,8 @@ trigger:
   entity_id: sensor.kitchen_motion
   to: 'inactive'
   for:
-    minutes: 5
+    minutes: 2
 action:
   service: light.turn_off
-  entity_id: light.under_cabinet_lighting
+  data:
+    entity_id: light.under_cabinet_lighting

@@ -1,8 +1,4 @@
-- name: pushy
-  platform: pushbullet
-  api_key: !secret pushy_key
-
 - name: html5
   platform: html5
-  gcm_api_key: !secret gcm_key
-  gcm_sender_id: !secret gcm_id
+  gcm_api_key: !secret hensonhass_gcm_key
+  gcm_sender_id: !secret hensonhass_gcm_id
