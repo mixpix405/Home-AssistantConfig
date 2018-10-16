@@ -110,8 +110,8 @@ google: # For Google Calendar integration
 
 google_assistant:
   project_id: !secret hensonhass_project_id
-  client_id: !secret hensonhass_client_id
-  access_token: !secret hensonhass_access_token
+  #client_id: !secret hensonhass_client_id
+  #access_token: !secret hensonhass_access_token
   api_key: !secret hensonhass_api_key
   exposed_domains:
     - light
