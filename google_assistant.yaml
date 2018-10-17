@@ -1,0 +1,85 @@
+  project_id: !secret hensonhass_project_id
+  api_key: !secret hensonhass_api_key
+  exposed_domains:
+    - light
+    - cover
+    - switch
+  entity_config:
+    switch.sonoff_cord_02:
+      name: "Over Cabinet Lighting"
+      room: "Kitchen"
+    switch.bathroom_switch:
+      name: "Bathroom Switch"
+      room: "Master Bathroom"
+    switch.bedroom_switch:
+      name: "Bedroom Switch"
+      room: "Master Bedroom"
+    switch.landscaping_outlet_switch:
+      name: "Landscaping Outlet"
+      room: "Porch"
+    light.peq_lamp:
+      name: "Daryl's Lamp"
+      room: "Master Bedroom"
+    switch.sonoff_cord_01:
+      name: "Megan's Lamp"
+      room: "Master Bedroom"
+    switch.porch_switch:
+      name: "Porch Switch"
+      room: "Porch"
+    light.under_cabinet_lighting:
+      name: "Under Cabinet Lighting"
+      room: "Kitchen"
+    switch.receiver_input_tv:
+      expose: false
+    switch.receiver_input_xbox:
+      expose: false
+    switch.receiver_power:
+      expose: false
+    switch.receiver_power_toggle:
+      expose: false
+    switch.garage_daryl_switch:
+      expose: false
+    switch.garage_megan_switch:
+      expose: false
+    switch.vizio_den_input:
+      expose: false
+    switch.vizio_den_play_pause:
+      expose: false
+    switch.vizio_den_power:
+      expose: false
+    switch.vizio_den_power_toggle_broken:
+      expose: false
+    switch.xbox_back:
+      expose: false
+    switch.xbox_backback:
+      expose: false
+    switch.xbox_backwards:
+      expose: false
+    switch.xbox_down:
+      expose: false
+    switch.xbox_forward:
+      expose: false
+    switch.xbox_hdmi:
+      expose: false
+    switch.xbox_home:
+      expose: false
+    switch.xbox_info:
+      expose: false
+    switch.xbox_left:
+      expose: false
+    switch.xbox_menu:
+      expose: false
+    switch.xbox_next:
+      expose: false
+    switch.xbox_ok:
+      expose: false
+    switch.xbox_play:
+      expose: false
+    switch.xbox_power:
+      expose: false
+    switch.xbox_right:
+      expose: false
+    switch.xbox_stop:
+      expose: false
+    switch.xbox_up:
+      expose: false
