@@ -1,0 +1,18 @@
+climate.hallway:
+  friendly_name: "Nest Thermostat"
+  entity_picture: /local/images/devices/nest.png
+sensor.hallway_thermostat_humidity:
+  friendly_name: "Humidity"
+sensor.hallway_thermostat_hvac_state:
+  friendly_name: "State"
+sensor.hallway_thermostat_operation_mode:
+  friendly_name: "Mode"
+sensor.hallway_thermostat_target:
+  friendly_name: "Target Temp"
+sensor.hallway_thermostat_temperature:
+  friendly_name: "Temperature"
+binary_sensor.hallway_thermostat_fan:
+  friendly_name: "Fan"
+  icon: mdi:fan
+binary_sensor.hallway_thermostat_online:
+  friendly_name: "Online"

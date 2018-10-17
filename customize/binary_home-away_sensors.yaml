@@ -1,0 +1,4 @@
+binary_sensor.daryl_home:
+  entity_picture: /local/images/people/avi_daryl.png
+binary_sensor.megan_home:
+  entity_picture: /local/images/people/avi_megan.png

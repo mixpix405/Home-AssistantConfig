@@ -1,0 +1,8 @@
+switch.porch_switch:
+  icon: mdi:spotlight-beam
+switch.bathroom_switch:
+  icon: mdi:lightbulb-outline
+switch.bedroom_switch:
+  icon: mdi:lightbulb-outline
+switch.landscaping_outlet_switch:
+  icon: mdi:power-socket-us

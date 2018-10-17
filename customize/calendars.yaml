@@ -1,0 +1,18 @@
+calendar.football:
+  icon: mdi:football
+calendar.family:
+  icon: mdi:home-heart
+calendar.private_events:
+  icon: mdi:lock-outline
+calendar.childrens_theatre_rehearsals:
+  icon: mdi:guy-fawkes-mask
+calendar.scheduling:
+  icon: mdi:timetable
+calendar.scheduling_nowork:
+  icon: mdi:timetable
+calendar.scheduling_work:
+  icon: mdi:timetable
+calendar.holidays_in_united_states:
+  icon: mdi:beach
+calendar._sawyers_basketball_games_:
+  icon: mdi:basketball

@@ -1,0 +1,7 @@
+light.peq_lamp:
+  icon: mdi:lamp
+sensor.kitchen_motion:
+  icon: mdi:walk
+sensor.bathroom_door:
+  icon: mdi:door
+  # icon_template: "{% if is_state('sensor.bathroom_door', 'open') %}mdi:door-open{% else %}mdi:door-closed{% endif %}"

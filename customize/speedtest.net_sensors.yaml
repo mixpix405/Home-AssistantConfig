@@ -1,0 +1,4 @@
+sensor.speedtest_download:
+  icon: mdi:download-network
+sensor.speedtest_upload:
+  icon: mdi:upload-network

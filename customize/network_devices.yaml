@@ -1,0 +1,47 @@
+sensor.htpc:
+  icon: mdi:desktop-tower
+sensor.htpc_pia:
+  icon: mdi:security-network
+sensor.ipinfo_city:
+  icon: mdi:map
+  friendly_name: "PIA City"
+sensor.ghome_kitchen:
+  icon: mdi:google-assistant
+sensor.range_extender:
+  icon: mdi:access-point
+sensor.ghome_mini_bedroom:
+  icon: mdi:google-assistant
+sensor.ghome_mini_bathroom:
+  icon: mdi:google-assistant
+sensor.xbox_one:
+  icon: mdi:xbox
+sensor.st_hub:
+  icon: mdi:white-balance-iridescent
+sensor.sawyers_tablet:
+  icon: mdi:tablet-android
+sensor.audreys_tablet:
+  icon: mdi:tablet-android
+sensor.cast_bedroom:
+  icon: mdi:cast
+sensor.nest:
+  entity_picture: /local/images/devices/nest.png
+sensor.transmission_down_speed:
+  icon: mdi:download-network
+sensor.transmission_up_speed:
+  icon: mdi:upload-network
+sensor.daryl_xl_nmap:
+  icon: mdi:cellphone
+sensor.megan_nmap:
+  icon: mdi:cellphone
+sensor.dat_dongle:
+  icon: mdi:cast
+sensor.daryl_laptop:
+  icon: mdi:laptop-windows
+sensor.retropie:
+  icon: mdi:gamepad-variant
+sensor.daryl_watch:
+  icon: mdi:watch
+sensor.megan_explorer:
+  icon: mdi:car-estate
+sensor.chromebook_lenovo:
+  icon: mdi:laptop-chromebook

@@ -1,0 +1,12 @@
+sensor.google_wifi_current_version:
+  friendly_name: "Firmware version"
+sensor.google_wifi_last_restart:
+  friendly_name: "Last reboot"
+sensor.google_wifi_local_ip:
+  friendly_name: "External IP"
+sensor.google_wifi_new_version:
+  friendly_name: "Firmware update?"
+sensor.google_wifi_status:
+  friendly_name: "Status"
+sensor.google_wifi_uptime:
+  friendly_name: "Uptime"

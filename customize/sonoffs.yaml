@@ -1,0 +1,10 @@
+switch.sonoff_cord_01:
+  friendly_name: "Megan's Bedside Lamp"
+  icon: mdi:power-socket-us
+switch.sonoff_cord_02:
+  friendly_name: "Above Cabinet Lighting"
+  icon: mdi:power-socket-us
+sensor.sonoff_01:
+  icon: mdi:power-socket-us
+sensor.sonoff_02:
+  icon: mdi:power-socket-us

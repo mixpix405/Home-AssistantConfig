@@ -1,0 +1,64 @@
+automation.tell_the_family_its_705:
+  icon: mdi:numeric-1-box-outline
+automation.tell_the_family_its_710:
+  icon: mdi:numeric-2-box-outline
+automation.tell_the_family_its_715:
+  icon: mdi:numeric-3-box-outline
+automation.pushbullet_test:
+  icon: mdi:message
+automation.midnight:
+  icon: mdi:sleep
+automation.home_mode:
+  icon: mdi:home-map-marker
+automation.bedroom_lights_with_motion:
+  icon: mdi:walk
+automation.close_daryls_door__11pm:
+  icon: mdi:garage
+automation.close_megans_door__11pm:
+  icon: mdi:garage
+automation.early_morning_mode:
+  icon: mdi:weather-sunset-up
+automation.garage_open__daryl:
+  icon: mdi:garage-open
+automation.garage_open__megan:
+  icon: mdi:garage-open
+automation.bedroom_no_motion:
+  icon: mdi:walk
+automation.bathroom_lights_auto:
+  icon: mdi:white-balance-incandescent
+automation.away_mode:
+  icon: mdi:account-remove
+automation.html5_push_test:
+  icon: mdi:language-html5
+automation.tell_daryl_when_megan_gets_home:
+  icon: mdi:airplane-landing
+automation.option_to_tell_daryl_to_check_shopping_list:
+  icon: mdi:cart
+automation.option_to_tell_megan_daryl_is_home:
+  icon: mdi:mdi:airplane-landing
+automation.option_to_tell_megan_to_check_shopping_list:
+  icon: mdi:cart
+automation.porch_off_via_html5:
+  icon: mdi:spotlight-beam
+automation.porch_on_via_html5:
+  icon: mdi:spotlight-beam
+automation.tell_daryl_when_megan_is_at_walmart:
+  icon: mdi:cart
+automation.tell_megan_when_daryl_is_at_walmart:
+  icon: mdi:cart
+automation.welcome_daryl_home:
+  icon: mdi:human-greeting
+automation.announce_daryls_reminders:
+  icon: mdi:bullhorn
+automation.dusk_mode:
+  icon: mdi:weather-sunset-down
+automation.morning_mode:
+  icon: mdi:weather-sunset-up
+automation.set_theme_at_startup:
+  icon: mdi:restart
+automation.dusk_mode_christmas:
+  icon: mdi:pine-tree
+automation.mode_early_morning:
+  icon: mdi:coffee
+automation.sleepy_time_off_at_830am:
+  icon: mdi:alarm-bell

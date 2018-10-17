@@ -1,0 +1,6 @@
+group.all_automations:
+  hidden: false
+  friendly_name: "All Automations"
+group.all_devices:
+  hidden: false
+  friendly_name: "All Devices"

@@ -1,0 +1,24 @@
+# Now Tab
+sensor.dark_sky_temperature:
+  friendly_name: "Temperature"
+sensor.dark_sky_apparent_temperature:
+  friendly_name: "Feels Like"
+sensor.dark_sky_summary:
+  friendly_name: "Currently"
+sensor.dark_sky_minutely_summary:
+  friendly_name: "Next Hour"
+sensor.dark_sky_humidity:
+  friendly_name: "Humidity"
+sensor.dark_sky_nearest_storm_distance:
+  friendly_name: "Nearest Storm"
+# Today Tab
+sensor.dark_sky_daily_high_temperature:
+  friendly_name: "High"
+sensor.dark_sky_daily_low_temperature:
+  friendly_name: "Low"
+sensor.dark_sky_precip_probability:
+  friendly_name: "Chance of Precip."
+sensor.dark_sky_hourly_summary:
+  friendly_name: "24-Hour"
+sensor.dark_sky_daily_summary:
+  friendly_name: "7-Day"

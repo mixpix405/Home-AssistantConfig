@@ -1,0 +1,8 @@
+sensor.daryls_battery:
+  icon: mdi:battery-outline
+sensor.time_to_home_for_daryl:
+  icon: mdi:car-sports
+sensor.megans_battery:
+  icon: mdi:battery-outline
+sensor.time_to_home_for_megan:
+  icon: mdi:car-estate
