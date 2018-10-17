@@ -7,3 +7,7 @@
   exclude:
     - 10.0.0.3
   interval_seconds: 30
+
+- platform: google_maps
+  username: !secret google_loc_sharing_user
+  password: !secret google_loc_sharing_pass
