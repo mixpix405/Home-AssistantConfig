@@ -1,11 +1,3 @@
-# - platform: coinmarketcap
-  # currency: electroneum
-  # dusplay_currency: USD
-
-# - platform: coinmarketcap
-  # currency: bitcoin
-  # display_currency: USD
-
 - platform: darksky
   api_key: !secret darksky_key
   monitored_conditions:
@@ -30,11 +22,11 @@
   username: !secret ups_user
   password: !secret ups_pass
 
-# - platform: fedex
-  # name: "FedEx Manager"
-  # username: !secret fedex_user
-  # password: !secret fedex_pass
-  # update_interval: '00:15:00'
+- platform: fedex
+  name: "FedEx Manager"
+  username: !secret fedex_user
+  password: !secret fedex_pass
+  update_interval: '00:15:00'
 
 - platform: speedtest
   minute: 0
@@ -101,28 +93,22 @@
   state_topic: "smartthings/PEQ Motion Sensor/motion/state"
   payload_on: "active"
   payload_off: "inactive"
-  # device_class: "motion"
 
 - platform: mqtt
   name: "Bathroom Door"
   state_topic: "smartthings/PEQ Door Sensor/contact/state"
-  # payload_on: "closed"
-  # payload_off: "open"
-  # device_class: "opening"
 
 - platform: mqtt
   name: "Daryl's Garage Door"
   state_topic: "smartthings/Daryl's Garage Door Sensor/contact/state"
   payload_on: "open"
   payload_off: "closed"
-  # device_class: "opening"
 
 - platform: mqtt
   name: "Megan's Garage Door"
   state_topic: "smartthings/Megan's Garage Door Sensor/contact/state"
   payload_on: "open"
   payload_off: "closed"
-  # device_class: "opening"
 
 - platform: cert_expiry
   host: !secret duck_domain
@@ -150,8 +136,6 @@
   api_key: !secret hensonhass_api_key
   origin: device_tracker.mixpix405_megans_xl
   destination: zone.home
-
-#- platform: pi_hole
 
 - platform: command_line
   name: log_db_file_size
@@ -291,3 +275,9 @@
     den_tv_source:
       friendly_name: "Den TV Source"
       value_template: '{{ states.media_player.den_vizio.attributes.source }}'
+    ### For New Google Device Tracker Stuffs
+    daryl_google_battery:
+      friendly_name: "Daryl's Battery Level"
+      unit_of_measurement: "%"
+      value_template: "{{ states.device_tracker.google_maps_109190697617170869990.attributes.battery_level }}"
+      icon_template: "{%- if states.sensor.daryls_google_battery.state >= '95' %}mdi:battery{%- elif states.sensor.daryls_google_battery.state == '100' %}mdi:battery{%- elif states.sensor.daryls_google_battery.state == '' %}mdi:battery-unknown{%- elif states.sensor.daryls_google_battery.state <= '15' %}mdi:battery-outline{% else %}mdi:battery-{{(states.sensor.daryls_google_battery.state|float / 10)|round*10}}{%- endif %}"

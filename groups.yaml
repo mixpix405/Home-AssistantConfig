@@ -3,6 +3,7 @@ default_view:
   icon: mdi:castle
   entities:
     - group.daryl_tracker
+    - group.daryl_tracker_updated
     - group.megan_tracker
     - group.lights_and_switches
     - group.sonoffs
@@ -264,6 +265,7 @@ trackers_tab:
   icon: mdi:map-marker
   entities:
     - group.daryl_tracker
+    - group.daryl_tracker_updated
     - group.megan_tracker
 
 daryl_tracker:
@@ -271,6 +273,16 @@ daryl_tracker:
   entities:
     - device_tracker.mixpix405_2xl
     - sensor.daryls_battery_dyn
+    - sensor.daryl_charging
+    - sensor.time_to_home_for_daryl
+    - cover.daryls_garage_door
+    - camera.daryl
+
+daryl_tracker_updated:
+  name: "Daryl (Updated)"
+  entities:
+    - device_tracker.google_maps_109190697617170869990
+    - sensor.daryl_google_battery
     - sensor.daryl_charging
     - sensor.time_to_home_for_daryl
     - cover.daryls_garage_door
